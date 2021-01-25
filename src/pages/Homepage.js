@@ -3,7 +3,7 @@ import AppUpperHeader from '../components/upper-header/upper-header.comp';
 
 const Homepage = () => {
   return (
-    <div className="home-page-wrapper custom-container">
+    <div className="custom-container home-page-wrapper">
       <AppUpperHeader />
     </div>
   );

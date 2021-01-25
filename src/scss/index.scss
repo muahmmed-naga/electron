@@ -4,6 +4,19 @@
   box-sizing: border-box;
 }
 
+:root {
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none !important;
+}
+
 // Files
 @import './variables.scss';
 @import './classes.scss';
+
+// Custom classes
+.main-color {
+  color: $yellow;
+}

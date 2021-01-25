@@ -15,8 +15,66 @@
   }
 }
 
-@media screen and (max-width: $breakpoint-xl) {
+@media screen and (max-width: $breakpoint-lg) {
   .custom-container {
-    max-width: 1400px !important;
+    width: 95% !important;
   }
+}
+@media screen and (min-width: $breakpoint-xl) {
+  .custom-container {
+    max-width: 1600px !important;
+  }
+}
+
+/**
+=========================================================
+                   Flex Box 
+=========================================================
+**/
+
+%flex {
+  display: flex;
+}
+
+.flex {
+  @extend %flex;
+}
+
+// Align items
+.flex-align-center {
+  @extend %flex;
+  align-items: center;
+}
+
+// Justify content
+.flex-justify-between {
+  @extend %flex;
+  justify-content: space-between;
+}
+.flex-justify-around {
+  @extend %flex;
+  justify-content: space-around;
+}
+.flex-justify-center {
+  @extend %flex;
+  justify-content: center;
+}
+
+// Align items & Justify Content
+.flex-center-center {
+  @extend %flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-center-between {
+  @extend %flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-center-around {
+  @extend %flex;
+  align-items: center;
+  justify-content: space-around;
 }

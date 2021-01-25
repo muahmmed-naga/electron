@@ -1,5 +1,42 @@
 .app-upper-header-wrapper {
-  display: flex;
-  align-items: cente;
-  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 0.7rem;
+  font-family: 'Open Sans', sans-serif;
+
+  .left-side,
+  .right-side {
+    p {
+      color: #565656;
+    }
+
+    svg {
+      font-size: 18px;
+      margin-right: 5px;
+    }
+  }
+
+  .left-side {
+    .item:first-child {
+      margin-right: 20px;
+    }
+  }
+
+  .right-side {
+    display: flex;
+    justify-content: flex-end !important;
+
+    & > div:first-child {
+      border-right: 1px solid #d6d6d694;
+    }
+
+    .item {
+      margin: 0 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .app-upper-header-wrapper {
+    display: none !important;
+  }
 }
