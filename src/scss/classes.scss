@@ -1,0 +1,22 @@
+/**
+=========================================================
+                    App Container 
+=========================================================
+**/
+
+.custom-container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: $breakpoint-md) {
+  .custom-container {
+    width: 95% !important;
+  }
+}
+
+@media screen and (max-width: $breakpoint-xl) {
+  .custom-container {
+    max-width: 1400px !important;
+  }
+}
