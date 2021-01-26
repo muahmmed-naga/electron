@@ -14,7 +14,7 @@ import './upper-header.styles.scss';
 
 const AppUpperHeader = () => {
   return (
-    <div className="app-upper-header-wrapper flex-center-between">
+    <div className="custom-container app-upper-header-wrapper flex-center-between">
       <div className="left-side flex-center-between">
         <div className="item flex-align-center">
           <IoIosCall className="main-color" />
