@@ -1,0 +1,144 @@
+.homepage-landing-wrapper {
+  background-color: #fed700;
+  padding: 100px 0;
+  font-family: 'Open Sans', sans-serif;
+
+  .left-side {
+    text-transform: uppercase;
+
+    .text-1,
+    .text-2 {
+      line-height: 45px;
+    }
+
+    .text-1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .text-2 {
+      font-size: 70px;
+      font-weight: 400;
+    }
+
+    h4 {
+      margin-top: 30px;
+      font-weight: 600;
+    }
+  }
+
+  .middle {
+    img {
+      width: 450px;
+      height: auto;
+    }
+  }
+
+  .right-side {
+    h4 {
+      color: #3162bd;
+      font-weight: 700;
+    }
+
+    .price {
+      margin-top: 10px;
+      font-weight: 600;
+
+      .old-price {
+        color: gray;
+        margin-right: 10px;
+      }
+
+      .new-price {
+        color: #ee0000;
+        font-size: 2rem;
+      }
+    }
+
+    .buy-now {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 46px;
+      border-radius: 20px;
+      text-transform: capitalize;
+      font-weight: 700;
+      margin-top: 17px;
+      display: inline-block;
+      font-size: 0.9rem;
+    }
+  }
+
+  // .footer {
+  //   border-top: 1px solid #000;
+  //   padding: 20px 0;
+  // }
+}
+
+@media screen and (max-width: 550px) {
+  .homepage-landing-wrapper {
+    .right-side-wrapper {
+      flex-direction: column !important;
+
+      img {
+        width: 100% !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .homepage-landing-wrapper {
+    .right-side-wrapper {
+      img {
+        // border: 1px solid red;
+        width: 300px !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .homepage-landing-wrapper {
+    padding: 50px 0 !important;
+
+    .content-wrapper {
+      flex-direction: column !important;
+
+      .left-side {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .homepage-landing-wrapper {
+    .text-1,
+    .text-2 {
+      line-height: 30px !important;
+    }
+
+    .text-1 {
+      font-size: 30px !important;
+    }
+    .text-2 {
+      font-size: 45px !important;
+    }
+  }
+}
+
+@media screen and (min-width: 950px) and (max-width: 1100px) {
+  .homepage-landing-wrapper {
+    .text-1,
+    .text-2 {
+      line-height: 35px !important;
+    }
+
+    .text-1 {
+      font-size: 20px !important;
+    }
+    .text-2 {
+      font-size: 40px !important;
+    }
+  }
+}
