@@ -1,0 +1,71 @@
+/**
+=========================================================
+                    Padding
+=========================================================
+**/
+
+@for $i from 1 to 60 {
+  .p-#{$i} {
+    padding: $i + px;
+  }
+}
+
+@for $i from 1 to 60 {
+  .p-top-#{$i} {
+    padding-top: $i + px;
+  }
+}
+
+@for $i from 1 to 60 {
+  .p-right-#{$i} {
+    padding-right: $i + px;
+  }
+}
+
+@for $i from 1 to 60 {
+  .p-bottom-#{$i} {
+    padding-bottom: $i + px;
+  }
+}
+
+@for $i from 1 to 60 {
+  .p-left-#{$i} {
+    padding-left: $i + px;
+  }
+}
+
+/**
+=========================================================
+                    Margin
+=========================================================
+**/
+
+@for $i from 1 to 60 {
+  .m-#{$i} {
+    margin: $i + px;
+  }
+}
+
+@for $i from 1 to 60 {
+  .m-top-#{$i} {
+    margin-top: $i + px;
+  }
+}
+
+@for $i from 1 to 60 {
+  .m-right-#{$i} {
+    margin-right: $i + px;
+  }
+}
+
+@for $i from 1 to 60 {
+  .m-bottom-#{$i} {
+    margin-bottom: $i + px;
+  }
+}
+
+@for $i from 1 to 60 {
+  .m-left-#{$i} {
+    margin-left: $i + px;
+  }
+}

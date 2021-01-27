@@ -1,0 +1,490 @@
+.all-departments-wrapper {
+  margin-right: 40px;
+  background-color: #00abc5;
+  border-radius: 10px 10px 0 0;
+  position: relative;
+
+  .header {
+    cursor: pointer;
+    padding: 15px 85px 15px 25px;
+
+    svg:first-of-type {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .title {
+      color: #fff;
+      text-transform: capitalize;
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+  }
+
+  .slide-menu {
+    border: 1px solid #ddd;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 9999;
+    padding: 0 25px;
+    position: relative;
+
+    & > li:not(:last-of-type) {
+      border-bottom: 1px solid #ddd;
+    }
+
+    & > li {
+      padding: 6px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+
+      & > a {
+        font-size: 0.8rem;
+        color: #333e48;
+        text-transform: capitalize;
+        transition: all 0.3s ease;
+
+        &:hover {
+          padding-left: 5px;
+          color: #00abc5;
+        }
+      }
+
+      & > svg {
+        color: #636363;
+      }
+    }
+
+    // TV & Audio submenu
+    .tv-audio-menu {
+      &:hover {
+        .tv-audio-submenu {
+          opacity: 1;
+          visibility: visible;
+          transform: translateX(0);
+        }
+      }
+
+      .tv-audio-submenu {
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: -1px;
+        left: 100%;
+        border: 1px solid #ddd;
+        border-right: none !important;
+        width: 900px;
+        z-index: 9999;
+        background-color: #fff;
+        min-height: 248px;
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        background-image: url('https://cdn.shopify.com/s/files/1/0066/4322/0562/files/megamenu-4-300x256_292x270.png?v=1604560580');
+        transition: all 0.6s ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(30px);
+        border-top: 2px solid #00abc5;
+
+        .custom-row {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          height: 100%;
+
+          .column {
+            height: 100%;
+            padding: 20px;
+
+            .title {
+              margin-bottom: 10px;
+              font-weight: 700;
+              color: #424242;
+              text-transform: capitalize;
+            }
+            ul {
+              li {
+                padding: 6px 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                cursor: pointer;
+
+                & > a {
+                  font-size: 0.8rem;
+                  color: #333e48;
+                  text-transform: capitalize;
+                  transition: all 0.3s ease;
+
+                  &:hover {
+                    padding-left: 5px;
+                    color: #00abc5;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Gadgets submenu
+    .gadgets-menu {
+      &:hover {
+        .gadgets-submenu {
+          opacity: 1;
+          visibility: visible;
+          transform: translateX(0);
+        }
+      }
+
+      .gadgets-submenu {
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: -1px;
+        left: 100%;
+        border: 1px solid #ddd;
+        border-right: none !important;
+        width: 700px;
+        z-index: 9999;
+        background-color: #fff;
+        min-height: 248px;
+        background-repeat: no-repeat;
+        background-position: right;
+        background-image: url('https://cdn.shopify.com/s/files/1/0066/4322/0562/files/megamenu-9.png?v=1604560581');
+        transition: all 0.6s ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(30px);
+        border-top: 2px solid #00abc5;
+
+        .custom-row {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          height: 100%;
+
+          .column {
+            height: 100%;
+            padding: 20px;
+
+            .title {
+              margin-bottom: 10px;
+              font-weight: 700;
+              color: #424242;
+              text-transform: capitalize;
+            }
+            ul {
+              & > li {
+                padding: 6px 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                & > a {
+                  font-size: 0.8rem;
+                  color: #333e48;
+                  text-transform: capitalize;
+                  transition: all 0.3s ease;
+
+                  &:hover {
+                    padding-left: 5px;
+                    color: #00abc5;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // All in One submenu
+    .all-in-one {
+      &:hover {
+        .all-in-one-submenu {
+          opacity: 1;
+          visibility: visible;
+          transform: translateX(0);
+        }
+      }
+
+      .all-in-one-submenu {
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: -1px;
+        left: 100%;
+        border: 1px solid #ddd;
+        border-right: none !important;
+        width: 900px;
+        z-index: 9999;
+        background-color: #fff;
+        min-height: 248px;
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        background-image: url('https://cdn.shopify.com/s/files/1/0066/4322/0562/files/megamenu-8.png?v=1604560580');
+        transition: all 0.6s ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(30px);
+        border-top: 2px solid #00abc5;
+
+        .custom-row {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          height: 100%;
+
+          .column {
+            height: 100%;
+            padding: 20px;
+
+            .title {
+              margin-bottom: 10px;
+              font-weight: 700;
+              color: #424242;
+              text-transform: capitalize;
+            }
+            ul {
+              & > li {
+                padding: 6px 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                & > a {
+                  font-size: 0.8rem;
+                  color: #333e48;
+                  text-transform: capitalize;
+                  transition: all 0.3s ease;
+
+                  &:hover {
+                    padding-left: 5px;
+                    color: #00abc5;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Accessories submenu
+    .accessories-menu {
+      &:hover {
+        .accessories-submenu {
+          opacity: 1;
+          visibility: visible;
+          transform: translateX(0);
+        }
+      }
+
+      .accessories-submenu {
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: -1px;
+        left: 100%;
+        border: 1px solid #ddd;
+        border-right: none !important;
+        width: 700px;
+        z-index: 9999;
+        background-color: #fff;
+        min-height: 248px;
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        background-image: url('https://cdn.shopify.com/s/files/1/0066/4322/0562/files/megamenu-image1-1_292x270.jpg?v=1604560580');
+        transition: all 0.6s ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(30px);
+        border-top: 2px solid #00abc5;
+
+        .custom-row {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          height: 100%;
+
+          .column {
+            height: 100%;
+            padding: 20px;
+
+            .title {
+              margin-bottom: 10px;
+              font-weight: 700;
+              color: #424242;
+              text-transform: capitalize;
+            }
+            ul {
+              & > li {
+                padding: 6px 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                & > a {
+                  font-size: 0.8rem;
+                  color: #333e48;
+                  text-transform: capitalize;
+                  transition: all 0.3s ease;
+
+                  &:hover {
+                    padding-left: 5px;
+                    color: #00abc5;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Gaming submenu
+    .gaming-menu {
+      &:hover {
+        .gaming-submenu {
+          opacity: 1;
+          visibility: visible;
+          transform: translateX(0);
+        }
+      }
+
+      .gaming-submenu {
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: -1px;
+        left: 100%;
+        border: 1px solid #ddd;
+        border-right: none !important;
+        width: 700px;
+        z-index: 9999;
+        background-color: #fff;
+        min-height: 248px;
+        background-repeat: no-repeat;
+        background-position: right;
+        background-image: url('https://cdn.shopify.com/s/files/1/0066/4322/0562/files/megamenu.png?v=1604560581');
+        transition: all 0.6s ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(30px);
+        border-top: 2px solid #00abc5;
+
+        .custom-row {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          height: 100%;
+
+          .column {
+            height: 100%;
+            padding: 20px;
+
+            .title {
+              margin-bottom: 10px;
+              font-weight: 700;
+              color: #424242;
+              text-transform: capitalize;
+            }
+            ul {
+              & > li {
+                padding: 6px 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                & > a {
+                  font-size: 0.8rem;
+                  color: #333e48;
+                  text-transform: capitalize;
+                  transition: all 0.3s ease;
+
+                  &:hover {
+                    padding-left: 5px;
+                    color: #00abc5;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Labtop & Computer submenu
+    .laptop-computer-menu {
+      &:hover {
+        .laptop-computer-submenu {
+          opacity: 1;
+          visibility: visible;
+          transform: translateX(0);
+        }
+      }
+
+      .laptop-computer-submenu {
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: -1px;
+        left: 100%;
+        border: 1px solid #ddd;
+        border-right: none !important;
+        width: 700px;
+        z-index: 9999;
+        background-color: #fff;
+        min-height: 248px;
+        background-repeat: no-repeat;
+        background-position: right;
+        background-image: url('https://cdn.shopify.com/s/files/1/0066/4322/0562/files/megamenu-2-300x256_292x270.png?v=1604560580');
+        transition: all 0.6s ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(30px);
+        border-top: 2px solid #00abc5;
+
+        .custom-row {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          height: 100%;
+
+          .column {
+            height: 100%;
+            padding: 20px;
+
+            .title {
+              margin-bottom: 10px;
+              font-weight: 700;
+              color: #424242;
+              text-transform: capitalize;
+            }
+            ul {
+              & > li {
+                padding: 6px 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                & > a {
+                  font-size: 0.8rem;
+                  color: #333e48;
+                  text-transform: capitalize;
+                  transition: all 0.3s ease;
+
+                  &:hover {
+                    padding-left: 5px;
+                    color: #00abc5;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

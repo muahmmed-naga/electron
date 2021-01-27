@@ -20,9 +20,14 @@ a {
   text-decoration: none !important;
 }
 
+ul {
+  list-style: none;
+}
+
 // Files
 @import './variables.scss';
 @import './classes.scss';
+@import './loops.scss';
 
 // Custom classes
 .main-color {
