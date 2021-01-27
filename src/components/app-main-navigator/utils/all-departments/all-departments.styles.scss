@@ -22,7 +22,6 @@
   }
 
   .slide-menu {
-    border: 1px solid #ddd;
     position: absolute;
     top: 0;
     left: 0;
@@ -32,6 +31,9 @@
     padding: 0 25px;
     position: relative;
     transition: height 1s ease-in-out;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
 
     & > li:not(:last-of-type) {
       border-bottom: 1px solid #ddd;

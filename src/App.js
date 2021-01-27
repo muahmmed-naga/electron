@@ -14,6 +14,7 @@ function App() {
     <div className="App">
       <AppUpperHeader />
       <AppMainHeader />
+
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route component={PageNotFound} />
