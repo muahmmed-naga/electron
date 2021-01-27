@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // Components
 import { Link } from 'react-router-dom';
@@ -9,13 +9,25 @@ import { MdKeyboardArrowRight } from 'react-icons/md';
 import './all-departments.styles.scss';
 
 const AllDepartments = () => {
+  const [toggleDepartments, setToggleDepartments] = useState(false);
+
   return (
     <div className="all-departments-wrapper">
-      <div className="header flex-align-center">
+      <div
+        className="header flex-align-center"
+        onClick={() => setToggleDepartments(!toggleDepartments)}
+      >
         <FaBars className="m-right-10" />
         <div className="title">all departments</div>
       </div>
-      <ul className="slide-menu">
+      <ul
+        className="slide-menu"
+        id="toggle-all-departments-menu"
+        style={{
+          height: toggleDepartments && 0,
+          overflow: toggleDepartments && 'hidden',
+        }}
+      >
         <li className="tv-audio-menu">
           <Link to="#">tv & audio</Link>
           <MdKeyboardArrowRight />
