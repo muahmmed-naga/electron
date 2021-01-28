@@ -2,8 +2,10 @@ import React from 'react';
 
 // Components
 import AwesomeSlider from 'react-awesome-slider';
+import { Link } from 'react-router-dom';
 
 // Assets
+import SliderBG from '../../assets/images/slider-bg.jpg';
 import SlideImg1 from '../../assets/images/slider-1.png';
 import SlideImg2 from '../../assets/images/slider-2.png';
 import SlideImg3 from '../../assets/images/slider-3.png';
@@ -12,13 +14,12 @@ import SlideImg3 from '../../assets/images/slider-3.png';
 import './homepage-carousel.styles.scss';
 import 'react-awesome-slider/dist/styles.css';
 import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
-import { Link } from 'react-router-dom';
 
 const HomepageCarousel = () => {
   return (
     <div className="homepage-carousel-wrapper">
       <AwesomeSlider animation="cubeAnimation">
-        <div className="item-wrapper">
+        <div className="item-wrapper" style={{ backgroundImage: SliderBG }}>
           <div className="slide-1-caption">
             <div className="text-1">the new standard </div>
             <div className="text-2">UNDER FAVORABLE SMARTWATCHES</div>
