@@ -1,0 +1,38 @@
+.homepage-categories-tabs-wrapper {
+  // border: 1px solid red;
+  .tab-navigator {
+    border-bottom: 1px solid #dddddd;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    .tab-item {
+      margin: 0 20px;
+      border: 2px solid #00abc5;
+      cursor: pointer;
+      padding: 3px 30px;
+      border-radius: 20px;
+      color: #333e48;
+      font-size: 0.9rem;
+    }
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    // border: 1px solid red;
+
+    .content-item {
+      display: flex;
+      flex-direction: column;
+      // align-items: center;
+    }
+
+    .left-side-wrapper,
+    .right-side-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      background-color: whitesmoke;
+    }
+  }
+}
