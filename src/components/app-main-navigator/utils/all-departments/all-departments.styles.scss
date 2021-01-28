@@ -23,13 +23,12 @@
 
   .slide-menu {
     position: absolute;
-    top: 0;
+    top: 48px;
     left: 0;
     right: 0;
     background-color: #fff;
     z-index: 9999;
     padding: 0 25px;
-    position: relative;
     transition: height 1s ease-in-out;
     border-right: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
