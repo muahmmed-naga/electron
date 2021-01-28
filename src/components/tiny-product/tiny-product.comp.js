@@ -4,12 +4,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { IoEyeOutline } from 'react-icons/io5';
 import { IoMdHeartEmpty } from 'react-icons/io';
-import ProductImg from '../../assets/images/products/product-1.jpg';
 
 // Styles
 import './tiny-product.styles.scss';
 
-const TinyProduct = () => {
+const TinyProduct = ({ ProductImg }) => {
   return (
     <div className="tiny-product-wrapper">
       <div className="category">Donna Karan</div>
