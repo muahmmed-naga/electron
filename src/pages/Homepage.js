@@ -4,6 +4,7 @@ import React from 'react';
 import HomepageCarousel from '../components/homepage-carousel/homepage-carousel.comp';
 import AppMainNavigator from '../components/app-main-navigator/app-main-navigator.comp';
 import HomepageBanner from '../components/homepage-banner/homepage-banner.comp';
+import HomepageTabContent from '../components/homepage-tab-content/homepage-tab-content.comp';
 
 // Styles
 
@@ -13,6 +14,7 @@ const Homepage = () => {
       <AppMainNavigator />
       <HomepageCarousel />
       <HomepageBanner />
+      <HomepageTabContent />
     </div>
   );
 };

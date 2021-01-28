@@ -1,0 +1,99 @@
+.left-side-tab-featured {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  .img-wrapper {
+    overflow: hidden;
+    display: block;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .product-name {
+    text-transform: capitalize;
+    font-weight: 600;
+    color: #00abc5;
+    margin: 10px 0;
+  }
+
+  .price {
+    margin-bottom: 10px;
+
+    .new {
+      margin-right: 10px;
+      font-size: 1.5rem;
+      color: #f23b3b;
+      font-weight: 600;
+    }
+
+    del {
+      color: #a6a6a6;
+      font-size: 0.8rem;
+    }
+  }
+
+  .on-stock {
+    width: 100%;
+    margin-bottom: 10px;
+
+    .head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: #484848;
+    }
+  }
+
+  .progress {
+    height: 20px;
+    background-color: #eeeeee;
+    border-radius: 15px;
+    margin: 10px 0;
+    overflow: hidden;
+
+    .solded {
+      background-color: #00abc5;
+      width: 21%;
+      height: 100%;
+    }
+  }
+
+  .hurry-up {
+    span {
+      font-size: 1.5rem;
+      color: #757575;
+    }
+  }
+
+  .special-offer {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 1.3rem;
+    text-transform: capitalize;
+    color: gray;
+  }
+
+  .discound-offer {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    text-transform: capitalize;
+    color: #fff;
+    background-color: #00abc5;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 0.9rem;
+  }
+}
