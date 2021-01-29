@@ -1,0 +1,47 @@
+.best-seller-seciton-wrapper {
+  .tabs-navigator {
+    border-bottom: 1px solid #dddddd;
+
+    .title {
+      color: #00abc5;
+      font-size: 1.2rem;
+      width: fit-content;
+      border-bottom: 1px solid #00abc5;
+      padding-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .navigator-items-wrapper {
+      padding-bottom: 10px;
+
+      .tab-item {
+        margin-left: 15px;
+        cursor: pointer;
+        padding: 3px 10px;
+        border-radius: 20px;
+        color: #333e48;
+        font-size: 0.8rem;
+        border: 2px solid #fff;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          border-color: #00abc5 !important;
+        }
+      }
+
+      .active-tab {
+        border: 2px solid #00abc5;
+      }
+    }
+  }
+
+  .tabs-content-wrapper {
+    .tab-content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background-color: whitesmoke;
+      margin-top: 20px;
+    }
+  }
+}
