@@ -1,0 +1,56 @@
+.new-arrivals-wrapper {
+  .tabs-navigator {
+    border-bottom: 1px solid #dddddd;
+    margin-bottom: 20px;
+
+    .title {
+      color: #00abc5;
+      font-size: 1.2rem;
+      width: fit-content;
+      border-bottom: 1px solid #00abc5;
+      padding-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .carousel-navigator {
+      position: relative;
+    }
+  }
+
+  .alice-carousel__prev-btn,
+  .alice-carousel__next-btn {
+    width: fit-content !important;
+    padding: 0 !important;
+  }
+
+  .alice-carousel__prev-btn {
+    position: absolute;
+    top: -60px !important;
+    right: 25px !important;
+  }
+  .alice-carousel__next-btn {
+    position: absolute;
+    top: -60px !important;
+    right: 0 !important;
+  }
+
+  .alice-carousel__prev-btn-item.__inactive,
+  .alice-carousel__next-btn-item.__inactive {
+    opacity: 1 !important;
+  }
+
+  .alice-carousel__prev-btn-item,
+  .alice-carousel__next-btn-item {
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px;
+    margin: 0;
+    color: #738184 !important;
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+
+    &:hover {
+      color: #00abc5 !important;
+    }
+  }
+}

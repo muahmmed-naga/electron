@@ -7,6 +7,8 @@ import HomepageCategoriesTabs from '../components/categories-tab/categories-tab.
 import AppMainNavigator from '../components/app-main-navigator/app-main-navigator.comp';
 import HomepageTabContent from '../components/homepage-tab-content/homepage-tab-content.comp';
 import BestSellerSection from '../components/best-seller-section/best-seller-section.comp';
+import NewArrivals from '../components/new-arrivals/new-arrivals.comp';
+import ShopAndSave from '../components/shop-and-save.comp';
 
 // Styles
 
@@ -19,6 +21,8 @@ const Homepage = () => {
       <HomepageTabContent />
       <HomepageCategoriesTabs />
       <BestSellerSection />
+      <ShopAndSave />
+      <NewArrivals />
     </div>
   );
 };
