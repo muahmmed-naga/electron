@@ -2,10 +2,10 @@ import React from 'react';
 
 // Components
 import AliceCarousel from 'react-alice-carousel';
+import TinyProduct from '../tiny-product/tiny-product.comp';
 
 // Styles
 import 'react-alice-carousel/lib/alice-carousel.css';
-import TinyProduct from '../tiny-product/tiny-product.comp';
 import './new-arrivals.styles.scss';
 
 const NewArrivals = () => {

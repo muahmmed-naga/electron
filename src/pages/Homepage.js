@@ -10,6 +10,7 @@ import BestSellerSection from '../components/best-seller-section/best-seller-sec
 import NewArrivals from '../components/new-arrivals/new-arrivals.comp';
 import ShopAndSave from '../components/shop-and-save.comp';
 import ProductsMultiColumns from '../components/products-multi-colums/products-multi-colums.comp';
+import OurParteners from '../components/our-parteners/our-parteners.comp';
 
 // Styles
 
@@ -25,6 +26,7 @@ const Homepage = () => {
       <ShopAndSave />
       <NewArrivals />
       <ProductsMultiColumns />
+      <OurParteners />
     </div>
   );
 };
