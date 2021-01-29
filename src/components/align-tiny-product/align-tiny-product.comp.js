@@ -22,7 +22,9 @@ const AlignTinyProduct = ({ imgUrl }) => {
 
       <div className="content">
         <div className="category">category</div>
-        <div className="product-name">{truncateStr('Product Name', 15)}</div>
+        <Link to="#" className="product-name">
+          {truncateStr('Product Name', 15)}
+        </Link>
         <div className="price">
           <div className="new">$200.00</div>
           <del>$250.00</del>

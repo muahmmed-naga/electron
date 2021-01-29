@@ -15,16 +15,36 @@ const HomepageCategoriesTabs = () => {
   return (
     <div className="custom-container homepage-categories-tabs-wrapper m-top-50">
       <div className="tab-navigator flex-align-center p-bottom-10">
-        <div className="tab-item" onClick={() => setActiveTab('best-deals')}>
-          best deals
+        <div
+          className={`tab-item ${
+            activeTab === 'best-deals' ? 'active-tab' : undefined
+          }`}
+          onClick={() => setActiveTab('best-deals')}
+        >
+          Best Deals
         </div>
-        <div className="tab-item" onClick={() => setActiveTab('tv-video')}>
+        <div
+          className={`tab-item ${
+            activeTab === 'tv-video' ? 'active-tab' : undefined
+          }`}
+          onClick={() => setActiveTab('tv-video')}
+        >
           TV & Video
         </div>
-        <div className="tab-item" onClick={() => setActiveTab('cameras')}>
+        <div
+          className={`tab-item ${
+            activeTab === 'cameras' ? 'active-tab' : undefined
+          }`}
+          onClick={() => setActiveTab('cameras')}
+        >
           Cameras
         </div>
-        <div className="tab-item" onClick={() => setActiveTab('audio')}>
+        <div
+          className={`tab-item ${
+            activeTab === 'audio' ? 'active-tab' : undefined
+          }`}
+          onClick={() => setActiveTab('audio')}
+        >
           Audio
         </div>
       </div>

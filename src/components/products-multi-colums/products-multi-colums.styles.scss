@@ -1,0 +1,32 @@
+.products-multi-columns-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+  .product-colum-wrapper {
+    .title {
+      border-bottom: 1px solid #ddd;
+
+      span {
+        border-bottom: 2px solid #00abc5;
+        text-transform: capitalize;
+        color: #818386;
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+    }
+
+    .align-tiny-product-wrapper {
+      justify-content: flex-start !important;
+      padding: 10px 0;
+
+      img {
+        margin-right: 15px;
+      }
+    }
+    .product-name {
+      display: block;
+      margin: 10px 0;
+    }
+  }
+}
