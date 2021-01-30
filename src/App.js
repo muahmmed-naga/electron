@@ -8,6 +8,7 @@ import AppUpperHeader from './components/upper-header/upper-header.comp';
 // Pages
 import PageNotFound from './pages/PageNotFound';
 import Homepage from './pages/Homepage';
+import TestPage from './pages/TestPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
 
       <Switch>
         <Route exact path="/" component={Homepage} />
+        <Route path="/test" component={TestPage} />
         <Route component={PageNotFound} />
       </Switch>
     </div>

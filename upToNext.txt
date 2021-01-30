@@ -1,1 +1,1 @@
-===> Complete second tabs section in home page
+===> Complete Product Modal Fuctionality
