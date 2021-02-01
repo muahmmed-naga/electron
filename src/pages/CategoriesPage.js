@@ -4,6 +4,7 @@ import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import RouteNavigator from '../components/route-navigator/route-navigator.comp';
 import CategoriesPageLeftSide from '../components/categories-page-left/categories-page-left.comp';
+import CategoriesPageRightSide from '../components/categories-page-right/categories-page-right.comp';
 
 const CategoriesPage = () => {
   return (
@@ -13,7 +14,9 @@ const CategoriesPage = () => {
         <Col sm={3}>
           <CategoriesPageLeftSide />
         </Col>
-        <Col sm={9}>sm=10</Col>
+        <Col sm={9}>
+          <CategoriesPageRightSide />
+        </Col>
       </Row>
     </div>
   );

@@ -1,0 +1,30 @@
+.view-navigator-wrapper {
+  background-color: #f5f5f5;
+  padding: 10px 15px;
+
+  .view-controller {
+    svg {
+      margin-right: 10px;
+      color: #9c9a9a;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .active-view {
+      color: #000 !important;
+    }
+  }
+
+  .middle-wrapper {
+    .custom-select {
+      font-size: 0.8rem;
+    }
+    .form-group {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  .right-side {
+    font-size: 0.8rem;
+  }
+}
