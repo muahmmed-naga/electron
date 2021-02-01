@@ -4,7 +4,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import AppMainHeader from './components/main-header/main-header.comp';
 import AppUpperHeader from './components/upper-header/upper-header.comp';
-import AppFooter from './components/app-footer/app-footer.comp';
+// import AppFooter from './components/app-footer/app-footer.comp';
 
 // Pages
 import Homepage from './pages/Homepage';
@@ -27,7 +27,7 @@ function App() {
         <Route component={PageNotFound} />
       </Switch>
 
-      <AppFooter />
+      {/* <AppFooter /> */}
     </div>
   );
 }

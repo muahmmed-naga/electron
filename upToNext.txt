@@ -1,9 +1,11 @@
-==> Product Page 
 ==> Cart Page 
 ==> Checkout page
 ==> User Login & Sign Up
-==> Mobile & Tables Srceens
-==> App Footer
 ==> Scroll navbar
-==> Product Modal
+==> Mobile & Tables Srceens
+
+
+==> Product Modal -> Done with Dummy Data
+==> App Footer -> Done
+==> Product Page -> Done 
 ==> Categories Page -> Done
