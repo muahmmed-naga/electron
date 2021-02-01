@@ -1,4 +1,3 @@
-==> Categories Page
 ==> Product Page 
 ==> Cart Page 
 ==> Checkout page
@@ -6,4 +5,5 @@
 ==> Mobile & Tables Srceens
 ==> App Footer
 ==> Scroll navbar
-==> Product Modal -> Done
+==> Product Modal
+==> Categories Page -> Done

@@ -14,6 +14,12 @@ const RouteNavigator = ({ prev, current }) => {
 
   return (
     <div className="route-navigator-wrapper flex-align-center m-bottom-20">
+      <Link to="/" style={link}>
+        Home
+      </Link>
+      <IoIosArrowForward
+        style={{ margin: '0 10px', color: '#616971', fontSize: '.6rem' }}
+      />
       <Link to={`/${prev === 'home' ? '' : prev}`} style={link}>
         {prev}
       </Link>

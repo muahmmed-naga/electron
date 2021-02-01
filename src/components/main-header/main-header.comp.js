@@ -13,9 +13,9 @@ const AppMainHeader = () => {
   return (
     <div className="custom-container">
       <div className="app-main-header-wrapper flex-center-between">
-        <div className="logo">
+        <Link to="/" className="logo">
           <Logo />
-        </div>
+        </Link>
 
         <div className="product-search flex-align-center">
           <input type="text" placeholder="Search..." />

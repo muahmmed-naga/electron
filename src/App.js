@@ -11,6 +11,7 @@ import Homepage from './pages/Homepage';
 import CategoriesPage from './pages/CategoriesPage';
 import TestPage from './pages/TestPage';
 import PageNotFound from './pages/PageNotFound';
+import ProductPage from './pages/product-page/product-page.comp';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route path="/categories/all" component={CategoriesPage} />
+        <Route exact path="/collections/:id" component={ProductPage} />
         <Route path="/test" component={TestPage} />
         <Route component={PageNotFound} />
       </Switch>

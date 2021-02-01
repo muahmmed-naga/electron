@@ -12,10 +12,10 @@ const TinyProduct = ({ ProductImg }) => {
   return (
     <div className="tiny-product-wrapper">
       <div className="category">Donna Karan</div>
-      <Link to="#" className="product-name">
+      <Link to="/collections/10" className="product-name">
         Faxtex Product Sample
       </Link>
-      <Link to="#" className="img-wrapper">
+      <Link to="/collections/10" className="img-wrapper">
         <img src={ProductImg} alt="product" />
       </Link>
 
