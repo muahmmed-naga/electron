@@ -1,0 +1,47 @@
+.categories-page-left-wrapper {
+  border: 2px solid #ddd;
+  border-radius: 3px;
+  padding: 10px 15px;
+
+  .title {
+    font-size: 1.2rem;
+    color: #636363;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+
+  .list-item {
+    width: 100%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 0.8rem;
+    color: #6b6969;
+    border-bottom: 1px solid #ddd;
+    display: block;
+
+    button {
+      all: unset;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      cursor: pointer;
+      color: #6b6969;
+    }
+
+    li {
+      font-size: 0.8rem;
+      margin-bottom: 8px;
+
+      a {
+        color: #6b6969;
+      }
+    }
+
+    .card-body {
+      padding: 10px !important;
+    }
+  }
+}

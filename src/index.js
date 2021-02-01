@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 // Styles
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/index.scss';
 
 // Hot Module Replacement
