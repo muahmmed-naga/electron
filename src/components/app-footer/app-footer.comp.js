@@ -27,7 +27,7 @@ const AppFooter = () => {
             </div>
             <div className="middle">$20 coupon for first shopping.</div>
             <form>
-              <input type="email" name="emai" />
+              <input type="email" name="emai" placeholder="Enter your Email" />
               <button type="submit">subscribe</button>
             </form>
           </div>

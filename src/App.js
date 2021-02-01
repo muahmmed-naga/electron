@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 // Components
 import { Switch, Route } from 'react-router-dom';
-import AppMainHeader from './components/main-header/main-header.comp';
-import AppUpperHeader from './components/upper-header/upper-header.comp';
 import CartPage from './pages/cart-page/cart-page.comp';
 import AppFooter from './components/app-footer/app-footer.comp';
+import AppMainHeader from './components/main-header/main-header.comp';
+import ScrollHeader from './components/scroll-header/scroll-header.comp';
+import AppUpperHeader from './components/upper-header/upper-header.comp';
 
 // Pages
 import Homepage from './pages/Homepage';
@@ -15,8 +16,24 @@ import PageNotFound from './pages/PageNotFound';
 import ProductPage from './pages/product-page/product-page.comp';
 
 function App() {
+  const scrollFunction = () => {
+    if (
+      document.body.scrollTop > 100 ||
+      document.documentElement.scrollTop > 100
+    ) {
+      document.getElementById('scroll-header').style.top = '0';
+    } else {
+      document.getElementById('scroll-header').style.top = '-64px';
+    }
+  };
+
+  useEffect(() => {
+    window.onscroll = () => scrollFunction();
+  });
+
   return (
     <div className="App">
+      <ScrollHeader />
       <AppUpperHeader />
       <AppMainHeader />
 
