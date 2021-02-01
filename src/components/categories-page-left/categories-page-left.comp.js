@@ -2,13 +2,37 @@ import React from 'react';
 
 // Components
 import { Link } from 'react-router-dom';
+import AliceCarousel from 'react-alice-carousel';
+import TinyProduct from '../tiny-product/tiny-product.comp';
 import { IoIosArrowForward } from 'react-icons/io';
 import { Accordion, Card } from 'react-bootstrap';
 
 // Styles
+import 'react-alice-carousel/lib/alice-carousel.css';
 import './categories-page-left.styles.scss';
 
 const CategoriesPageLeftSide = () => {
+  const responsive = {
+    0: { items: 1 },
+    568: { items: 1 },
+    1024: { items: 1 },
+  };
+
+  const items = [
+    <TinyProduct ProductImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
+    <TinyProduct ProductImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
+    <TinyProduct ProductImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
+    <TinyProduct ProductImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
+    <TinyProduct ProductImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
+    <TinyProduct ProductImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
+    <TinyProduct ProductImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
+    <TinyProduct ProductImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
+    <TinyProduct ProductImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
+    <TinyProduct ProductImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
+    <TinyProduct ProductImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
+    <TinyProduct ProductImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
+  ];
+
   return (
     <div className="categories-page-left-wrapper">
       <div className="title">Categories</div>
@@ -147,6 +171,23 @@ const CategoriesPageLeftSide = () => {
       <Link to="#" className="list-item">
         Printers & Ink
       </Link>
+
+      <Link to="/cameras/4k" style={{ marginTop: '30px', display: 'block' }}>
+        <img
+          src="//cdn.shopify.com/s/files/1/0066/4322/0562/files/sidebar-banner_270x_caf21969-17c3-44e7-a84a-b10fc5e8a4be_1920x.jpg?v=1604560580"
+          alt="ad"
+          style={{ width: '100%' }}
+        />
+      </Link>
+      <div className="title m-top-20">Latest Products</div>
+      <AliceCarousel
+        mouseTracking
+        items={items}
+        responsive={responsive}
+        disableDotsControls
+        autoPlay
+        autoPlayInterval={5000}
+      />
     </div>
   );
 };
