@@ -4,7 +4,8 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import AppMainHeader from './components/main-header/main-header.comp';
 import AppUpperHeader from './components/upper-header/upper-header.comp';
-// import AppFooter from './components/app-footer/app-footer.comp';
+import CartPage from './pages/cart-page/cart-page.comp';
+import AppFooter from './components/app-footer/app-footer.comp';
 
 // Pages
 import Homepage from './pages/Homepage';
@@ -21,13 +22,14 @@ function App() {
 
       <Switch>
         <Route exact path="/" component={Homepage} />
-        <Route path="/categories/all" component={CategoriesPage} />
-        <Route exact path="/collections/:id" component={ProductPage} />
+        <Route exact path="/categories/all" component={CategoriesPage} />
+        <Route path="/collections/:id" component={ProductPage} />
+        <Route path="/cart" component={CartPage} />
         <Route path="/test" component={TestPage} />
         <Route component={PageNotFound} />
       </Switch>
 
-      {/* <AppFooter /> */}
+      <AppFooter />
     </div>
   );
 }

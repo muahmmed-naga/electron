@@ -17,12 +17,17 @@ const RouteNavigator = ({ prev, current }) => {
       <Link to="/" style={link}>
         Home
       </Link>
-      <IoIosArrowForward
-        style={{ margin: '0 10px', color: '#616971', fontSize: '.6rem' }}
-      />
-      <Link to={`/${prev === 'home' ? '' : prev}`} style={link}>
-        {prev}
-      </Link>
+      {prev && (
+        <>
+          <IoIosArrowForward
+            style={{ margin: '0 10px', color: '#616971', fontSize: '.6rem' }}
+          />
+          <Link to={`/${prev === 'home' ? '' : prev}`} style={link}>
+            {prev}
+          </Link>
+        </>
+      )}
+
       <IoIosArrowForward
         style={{ margin: '0 10px', color: '#616971', fontSize: '.6rem' }}
       />

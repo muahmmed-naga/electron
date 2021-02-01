@@ -33,7 +33,7 @@ const AppMainHeader = () => {
             <AiOutlineHeart />
             <div className="count">0</div>
           </Link>
-          <Link to="#" className="item">
+          <Link to="/cart" className="item">
             <IoBagOutline />
             <div className="count">0</div>
           </Link>
