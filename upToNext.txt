@@ -1,1 +1,9 @@
-===> Complete Product Modal Fuctionality
+==> Categories Page
+==> Product Page 
+==> Cart Page 
+==> Checkout page
+==> User Login & Sign Up
+==> Mobile & Tables Srceens
+==> App Footer
+==> Scroll navbar
+==> Product Modal -> Done
