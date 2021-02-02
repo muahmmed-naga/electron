@@ -14,7 +14,13 @@ const styles = {
 };
 
 const ShopAndSave = () => {
-  return <Link to="#" className="custom-container m-top-50" style={styles} />;
+  return (
+    <Link
+      to="#"
+      className="custom-container m-top-50 shop-and-save"
+      style={styles}
+    />
+  );
 };
 
 export default ShopAndSave;

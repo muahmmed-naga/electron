@@ -10,6 +10,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
   // height: 5000px;
+  overflow-x: hidden;
 }
 
 :root {
@@ -26,6 +27,10 @@ ul {
 
 p {
   margin-bottom: 0 !important;
+}
+
+.shop-and-save {
+  display: none !important;
 }
 
 // Files

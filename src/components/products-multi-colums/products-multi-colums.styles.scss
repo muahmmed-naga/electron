@@ -30,3 +30,15 @@
     }
   }
 }
+
+@media screen and (max-width: 800px) {
+  .products-multi-columns-wrapper {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media screen and (max-width: 450px) {
+  .products-multi-columns-wrapper {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+}

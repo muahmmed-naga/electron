@@ -30,3 +30,24 @@
     }
   }
 }
+
+@media screen and (max-width: 992px) {
+  .homepage-tab-content-wrapper {
+    .righ-side-tab-featured {
+      grid-template-columns: repeat(3, 1fr) !important;
+    }
+    .left-side {
+      height: fit-content !important;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .homepage-tab-content-wrapper {
+    grid-template-columns: 1fr !important;
+
+    .righ-side-tab-featured {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+  }
+}

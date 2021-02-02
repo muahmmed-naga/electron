@@ -9,8 +9,10 @@ import './our-parteners.styles.scss';
 
 const OurParteners = () => {
   const responsive = {
-    0: { items: 1 },
-    568: { items: 2 },
+    350: { items: 2 },
+    550: { items: 2 },
+    786: { items: 4 },
+    992: { items: 5 },
     1024: { items: 6 },
   };
 

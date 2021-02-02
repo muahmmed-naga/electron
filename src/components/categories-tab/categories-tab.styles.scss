@@ -44,3 +44,36 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .homepage-categories-tabs-wrapper {
+    .content {
+      grid-template-columns: 1fr !important;
+
+      .right-side-wrapper,
+      .left-side-wrapper {
+        grid-template-columns: repeat(4, 1fr) !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 552px) {
+  .homepage-categories-tabs-wrapper {
+    .content {
+      .right-side-wrapper,
+      .left-side-wrapper {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+    .tab-navigator {
+      justify-content: space-between !important;
+
+      .tab-item {
+        margin: 0 0 !important;
+        padding: 3px 20px !important;
+        font-size: 0.6rem !important;
+      }
+    }
+  }
+}

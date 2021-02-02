@@ -2,7 +2,6 @@ import React from 'react';
 
 // Components
 import { Link } from 'react-router-dom';
-import Countdown from 'react-countdown';
 
 // Assets
 import Img from '../../../../assets/images/homepage/tabs/left-1.jpg';
@@ -39,10 +38,6 @@ const LeftSideTabFeatured = () => {
         <div className="progress">
           <div className="solded" />
         </div>
-      </div>
-
-      <div className="hurry-up">
-        <Countdown date={Date.now() + 100000000} />
       </div>
 
       <div className="special-offer">special offer</div>

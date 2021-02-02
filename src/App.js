@@ -7,6 +7,7 @@ import AppFooter from './components/app-footer/app-footer.comp';
 import AppMainHeader from './components/main-header/main-header.comp';
 import ScrollHeader from './components/scroll-header/scroll-header.comp';
 import AppUpperHeader from './components/upper-header/upper-header.comp';
+import ResponsiveMainHeader from './components/responsive/main-header/main-header.comp';
 
 // Pages
 import Homepage from './pages/Homepage';
@@ -38,6 +39,7 @@ function App() {
       <ScrollHeader />
       <AppUpperHeader />
       <AppMainHeader />
+      {/* <ResponsiveMainHeader /> */}
 
       <Switch>
         <Route exact path="/" component={Homepage} />

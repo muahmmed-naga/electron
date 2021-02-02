@@ -9,11 +9,11 @@
   margin: 0 auto;
 }
 
-@media screen and (max-width: $breakpoint-md) {
-  .custom-container {
-    width: 95% !important;
-  }
-}
+// @media screen and (max-width: $breakpoint-lg) {
+//   .custom-container {
+//     width: 95% !important;
+//   }
+// }
 
 @media screen and (max-width: $breakpoint-lg) {
   .custom-container {

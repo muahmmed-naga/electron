@@ -10,3 +10,24 @@
     }
   }
 }
+
+@media screen and (max-width: 552px) {
+  .homepage-banner-wrapper {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
+  }
+}
+@media screen and (max-width: 350px) {
+  .homepage-banner-wrapper {
+    grid-template-columns: 1fr !important;
+
+    a {
+      max-height: 100px;
+      overflow: hidden;
+
+      img {
+        height: auto !important;
+      }
+    }
+  }
+}

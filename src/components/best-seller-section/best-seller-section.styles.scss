@@ -1,6 +1,7 @@
 .best-seller-seciton-wrapper {
   .tabs-navigator {
     border-bottom: 1px solid #dddddd;
+    flex-wrap: wrap;
 
     .title {
       color: #00abc5;
@@ -38,10 +39,29 @@
   .tabs-content-wrapper {
     .tab-content {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 2px;
       background-color: whitesmoke;
       margin-top: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 552px) {
+  .best-seller-seciton-wrapper {
+    .tabs-navigator {
+      .title {
+        margin-bottom: 15px;
+      }
+
+      .tab-item {
+        font-size: 0.6rem !important;
+        margin-left: 0 !important;
+        padding: 3px 6px !important;
+      }
     }
   }
 }

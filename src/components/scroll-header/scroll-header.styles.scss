@@ -74,8 +74,10 @@
   }
 }
 
-@media screen and (max-width: 991px) {
-  .app-main-header-wrapper {
-    display: none !important;
+@media screen and (max-width: 768px) {
+  .scroll-header-wrapper {
+    .product-search {
+      display: none !important;
+    }
   }
 }
