@@ -1,9 +1,9 @@
-==> Checkout page
-==> User Login & Sign Up
-==> Scroll navbar
 ==> Mobile & Tables Srceens
 
 
+==> User Login & Sign Up -> Done
+==> Checkout page -> Not Now
+==> Scroll navbar -> Done
 ==> Cart Page  -> Done
 ==> Product Modal -> Done with Dummy Data
 ==> App Footer -> Done

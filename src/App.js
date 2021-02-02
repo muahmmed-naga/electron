@@ -14,6 +14,8 @@ import CategoriesPage from './pages/CategoriesPage';
 import TestPage from './pages/TestPage';
 import PageNotFound from './pages/PageNotFound';
 import ProductPage from './pages/product-page/product-page.comp';
+import LoginPage from './pages/Login';
+import Signup from './pages/Signup';
 
 function App() {
   const scrollFunction = () => {
@@ -42,6 +44,8 @@ function App() {
         <Route exact path="/categories/all" component={CategoriesPage} />
         <Route path="/collections/:id" component={ProductPage} />
         <Route path="/cart" component={CartPage} />
+        <Route exact path="/account/signup" component={Signup} />
+        <Route exact path="/account/login" component={LoginPage} />
         <Route path="/test" component={TestPage} />
         <Route component={PageNotFound} />
       </Switch>

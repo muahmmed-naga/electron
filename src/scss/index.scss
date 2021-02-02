@@ -24,6 +24,10 @@ ul {
   list-style: none;
 }
 
+p {
+  margin-bottom: 0 !important;
+}
+
 // Files
 @import './variables.scss';
 @import './classes.scss';
