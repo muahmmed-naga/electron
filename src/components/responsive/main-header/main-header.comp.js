@@ -1,18 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+// Components
 import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
+import { Link } from 'react-router-dom';
 import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
+import Drawer from '@material-ui/core/Drawer';
+import AppBar from '@material-ui/core/AppBar';
 import MenuIcon from '@material-ui/icons/Menu';
+import { IoBagOutline } from 'react-icons/io5';
+import { IoIosArrowDown } from 'react-icons/io';
+import Toolbar from '@material-ui/core/Toolbar';
 import ListItem from '@material-ui/core/ListItem';
 import { Accordion, Card } from 'react-bootstrap';
-import { IoIosArrowForward } from 'react-icons/io';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { ReactComponent as Logo } from '../../../assets/svg/logo.svg';
 
 // Styles
 import './main-header.styles.scss';
@@ -57,6 +61,7 @@ const useStyles = makeStyles((theme) => ({
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
+    height: '30px !important',
   },
   content: {
     flexGrow: 1,
@@ -73,6 +78,11 @@ const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.enteringScreen,
     }),
     marginLeft: 0,
+  },
+  listLink: {
+    fontSize: '.8rem',
+    color: '#6b6969',
+    marginBottom: '8px',
   },
 }));
 
@@ -98,19 +108,32 @@ const ResponsiveMainHeader = () => {
           [classes.appBarShift]: open,
         })}
       >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            className={clsx(classes.menuButton, open && classes.hide)}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap>
-            Persistent drawer
-          </Typography>
+        <Toolbar
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+          }}
+        >
+          <div className="flex-align-center">
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerOpen}
+              edge="start"
+              className={clsx(classes.menuButton, open && classes.hide)}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" noWrap>
+              <Logo />
+            </Typography>
+          </div>
+
+          <div className="shopping-cart">
+            <IoBagOutline />
+            <div className="count">0</div>
+          </div>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -128,37 +151,11 @@ const ResponsiveMainHeader = () => {
           </IconButton>
         </div>
 
-        <List>
-          <ListItem button>
-            <Link to="/categories/all">Categories</Link>
-          </ListItem>
-          <ListItem button>
-            <Link to="#">TV & Audio</Link>
-          </ListItem>
-          <ListItem button>
-            <Link to="#">Mac Computer</Link>
-          </ListItem>
-          <ListItem button>
-            <Link to="#">Accessores</Link>
-          </ListItem>
-          <ListItem button>
-            <Link to="#">Gadgets</Link>
-          </ListItem>
-          <ListItem button>
-            <Link to="/cart">Shopping Cart</Link>
-          </ListItem>
-          <ListItem button>
-            <Link to="/account/signin">Login</Link>
-          </ListItem>
-          <ListItem button>
-            <Link to="/account/signup">Sign Up</Link>
-          </ListItem>
-        </List>
         <Accordion>
           <div className="list-item">
             <Accordion.Toggle variant="link" eventKey="0">
               Accessories
-              <IoIosArrowForward />
+              <IoIosArrowDown />
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
               <Card.Body>
@@ -183,7 +180,7 @@ const ResponsiveMainHeader = () => {
           <div className="list-item">
             <Accordion.Toggle variant="link" eventKey="1">
               All in One
-              <IoIosArrowForward />
+              <IoIosArrowDown />
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="1">
               <Card.Body>
@@ -208,7 +205,7 @@ const ResponsiveMainHeader = () => {
           <div className="list-item">
             <Accordion.Toggle variant="link" eventKey="2">
               Gadgets
-              <IoIosArrowForward />
+              <IoIosArrowDown />
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="2">
               <Card.Body>
@@ -233,7 +230,7 @@ const ResponsiveMainHeader = () => {
           <div className="list-item">
             <Accordion.Toggle variant="link" eventKey="3">
               Gaming
-              <IoIosArrowForward />
+              <IoIosArrowDown />
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="3">
               <Card.Body>
@@ -258,7 +255,7 @@ const ResponsiveMainHeader = () => {
           <div className="list-item">
             <Accordion.Toggle variant="link" eventKey="4">
               Others
-              <IoIosArrowForward />
+              <IoIosArrowDown />
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="4">
               <Card.Body>
@@ -279,6 +276,38 @@ const ResponsiveMainHeader = () => {
               </Card.Body>
             </Accordion.Collapse>
           </div>
+          <List>
+            <ListItem button>
+              <Link className={classes.listLink} to="/categories/all">
+                Categories
+              </Link>
+            </ListItem>
+            <ListItem button>
+              <Link className={classes.listLink} to="#">
+                TV & Audio
+              </Link>
+            </ListItem>
+            <ListItem button>
+              <Link className={classes.listLink} to="#">
+                Mac Computer
+              </Link>
+            </ListItem>
+            <ListItem button>
+              <Link className={classes.listLink} to="/cart">
+                Shopping Cart
+              </Link>
+            </ListItem>
+            <ListItem button>
+              <Link className={classes.listLink} to="/account/signin">
+                Login
+              </Link>
+            </ListItem>
+            <ListItem button>
+              <Link className={classes.listLink} to="/account/signup">
+                Sign Up
+              </Link>
+            </ListItem>
+          </List>
         </Accordion>
       </Drawer>
     </div>

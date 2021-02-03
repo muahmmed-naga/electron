@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 // Components
 import { Row, Col } from 'react-bootstrap';
@@ -8,6 +8,12 @@ import CategoriesPageRightSide from '../components/categories-page-right/categor
 import ProductsMultiColumns from '../components/products-multi-colums/products-multi-colums.comp';
 
 const CategoriesPage = () => {
+  // Handlers functions
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = `Electron | All Categories Page`;
+  });
+
   return (
     <>
       <div className="custom-container categories-page-wrapper">

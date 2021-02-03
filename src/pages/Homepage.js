@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 // Components
 import ShopAndSave from '../components/shop-and-save.comp';
@@ -14,6 +14,12 @@ import ProductsMultiColumns from '../components/products-multi-colums/products-m
 // Styles
 
 const Homepage = () => {
+  // Handlers functions
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = `Electron | Home Page`;
+  });
+
   return (
     <div className="home-page-wrapper">
       <AppMainNavigator />

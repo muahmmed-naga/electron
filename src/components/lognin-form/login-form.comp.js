@@ -9,11 +9,11 @@ const LoginForm = () => {
       <div className="title">Login</div>
 
       <form autoComplete="off">
-        <label htmlFor="email">Email Address*</label>
-        <input type="email" name="email" id="email" />
+        <label htmlFor="loginEmail">Email Address*</label>
+        <input type="email" name="email" id="loginEmail" />
 
-        <label htmlFor="password">Password*</label>
-        <input type="password" name="password" id="password" />
+        <label htmlFor="loginPassword">Password*</label>
+        <input type="password" name="password" id="loginPassword" />
 
         <button type="submit" className="cutom-button">
           Login

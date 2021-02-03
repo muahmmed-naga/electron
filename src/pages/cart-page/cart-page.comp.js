@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 // Components
 import { Link } from 'react-router-dom';
@@ -74,6 +74,12 @@ const useStyles = makeStyles({
 
 const CartPage = () => {
   const classes = useStyles();
+
+  // Handlers functions
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = `Electron | Cart Page`;
+  });
 
   return (
     <>

@@ -97,3 +97,13 @@
     font-size: 0.9rem;
   }
 }
+
+@media screen and (max-width: 992px) {
+  .left-side-tab-featured {
+    .discound-offer {
+      width: 50px !important;
+      height: 50px !important;
+      font-size: 0.6rem !important;
+    }
+  }
+}

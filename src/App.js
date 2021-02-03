@@ -10,13 +10,13 @@ import AppUpperHeader from './components/upper-header/upper-header.comp';
 import ResponsiveMainHeader from './components/responsive/main-header/main-header.comp';
 
 // Pages
+import Signup from './pages/Signup';
+import LoginPage from './pages/Login';
 import Homepage from './pages/Homepage';
-import CategoriesPage from './pages/CategoriesPage';
 import TestPage from './pages/TestPage';
 import PageNotFound from './pages/PageNotFound';
+import CategoriesPage from './pages/CategoriesPage';
 import ProductPage from './pages/product-page/product-page.comp';
-import LoginPage from './pages/Login';
-import Signup from './pages/Signup';
 
 function App() {
   const scrollFunction = () => {
@@ -39,7 +39,7 @@ function App() {
       <ScrollHeader />
       <AppUpperHeader />
       <AppMainHeader />
-      {/* <ResponsiveMainHeader /> */}
+      <ResponsiveMainHeader />
 
       <Switch>
         <Route exact path="/" component={Homepage} />

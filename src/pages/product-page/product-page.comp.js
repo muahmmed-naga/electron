@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Components
 import { Link } from 'react-router-dom';
@@ -20,6 +20,7 @@ const ProductPage = () => {
   // eslint-disable-next-line
   const [count, setCount] = useState(1);
 
+  // Product image gallery
   const responsive = {
     0: { items: 1 },
     568: { items: 1 },
@@ -61,6 +62,12 @@ const ProductPage = () => {
     <TinyProduct ProductImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
     <TinyProduct ProductImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
   ];
+
+  // Handlers functions
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = `Electron | Product Page`;
+  });
 
   return (
     <>
