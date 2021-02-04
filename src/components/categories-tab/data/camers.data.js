@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import faker from 'faker';
 
 const CAMERS = {
   left: [
@@ -6,33 +7,33 @@ const CAMERS = {
       id: uuidv4(),
       img:
         'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GameStation_720x.jpg?v=1604559863',
-      name: 'Finity Product Sample',
-      price: 90,
-      category: 'Christian Dior',
+      name: faker.commerce.productName(),
+      price: faker.commerce.price(),
+      category: faker.commerce.department(),
     },
     {
       id: uuidv4(),
       img:
         'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Smartwatch_1920x.jpg?v=1604559863',
-      name: 'Finity Product Sample',
-      price: 90,
-      category: 'Christian Dior',
+      name: faker.commerce.productName(),
+      price: faker.commerce.price(),
+      category: faker.commerce.department(),
     },
     {
       id: uuidv4(),
       img:
         'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_1920x.jpg?v=1604559864',
-      name: 'Fixair Product Sample',
-      price: 220,
-      category: 'Dolce & Gabbana',
+      name: faker.commerce.productName(),
+      price: faker.commerce.price(),
+      category: faker.commerce.department(),
     },
     {
       id: uuidv4(),
       img:
         'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863',
-      name: 'Fixair Product Sample',
-      price: 450,
-      category: 'Dolce & Gabbana',
+      name: faker.commerce.productName(),
+      price: faker.commerce.price(),
+      category: faker.commerce.department(),
     },
   ],
   middle: [
@@ -63,34 +64,34 @@ const CAMERS = {
       id: uuidv4(),
       img:
         'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Earphones_1920x.jpg?v=1604559866',
-      name: 'Faxtex Product Sample',
-      price: 14,
-      category: 'Bulgari',
+      name: faker.commerce.productName(),
+      price: faker.commerce.price(),
+      category: faker.commerce.department(),
     },
     {
       id: uuidv4(),
       img:
         'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863',
-      name: 'Fixair Product Sample',
-      price: 450,
-      category: 'Dolce & Gabbana',
+      name: faker.commerce.productName(),
+      price: faker.commerce.price(),
+      category: faker.commerce.department(),
     },
 
     {
       id: uuidv4(),
       img:
         'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Printer_1920x.jpg?v=1604559864',
-      name: 'Faxtex Product Sample',
-      price: 14,
-      category: 'Bulgari',
+      name: faker.commerce.productName(),
+      price: faker.commerce.price(),
+      category: faker.commerce.department(),
     },
     {
       id: uuidv4(),
       img:
         '//cdn.shopify.com/s/files/1/0066/4322/0562/products/Smartphone4_720x.jpg?v=1604559863',
-      name: 'Fixair Product Sample',
-      price: 220,
-      category: 'Dolce & Gabbana',
+      name: faker.commerce.productName(),
+      price: faker.commerce.price(),
+      category: faker.commerce.department(),
     },
   ],
 };

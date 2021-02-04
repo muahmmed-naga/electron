@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import faker from 'faker';
 
 const TABS_CONTENT = {
   featured: {
@@ -6,8 +7,10 @@ const TABS_CONTENT = {
       id: uuidv4(),
       imgUrl:
         'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GamePad_1920x.jpg?v=1604559863',
-      name: 'Naga Products',
-      price: 350,
+
+      name: faker.commerce.productName(),
+      price: faker.commerce.price(),
+      category: faker.commerce.department(),
       isSave: {
         percent: 10,
       },
@@ -17,65 +20,65 @@ const TABS_CONTENT = {
         id: uuidv4(),
         img:
           'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Printer_1920x.jpg?v=1604559864',
-        name: 'Faxtex Product Sample',
-        price: 14,
-        category: 'Bulgari',
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
+        category: faker.commerce.department(),
       },
       {
         id: uuidv4(),
         img:
           'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Smartwatch_1920x.jpg?v=1604559863',
-        name: 'Finity Product Sample',
-        price: 90,
-        category: 'Christian Dior',
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
+        category: faker.commerce.department(),
       },
       {
         id: uuidv4(),
         img:
           'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_1920x.jpg?v=1604559864',
-        name: 'Fixair Product Sample',
-        price: 220,
-        category: 'Dolce & Gabbana',
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
+        category: faker.commerce.department(),
       },
       {
         id: uuidv4(),
         img:
           'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863',
-        name: 'Fixair Product Sample',
-        price: 450,
-        category: 'Dolce & Gabbana',
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
+        category: faker.commerce.department(),
       },
       {
         id: uuidv4(),
         img:
           'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/DekstopPC_1920x.jpg?v=1604559865',
-        name: 'Freshkix Product Sample',
-        price: 120,
-        category: 'Armani',
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
+        category: faker.commerce.department(),
       },
       {
         id: uuidv4(),
         img:
           'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Earphones_1920x.jpg?v=1604559866',
-        name: 'Georgeous White Bag',
-        price: 150,
-        category: 'Bulgari',
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
+        category: faker.commerce.department(),
       },
       {
         id: uuidv4(),
         img:
           'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/FlashDrive_1920x.jpg?v=1604559864',
-        name: 'Georgeous White Dresses',
-        price: 350,
-        category: 'Donna Karan',
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
+        category: faker.commerce.department(),
       },
       {
         id: uuidv4(),
         img:
           'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GameStation_1920x.jpg?v=1604559863',
-        name: 'Gold Diamond Chain',
-        price: 44,
-        category: 'Dolce & Gabbana',
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
+        category: faker.commerce.department(),
       },
     ],
   },
@@ -84,8 +87,8 @@ const TABS_CONTENT = {
       id: uuidv4(),
       imgUrl:
         '//cdn.shopify.com/s/files/1/0066/4322/0562/products/Photocamera_1920x.jpg?v=1604559863',
-      name: 'Naga Products',
-      price: 350,
+      name: faker.commerce.productName(),
+      price: faker.commerce.price(),
       isSave: {
         percent: 10,
       },
@@ -95,65 +98,65 @@ const TABS_CONTENT = {
         id: uuidv4(),
         img:
           'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Earphones_1920x.jpg?v=1604559866',
-        name: 'Faxtex Product Sample',
-        price: 14,
-        category: 'Bulgari',
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
+        category: faker.commerce.department(),
       },
       {
         id: uuidv4(),
         img:
           'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GameStation_720x.jpg?v=1604559863',
-        name: 'Finity Product Sample',
-        price: 90,
-        category: 'Christian Dior',
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
+        category: faker.commerce.department(),
       },
       {
         id: uuidv4(),
         img:
           '//cdn.shopify.com/s/files/1/0066/4322/0562/products/Smartphone4_720x.jpg?v=1604559863',
-        name: 'Fixair Product Sample',
-        price: 220,
-        category: 'Dolce & Gabbana',
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
+        category: faker.commerce.department(),
       },
       {
         id: uuidv4(),
         img:
           'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863',
-        name: 'Fixair Product Sample',
-        price: 450,
-        category: 'Dolce & Gabbana',
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
+        category: faker.commerce.department(),
       },
       {
         id: uuidv4(),
         img:
           'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Smartphone5_720x.jpg?v=1604559873',
-        name: 'Freshkix Product Sample',
-        price: 120,
-        category: 'Armani',
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
+        category: faker.commerce.department(),
       },
       {
         id: uuidv4(),
         img:
           'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Earphones_1920x.jpg?v=1604559866',
-        name: 'Georgeous White Bag',
-        price: 150,
-        category: 'Bulgari',
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
+        category: faker.commerce.department(),
       },
       {
         id: uuidv4(),
         img:
           'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Laptop_50c3d045-3dd4-4032-a83c-0f619285f310_1920x.jpg?v=1604559863',
-        name: 'Georgeous White Dresses',
-        price: 350,
-        category: 'Donna Karan',
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
+        category: faker.commerce.department(),
       },
       {
         id: uuidv4(),
         img:
           'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GameStation_1920x.jpg?v=1604559863',
-        name: 'Gold Diamond Chain',
-        price: 44,
-        category: 'Dolce & Gabbana',
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
+        category: faker.commerce.department(),
       },
     ],
   },
@@ -162,8 +165,8 @@ const TABS_CONTENT = {
       id: uuidv4(),
       imgUrl:
         '//cdn.shopify.com/s/files/1/0066/4322/0562/products/Earphones_1920x.jpg?v=1604559866',
-      name: 'Naga Products',
-      price: 350,
+      name: faker.commerce.productName(),
+      price: faker.commerce.price(),
       isSave: {
         percent: 10,
       },
@@ -173,65 +176,65 @@ const TABS_CONTENT = {
         id: uuidv4(),
         img:
           'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Printer_1920x.jpg?v=1604559864',
-        name: 'Faxtex Product Sample',
-        price: 14,
-        category: 'Bulgari',
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
+        category: faker.commerce.department(),
       },
       {
         id: uuidv4(),
         img:
           'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Smartwatch_1920x.jpg?v=1604559863',
-        name: 'Finity Product Sample',
-        price: 90,
-        category: 'Christian Dior',
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
+        category: faker.commerce.department(),
       },
       {
         id: uuidv4(),
         img:
           'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_1920x.jpg?v=1604559864',
-        name: 'Fixair Product Sample',
-        price: 220,
-        category: 'Dolce & Gabbana',
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
+        category: faker.commerce.department(),
       },
       {
         id: uuidv4(),
         img:
           'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863',
-        name: 'Fixair Product Sample',
-        price: 450,
-        category: 'Dolce & Gabbana',
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
+        category: faker.commerce.department(),
       },
       {
         id: uuidv4(),
         img:
           'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/DekstopPC_1920x.jpg?v=1604559865',
-        name: 'Freshkix Product Sample',
-        price: 120,
-        category: 'Armani',
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
+        category: faker.commerce.department(),
       },
       {
         id: uuidv4(),
         img:
           'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Earphones_1920x.jpg?v=1604559866',
-        name: 'Georgeous White Bag',
-        price: 150,
-        category: 'Bulgari',
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
+        category: faker.commerce.department(),
       },
       {
         id: uuidv4(),
         img:
           'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/FlashDrive_1920x.jpg?v=1604559864',
-        name: 'Georgeous White Dresses',
-        price: 350,
-        category: 'Donna Karan',
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
+        category: faker.commerce.department(),
       },
       {
         id: uuidv4(),
         img:
           'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GameStation_1920x.jpg?v=1604559863',
-        name: 'Gold Diamond Chain',
-        price: 44,
-        category: 'Dolce & Gabbana',
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
+        category: faker.commerce.department(),
       },
     ],
   },
