@@ -4,22 +4,23 @@ import React from 'react';
 import TinyProduct from '../../../tiny-product/tiny-product.comp';
 
 // Assets
-import ProductImg from '../../../../assets/images/products/product-3.webp';
+import TABS_CONTENT from '../../../../data/tab-content';
 
 // Styles
 import './right-side-tab-featured.styles.scss';
 
-const RightSideTabTopRated = () => {
+const RightSideTabTopRated = ({ visiableTab }) => {
+  const { topRated } = TABS_CONTENT;
+
   return (
-    <div className="righ-side-tab-featured">
-      <TinyProduct ProductImg={ProductImg} />
-      <TinyProduct ProductImg={ProductImg} />
-      <TinyProduct ProductImg={ProductImg} />
-      <TinyProduct ProductImg={ProductImg} />
-      <TinyProduct ProductImg={ProductImg} />
-      <TinyProduct ProductImg={ProductImg} />
-      <TinyProduct ProductImg={ProductImg} />
-      <TinyProduct ProductImg={ProductImg} />
+    <div
+      className={`righ-side-tab-featured ${
+        visiableTab === 'top-rated-tab' ? 'top-rated-visiable ' : 'hidden'
+      }`}
+    >
+      {topRated.main.map((item, idx) => (
+        <TinyProduct key={idx} {...item} />
+      ))}
     </div>
   );
 };

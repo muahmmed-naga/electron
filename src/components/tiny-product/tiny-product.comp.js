@@ -8,19 +8,19 @@ import { IoMdHeartEmpty } from 'react-icons/io';
 // Styles
 import './tiny-product.styles.scss';
 
-const TinyProduct = ({ ProductImg }) => {
+const TinyProduct = ({ img, name, price, category }) => {
   return (
     <div className="tiny-product-wrapper">
-      <div className="category">Donna Karan</div>
+      <div className="category">{category}</div>
       <Link to="/collections/10" className="product-name">
-        Faxtex Product Sample
+        {name}
       </Link>
       <Link to="/collections/10" className="img-wrapper">
-        <img src={ProductImg} alt="product" />
+        <img src={img} alt="product" />
       </Link>
 
       <div className="price">
-        <div className="new">$220.00</div>
+        <div className="new">${price}</div>
         <del>$300.00</del>
       </div>
 

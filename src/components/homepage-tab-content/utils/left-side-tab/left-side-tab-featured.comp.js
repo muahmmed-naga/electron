@@ -4,24 +4,30 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Assets
-import Img from '../../../../assets/images/homepage/tabs/left-1.jpg';
+// import Img from '../../../../assets/images/homepage/tabs/left-1.jpg';
+import TABS_CONTENT from '../../../../data/tab-content';
 
 // Styles
 import './left-side-tab-featured.styles.scss';
 
 const LeftSideTabFeatured = () => {
+  const { featured } = TABS_CONTENT;
+
+  // Featured
+  const { imgUrl, name, price, isSave } = featured.left;
+
   return (
     <div className="left-side-tab-featured">
       <Link to="#" className="img-wrapper">
-        <img src={Img} alt="tab-1" />
+        <img src={imgUrl} alt="tab-1" />
       </Link>
 
       <Link to="#" className="product-name">
-        <div>black fashion zapda</div>
+        <div>{name}</div>
       </Link>
 
       <div className="price flex-align-center">
-        <div className="new">$220.00</div>
+        <div className="new">${price}</div>
         <del>$300.00</del>
       </div>
 
@@ -41,9 +47,11 @@ const LeftSideTabFeatured = () => {
       </div>
 
       <div className="special-offer">special offer</div>
-      <div className="discound-offer">
-        save <b>30%</b>
-      </div>
+      {isSave && (
+        <div className="discound-offer">
+          save <b>{isSave.percent}%</b>
+        </div>
+      )}
     </div>
   );
 };

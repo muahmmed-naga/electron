@@ -19,7 +19,7 @@ const HomepageTabContent = () => {
       <div className="left-side">
         {activeTab === 'featured-tab' && <LeftSideTabFeatured />}
         {activeTab === 'on-sale-tab' && <LeftSideTabOnSale />}
-        {activeTab === 'to-rated-tab' && <LeftSideTabTopRated />}
+        {activeTab === 'top-rated-tab' && <LeftSideTabTopRated />}
       </div>
       <div className="right-side">
         <div className="tab-navigator flex-align-center flex-justify-center">
@@ -36,17 +36,23 @@ const HomepageTabContent = () => {
             On Sale
           </div>
           <div
-            onClick={() => setActiveTab('to-rated-tab')}
-            className={activeTab === 'to-rated-tab' ? 'active-tab' : undefined}
+            onClick={() => setActiveTab('top-rated-tab')}
+            className={activeTab === 'top-rated-tab' ? 'active-tab' : undefined}
           >
             Top Rated
           </div>
         </div>
 
         <div className="m-top-20">
-          {activeTab === 'featured-tab' && <RightSideTabFeatured />}
-          {activeTab === 'on-sale-tab' && <RightSideTabOnSale />}
-          {activeTab === 'to-rated-tab' && <RightSideTabTopRated />}
+          {/* {activeTab === 'featured-tab' && (
+            )}
+          {activeTab === 'on-sale-tab' && (
+            )}
+          {activeTab === 'top-rated-tab' && (
+            )} */}
+          <RightSideTabFeatured visiableTab={activeTab} />
+          <RightSideTabOnSale visiableTab={activeTab} />
+          <RightSideTabTopRated visiableTab={activeTab} />
         </div>
       </div>
     </div>

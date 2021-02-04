@@ -3,4 +3,26 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 2px;
   background-color: whitesmoke;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s, display 0.5s ease-in-out;
+
+  &.featured-visiable {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &.on-sale-visiable {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &.top-rated-visiable {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &.hidden {
+    display: none;
+  }
 }
