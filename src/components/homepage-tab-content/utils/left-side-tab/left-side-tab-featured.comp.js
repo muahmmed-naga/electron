@@ -14,15 +14,15 @@ const LeftSideTabFeatured = () => {
   const { featured } = TABS_CONTENT;
 
   // Featured
-  const { imgUrl, name, price, isSave } = featured.left;
+  const { id, imgUrl, name, price, isSave } = featured.left;
 
   return (
     <div className="left-side-tab-featured">
-      <Link to="#" className="img-wrapper">
+      <Link to={`/collections/product/${id}`} className="img-wrapper">
         <img src={imgUrl} alt="tab-1" />
       </Link>
 
-      <Link to="#" className="product-name">
+      <Link to={`/collections/product/${id}`} className="product-name">
         <div>{name}</div>
       </Link>
 

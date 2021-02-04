@@ -10,18 +10,18 @@ import TABS_CONTENT from '../../../../data/tab-content';
 import './left-side-tab-featured.styles.scss';
 
 const LeftSideTabOnSale = () => {
-  const { featured } = TABS_CONTENT;
+  const { onSale } = TABS_CONTENT;
 
   // Featured
-  const { imgUrl, name, price, isSave } = featured.left;
+  const { id, imgUrl, name, price, isSave } = onSale.left;
 
   return (
     <div className="left-side-tab-featured">
-      <Link to="#" className="img-wrapper">
+      <Link to={`/collections/product/${id}`} className="img-wrapper">
         <img src={imgUrl} alt="tab-1" />
       </Link>
 
-      <Link to="#" className="product-name">
+      <Link to={`/collections/product/${id}`} className="product-name">
         <div>{name}</div>
       </Link>
 

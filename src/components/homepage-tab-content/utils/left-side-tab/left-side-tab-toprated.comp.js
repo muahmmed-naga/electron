@@ -4,24 +4,29 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Assets
-import Img from '../../../../assets/images/homepage/tabs/left-3.webp';
+import TABS_CONTENT from '../../../../data/tab-content';
 
 // Styles
 import './left-side-tab-featured.styles.scss';
 
 const LeftSideTabTopRated = () => {
+  const { topRated } = TABS_CONTENT;
+
+  // Featured
+  const { id, imgUrl, name, price, isSave } = topRated.left;
+
   return (
     <div className="left-side-tab-featured">
-      <Link to="#" className="img-wrapper">
-        <img src={Img} alt="tab-1" />
+      <Link to={`/collections/product/${id}`} className="img-wrapper">
+        <img src={imgUrl} alt="tab-1" />
       </Link>
 
       <Link to="#" className="product-name">
-        <div>black fashion zapda</div>
+        <div>{name}</div>
       </Link>
 
       <div className="price flex-align-center">
-        <div className="new">$220.00</div>
+        <div className="new">${price}.00</div>
         <del>$300.00</del>
       </div>
 
@@ -42,7 +47,7 @@ const LeftSideTabTopRated = () => {
 
       <div className="special-offer">special offer</div>
       <div className="discound-offer">
-        save <b>30%</b>
+        save <b>{isSave.percent}%</b>
       </div>
     </div>
   );
