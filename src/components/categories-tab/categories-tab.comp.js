@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 // Components
-import MiddleImgGallery from './utils/middle-img-gallery/middle-img-gallery.comp';
-import CategoriesLeftSide from './utils/left-side/left-side.comp';
-import CategoriesRightSide from './utils/right-side/right-side.comp';
-import GALLERY_IMAGES from './utils/middle-img-gallery/data/best-deals.data';
+import BestDeals from './BestDeals';
+import TVAndVideo from './TVAndVideo';
+import Camers from './Camers';
+import Audio from './Audio';
 
 // Styles
 import './categories-tab.styles.scss';
@@ -52,57 +52,25 @@ const HomepageCategoriesTabs = () => {
       <div className="content">
         {activeTab === 'best-deals' && (
           <>
-            <div className="left-side-wrapper content-item">
-              <CategoriesLeftSide />
-            </div>
-            <div className="middle-side-wrapper content-item">
-              <MiddleImgGallery images={GALLERY_IMAGES} />
-            </div>
-            <div className="right-side-wrapper content-item">
-              <CategoriesRightSide />
-            </div>
+            <BestDeals />
           </>
         )}
 
         {activeTab === 'tv-video' && (
           <>
-            <div className="left-side-wrapper content-item">
-              <CategoriesLeftSide />
-            </div>
-            <div className="middle-side-wrapper content-item">
-              <MiddleImgGallery />
-            </div>
-            <div className="right-side-wrapper content-item">
-              <CategoriesRightSide />
-            </div>
+            <TVAndVideo />
           </>
         )}
 
         {activeTab === 'cameras' && (
           <>
-            <div className="left-side-wrapper content-item">
-              <CategoriesLeftSide />
-            </div>
-            <div className="middle-side-wrapper content-item">
-              <MiddleImgGallery />
-            </div>
-            <div className="right-side-wrapper content-item">
-              <CategoriesRightSide />
-            </div>
+            <Camers />
           </>
         )}
 
         {activeTab === 'audio' && (
           <>
-            <div className="left-side-wrapper content-item">
-              <CategoriesLeftSide />
-            </div>
-            <div className="middle-side-wrapper content-item">
-              <MiddleImgGallery />
-            </div>
-            <div className="right-side-wrapper content-item">
-              <CategoriesRightSide />
-            </div>
+            <Audio />
           </>
         )}
       </div>

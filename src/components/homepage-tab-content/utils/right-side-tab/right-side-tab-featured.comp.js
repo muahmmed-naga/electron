@@ -9,15 +9,11 @@ import TABS_CONTENT from '../../../../data/tab-content';
 // Styles
 import './right-side-tab-featured.styles.scss';
 
-const RightSideTabFeatured = ({ visiableTab }) => {
+const RightSideTabFeatured = () => {
   const { featured } = TABS_CONTENT;
 
   return (
-    <div
-      className={`righ-side-tab-featured ${
-        visiableTab === 'featured-tab' ? 'featured-visiable' : 'hidden'
-      }`}
-    >
+    <div className="righ-side-tab-featured">
       {featured.main.map((item, idx) => (
         <TinyProduct key={idx} {...item} />
       ))}

@@ -44,15 +44,9 @@ const HomepageTabContent = () => {
         </div>
 
         <div className="m-top-20">
-          {/* {activeTab === 'featured-tab' && (
-            )}
-          {activeTab === 'on-sale-tab' && (
-            )}
-          {activeTab === 'top-rated-tab' && (
-            )} */}
-          <RightSideTabFeatured visiableTab={activeTab} />
-          <RightSideTabOnSale visiableTab={activeTab} />
-          <RightSideTabTopRated visiableTab={activeTab} />
+          {activeTab === 'featured-tab' && <RightSideTabFeatured />}
+          {activeTab === 'on-sale-tab' && <RightSideTabOnSale />}
+          {activeTab === 'top-rated-tab' && <RightSideTabTopRated />}
         </div>
       </div>
     </div>
