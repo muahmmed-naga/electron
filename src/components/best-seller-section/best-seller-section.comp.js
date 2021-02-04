@@ -17,7 +17,7 @@ const BestSellerSection = () => {
   return (
     <div className="custom-container best-seller-seciton-wrapper m-top-50">
       <div className="tabs-navigator flex-center-between">
-        <div className="title">Best Seller</div>
+        <div className="title">Best Sellers</div>
 
         <div className="navigator-items-wrapper flex-align-center">
           <div
