@@ -6,8 +6,8 @@ import AlignTinyProduct from '../align-tiny-product/align-tiny-product.comp';
 // Assets
 import MULTI_COLUMNS from '../products-multi-colums/data';
 
-const ProductsColumn = ({ title, data }) => {
-  const { featured, onSale, newest, topRated } = MULTI_COLUMNS;
+const OnSaleColum = ({ title }) => {
+  const { onSale } = MULTI_COLUMNS;
 
   return (
     <div className="product-colum-wrapper">
@@ -21,4 +21,4 @@ const ProductsColumn = ({ title, data }) => {
   );
 };
 
-export default ProductsColumn;
+export default OnSaleColum;
