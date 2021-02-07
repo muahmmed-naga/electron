@@ -7,8 +7,8 @@ const products = JSON.parse(
   fs.readFileSync(`${__dirname}/data/products.json`, 'utf-8')
 );
 
-// Get Products
-app.get('/api/v1/products', (req, res) => {
+// Get all products
+const getAllProducts = (req, res) => {
   res.status(200).json({
     status: 'success',
     results: products.length,
@@ -16,16 +16,16 @@ app.get('/api/v1/products', (req, res) => {
       products,
     },
   });
-});
+};
 
-// Get single product
-app.get('/api/v1/products/:id', (req, res) => {
+// Get Product
+const getProduct = (req, res) => {
   const id = req.params.id * 1;
   const product = products.find((product) => product.id === id);
 
   if (id > products.length) {
     return res.status(400).json({
-      status: 'fial',
+      status: 'fail',
       msg: 'Can not found this Product, Make sure from your Request.',
     });
   }
@@ -36,7 +36,10 @@ app.get('/api/v1/products/:id', (req, res) => {
       product,
     },
   });
-});
+};
+
+app.route('/api/v1/products').get(getAllProducts);
+app.route('/api/v1/products/:id').get(getProduct);
 
 const PORT = process.env.PORT || 5000;
 
