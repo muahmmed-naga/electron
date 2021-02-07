@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 // Components
 import { Switch, Route } from 'react-router-dom';
 import CartPage from './pages/cart-page/cart-page.comp';
-import AppFooter from './components/app-footer/app-footer.comp';
+// import AppFooter from './components/app-footer/app-footer.comp';
 import AppMainHeader from './components/main-header/main-header.comp';
 import ScrollHeader from './components/scroll-header/scroll-header.comp';
 import AppUpperHeader from './components/upper-header/upper-header.comp';
@@ -52,7 +52,7 @@ function App() {
         <Route component={PageNotFound} />
       </Switch>
 
-      <AppFooter />
+      {/* <AppFooter /> */}
     </div>
   );
 }
