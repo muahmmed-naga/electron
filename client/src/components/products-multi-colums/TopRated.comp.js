@@ -15,7 +15,7 @@ const TopRated = ({ title, data }) => {
         <span className="p-bottom-10">{title}</span>
       </div>
       {topRated.map((item, idx) => (
-        <AlignTinyProduct key={idx} {...item} />
+        <AlignTinyProduct key={idx} {...item} data={topRated} />
       ))}
     </div>
   );

@@ -4,12 +4,13 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ImageGallery from 'react-image-gallery';
 import AliceCarousel from 'react-alice-carousel';
-import { Accordion, Card, Row, Col } from 'react-bootstrap';
 import { IoIosArrowForward } from 'react-icons/io';
-import RouteNavigator from '../../components/route-navigator/route-navigator.comp';
-import TinyProduct from '../../components/tiny-product/tiny-product.comp';
 import { AiOutlineStar } from 'react-icons/ai';
 import ProdductDescriptioTabs from './utils/tabs.comp';
+import { Accordion, Card, Row, Col } from 'react-bootstrap';
+import NEW_ARRIVALS from '../../components/new-arrivals/data';
+import TinyProduct from '../../components/tiny-product/tiny-product.comp';
+import RouteNavigator from '../../components/route-navigator/route-navigator.comp';
 import ProductsMultiColumns from '../../components/products-multi-colums/products-multi-colums.comp';
 
 // Styles
@@ -48,20 +49,9 @@ const ProductPage = () => {
     },
   ];
 
-  const items = [
-    <TinyProduct ProductImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
-    <TinyProduct ProductImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
-    <TinyProduct ProductImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
-    <TinyProduct ProductImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
-    <TinyProduct ProductImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
-    <TinyProduct ProductImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
-    <TinyProduct ProductImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
-    <TinyProduct ProductImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
-    <TinyProduct ProductImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
-    <TinyProduct ProductImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
-    <TinyProduct ProductImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
-    <TinyProduct ProductImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
-  ];
+  const items = NEW_ARRIVALS.map((item) => (
+    <TinyProduct key={item.id} {...item} />
+  ));
 
   // Handlers functions
   useEffect(() => {
@@ -153,7 +143,7 @@ const ProductPage = () => {
 
             <Col xs={12} md={9} lg={9}>
               <Row>
-                <Col xs={12} md={4} lg={4}>
+                <Col xs={12} md={4} lg={6}>
                   <div className="preview-products-images">
                     <ImageGallery
                       items={defaultImages}
@@ -162,7 +152,7 @@ const ProductPage = () => {
                     />
                   </div>
                 </Col>
-                <Col xs={12} md={8} lg={8}>
+                <Col xs={12} md={8} lg={6}>
                   <div className="upper">
                     <div className="category">Bulgari</div>
                     <div className="product-name">Faxtex Product Sample</div>
