@@ -1,23 +1,41 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 // Components
-import { Link } from 'react-router-dom';
-import ImageGallery from 'react-image-gallery';
-import AliceCarousel from 'react-alice-carousel';
-import { IoIosArrowForward } from 'react-icons/io';
-import { AiOutlineStar } from 'react-icons/ai';
-import ProdductDescriptioTabs from './utils/tabs.comp';
-import { Accordion, Card, Row, Col } from 'react-bootstrap';
-import NEW_ARRIVALS from '../../components/new-arrivals/data';
-import TinyProduct from '../../components/tiny-product/tiny-product.comp';
-import RouteNavigator from '../../components/route-navigator/route-navigator.comp';
-import ProductsMultiColumns from '../../components/products-multi-colums/products-multi-colums.comp';
+import { Link } from "react-router-dom";
+import ImageGallery from "react-image-gallery";
+import AliceCarousel from "react-alice-carousel";
+import PRODUCTS_DATA from "../../data/products";
+import { AiOutlineStar } from "react-icons/ai";
+import { IoIosArrowForward } from "react-icons/io";
+import ProdductDescriptioTabs from "./utils/tabs.comp";
+import { Accordion, Card, Row, Col } from "react-bootstrap";
+import NEW_ARRIVALS from "../../components/new-arrivals/data";
+import TinyProduct from "../../components/tiny-product/tiny-product.comp";
+import RouteNavigator from "../../components/route-navigator/route-navigator.comp";
+import ProductsMultiColumns from "../../components/products-multi-colums/products-multi-colums.comp";
 
 // Styles
-import 'react-alice-carousel/lib/alice-carousel.css';
-import './product-page.styles.scss';
+import "react-alice-carousel/lib/alice-carousel.css";
+import "./product-page.styles.scss";
 
-const ProductPage = () => {
+const ProductPage = ({ match }) => {
+  const { params } = match;
+  const { category } = params;
+
+  // const currentObjData = PRODUCTS_DATA.hasOwnProperty(category);
+  // console.log(currentObjData);
+
+  const allowed = [category];
+
+  const filtered = Object.keys(PRODUCTS_DATA)
+    .filter(key => allowed.includes(key))
+    .reduce((obj, key) => {
+      obj[key] = PRODUCTS_DATA[key];
+      return obj;
+    }, {});
+
+  console.log(filtered);
+
   // eslint-disable-next-line
   const [count, setCount] = useState(1);
 
@@ -31,25 +49,25 @@ const ProductPage = () => {
   const defaultImages = [
     {
       original:
-        'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_3929c9a4-1a61-4e52-91fb-8a07d394b56f_1366x.jpg?v=1604559863',
+        "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_3929c9a4-1a61-4e52-91fb-8a07d394b56f_1366x.jpg?v=1604559863",
       thumbnail:
-        'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_3929c9a4-1a61-4e52-91fb-8a07d394b56f_1366x.jpg?v=1604559863',
+        "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_3929c9a4-1a61-4e52-91fb-8a07d394b56f_1366x.jpg?v=1604559863",
     },
     {
       original:
-        'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_3929c9a4-1a61-4e52-91fb-8a07d394b56f_1366x.jpg?v=1604559863',
+        "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_3929c9a4-1a61-4e52-91fb-8a07d394b56f_1366x.jpg?v=1604559863",
       thumbnail:
-        'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_3929c9a4-1a61-4e52-91fb-8a07d394b56f_1366x.jpg?v=1604559863',
+        "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_3929c9a4-1a61-4e52-91fb-8a07d394b56f_1366x.jpg?v=1604559863",
     },
     {
       original:
-        'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_3929c9a4-1a61-4e52-91fb-8a07d394b56f_1366x.jpg?v=1604559863',
+        "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_3929c9a4-1a61-4e52-91fb-8a07d394b56f_1366x.jpg?v=1604559863",
       thumbnail:
-        'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_3929c9a4-1a61-4e52-91fb-8a07d394b56f_1366x.jpg?v=1604559863',
+        "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_3929c9a4-1a61-4e52-91fb-8a07d394b56f_1366x.jpg?v=1604559863",
     },
   ];
 
-  const items = NEW_ARRIVALS.map((item) => (
+  const items = NEW_ARRIVALS.map(item => (
     <TinyProduct key={item.id} {...item} />
   ));
 
@@ -122,12 +140,12 @@ const ProductPage = () => {
               </div>
               <Link
                 to="/cameras/4k"
-                style={{ marginTop: '30px', display: 'block' }}
+                style={{ marginTop: "30px", display: "block" }}
               >
                 <img
                   src="//cdn.shopify.com/s/files/1/0066/4322/0562/files/sidebar-banner_270x_caf21969-17c3-44e7-a84a-b10fc5e8a4be_1920x.jpg?v=1604560580"
                   alt="ad"
-                  style={{ width: '100%' }}
+                  style={{ width: "100%" }}
                 />
               </Link>
               <div className="latest-products m-top-20">Latest Products</div>
@@ -181,7 +199,7 @@ const ProductPage = () => {
                     <li>
                       <div>Products SKU: 4827521</div>
                       <div>
-                        Category: <Link to="#">Accessories</Link>{' '}
+                        Category: <Link to="#">Accessories</Link>{" "}
                       </div>
                     </li>
                   </ul>

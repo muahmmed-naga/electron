@@ -1,21 +1,27 @@
-import React from 'react';
+import React from "react";
 
 // Components
-import { Link } from 'react-router-dom';
-import { IoEyeOutline } from 'react-icons/io5';
-import { IoMdHeartEmpty } from 'react-icons/io';
+import { Link } from "react-router-dom";
+import { IoEyeOutline } from "react-icons/io5";
+import { IoMdHeartEmpty } from "react-icons/io";
 
 // Styles
-import './tiny-product.styles.scss';
+import "./tiny-product.styles.scss";
 
-const TinyProduct = ({ id, img, name, price, category }) => {
+const TinyProduct = ({ id, img, name, price, category, routeKey }) => {
   return (
     <div className="tiny-product-wrapper">
       <div className="category">{category}</div>
-      <Link to={`/collections/product/${id}`} className="product-name">
+      <Link
+        to={`/collections/${routeKey}/product/${id}`}
+        className="product-name"
+      >
         {name}
       </Link>
-      <Link to={`/collections/product/${id}`} className="img-wrapper">
+      <Link
+        to={`/collections/${routeKey}/product/${id}`}
+        className="img-wrapper"
+      >
         <img src={img} alt="product" />
       </Link>
 
