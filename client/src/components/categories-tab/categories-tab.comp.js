@@ -1,74 +1,74 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 // Components
-import BestDeals from './BestDeals';
-import TVAndVideo from './TVAndVideo';
-import Camers from './Camers';
-import Audio from './Audio';
+import BestDeals from "./BestDeals";
+import TVAndVideo from "./TVAndVideo";
+import Camers from "./Camers";
+import Audio from "./Audio";
 
 // Styles
-import './categories-tab.styles.scss';
+import "./categories-tab.styles.scss";
 
 const HomepageCategoriesTabs = () => {
-  const [activeTab, setActiveTab] = useState('best-deals');
+  const [activeTab, setActiveTab] = useState("best-deals");
 
   return (
     <div className="custom-container homepage-categories-tabs-wrapper m-top-50">
       <div className="tab-navigator flex-align-center p-bottom-10">
         <div
           className={`tab-item ${
-            activeTab === 'best-deals' ? 'active-tab' : undefined
+            activeTab === "best-deals" ? "active-tab" : undefined
           }`}
-          onClick={() => setActiveTab('best-deals')}
+          onClick={() => setActiveTab("best-deals")}
         >
           Best Deals
         </div>
         <div
           className={`tab-item ${
-            activeTab === 'tv-video' ? 'active-tab' : undefined
+            activeTab === "tv-video" ? "active-tab" : undefined
           }`}
-          onClick={() => setActiveTab('tv-video')}
+          onClick={() => setActiveTab("tv-video")}
         >
           TV & Video
         </div>
         <div
           className={`tab-item ${
-            activeTab === 'cameras' ? 'active-tab' : undefined
+            activeTab === "cameras" ? "active-tab" : undefined
           }`}
-          onClick={() => setActiveTab('cameras')}
+          onClick={() => setActiveTab("cameras")}
         >
           Cameras
         </div>
         <div
           className={`tab-item ${
-            activeTab === 'audio' ? 'active-tab' : undefined
+            activeTab === "audio" ? "active-tab" : undefined
           }`}
-          onClick={() => setActiveTab('audio')}
+          onClick={() => setActiveTab("audio")}
         >
           Audio
         </div>
       </div>
 
       <div className="content">
-        {activeTab === 'best-deals' && (
+        {activeTab === "best-deals" && (
           <>
             <BestDeals />
           </>
         )}
 
-        {activeTab === 'tv-video' && (
+        {activeTab === "tv-video" && (
           <>
             <TVAndVideo />
           </>
         )}
 
-        {activeTab === 'cameras' && (
+        {activeTab === "cameras" && (
           <>
             <Camers />
           </>
         )}
 
-        {activeTab === 'audio' && (
+        {activeTab === "audio" && (
           <>
             <Audio />
           </>

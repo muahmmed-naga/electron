@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 // Components
-import ImageGallery from 'react-image-gallery';
+import ImageGallery from "react-image-gallery";
 
 // Styles
-import './middle-img-gallery.styles.scss';
+import "./middle-img-gallery.styles.scss";
 
 const MiddleImgGallery = ({ data }) => {
   return (
@@ -16,6 +16,7 @@ const MiddleImgGallery = ({ data }) => {
         showPlayButton={false}
         lazyLoad={true}
         autoPlay
+        slideInterval={100000}
       />
     </div>
   );

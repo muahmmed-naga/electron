@@ -26,9 +26,9 @@
   }
 
   .content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    // border: 1px solid red;
+    display: flex;
+    // grid-template-columns: repeat(3, 1fr);
+    overflow: hidden;
 
     .content-item {
       display: flex;

@@ -8,20 +8,14 @@ import { IoMdHeartEmpty } from "react-icons/io";
 // Styles
 import "./tiny-product.styles.scss";
 
-const TinyProduct = ({ id, img, name, price, category, routeKey }) => {
+const TinyProduct = ({ id, img, name, price, category, routeUrl }) => {
   return (
     <div className="tiny-product-wrapper">
       <div className="category">{category}</div>
-      <Link
-        to={`/collections/${routeKey}/product/${id}`}
-        className="product-name"
-      >
+      <Link to={`${routeUrl}/${id}`} className="product-name">
         {name}
       </Link>
-      <Link
-        to={`/collections/${routeKey}/product/${id}`}
-        className="img-wrapper"
-      >
+      <Link to={`${routeUrl}/${id}`} className="img-wrapper">
         <img src={img} alt="product" />
       </Link>
 

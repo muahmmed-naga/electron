@@ -1,23 +1,47 @@
-import React from 'react';
-import BEST_DEALS from './data/best-deals.data';
-import CategoriesLeftSide from './utils/left-side/left-side.comp';
-import MiddleImgGallery from './utils/middle-img-gallery/middle-img-gallery.comp';
-import CategoriesRightSide from './utils/right-side/right-side.comp';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-const BestDeals = () => {
-  const { left, middle, right } = BEST_DEALS;
+// Components
+import CategoriesLeftSide from "./utils/left-side/left-side.comp";
+import CategoriesRightSide from "./utils/right-side/right-side.comp";
+import LoadingSpinner from "../loading-spinner/loading-spinner.comp";
+import MiddleImgGallery from "./utils/middle-img-gallery/middle-img-gallery.comp";
+
+const BestDeals = props => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [leftData, setLeftData] = useState([]);
+  const [middleData, setMiddleData] = useState([]);
+  const [rightData, setRightData] = useState([]);
+
+  // Fetch products data
+  useEffect(() => {
+    setIsLoading(true);
+    axios.get("/api/v1/categories").then(res => {
+      const { left, middle, right } = res.data.data.categories.best_deals;
+      setLeftData(left);
+      setMiddleData(middle);
+      setRightData(right);
+    });
+    setTimeout(() => setIsLoading(false), 500);
+  }, []);
 
   return (
     <>
-      <div className="left-side-wrapper content-item">
-        <CategoriesLeftSide data={left} />
-      </div>
-      <div className="middle-side-wrapper content-item">
-        <MiddleImgGallery data={middle} />
-      </div>
-      <div className="right-side-wrapper content-item">
-        <CategoriesRightSide data={right} />
-      </div>
+      {isLoading ? (
+        <LoadingSpinner />
+      ) : (
+        <>
+          <div className="left-side-wrapper content-item">
+            <CategoriesLeftSide data={leftData} />
+          </div>
+          <div className="middle-side-wrapper content-item">
+            <MiddleImgGallery data={middleData} />
+          </div>
+          <div className="right-side-wrapper content-item">
+            <CategoriesRightSide data={rightData} />
+          </div>
+        </>
+      )}
     </>
   );
 };

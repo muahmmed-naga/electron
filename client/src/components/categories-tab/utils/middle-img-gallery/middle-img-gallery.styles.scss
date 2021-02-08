@@ -1,4 +1,4 @@
-@import '~react-image-gallery/styles/scss/image-gallery.scss';
+@import "~react-image-gallery/styles/scss/image-gallery.scss";
 
 .middle-image-gallery-wrapper {
   .category {
@@ -29,7 +29,7 @@
 
   .image-gallery-left-nav,
   .image-gallery-right-nav {
-    padding: 50px 40px !important;
+    padding: 0 !important;
   }
 
   .image-gallery-left-nav .image-gallery-svg,

@@ -1,0 +1,318 @@
+{
+  "best_deals": {
+    "left": [
+      {
+        "id": 1,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Printer_1920x.jpg?v=1604559864",
+        "name": "Product Name",
+        "price": 220.00,
+        "category": "category"
+      },
+      {
+        "id": 2,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Smartwatch_1920x.jpg?v=1604559863",
+        "name": "Product Name",
+        "price": 220.00,
+        "category": "category"
+      },
+      {
+        "id": 3,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_1920x.jpg?v=1604559864",
+        "name": "Product Name",
+        "price": 220.00,
+        "category": "category"
+      },
+      {
+        "id": 4,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863",
+        "name": "Product Name",
+        "price": 220.00,
+        "category": "category"
+      }
+    ],
+    "middle": [
+      {
+        "id": 5,
+        "original": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/TV_010884af-efd0-4645-8d19-6ee037cd730d_1920x.jpg?v=1604559864",
+        "thumbnail": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/TV_010884af-efd0-4645-8d19-6ee037cd730d_1920x.jpg?v=1604559864"
+      },
+      {
+        "id": 6,
+        "original": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Printer_1920x.jpg?v=1604559864",
+        "thumbnail": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Printer_1920x.jpg?v=1604559864"
+      },
+      {
+        "id": 7,
+        "original": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863",
+        "thumbnail": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863"
+      }
+    ],
+    "right": [
+      {
+        "id": 8,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Earphones_1920x.jpg?v=1604559866",
+        "name": "Product Name",
+        "price": 220.00,
+        "category": "category"
+      },
+      {
+        "id": 9,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GameStation_720x.jpg?v=1604559863",
+        "name": "Product Name",
+        "price": 220.00,
+        "category": "category"
+      },
+      {
+        "id": 10,
+        "img": "//cdn.shopify.com/s/files/1/0066/4322/0562/products/Smartphone4_720x.jpg?v=1604559863",
+        "name": "Product Name",
+        "price": 220.00,
+        "category": "category"
+      },
+      {
+        "id": 11,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863",
+        "name": "Product Name",
+        "price": 220.00,
+        "category": "category"
+      }
+    ]
+  },
+  "tv_videos": {
+    "left": [
+      {
+        "id": 12,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Printer_1920x.jpg?v=1604559864",
+        "name": "name",
+        "price": 120.00,
+        "category": "category name"
+      },
+      {
+        "id": 13,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863",
+        "name": "name",
+        "price": 120.00,
+        "category": "category name"
+      },
+      {
+        "id": 14,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_1920x.jpg?v=1604559864",
+        "name": "name",
+        "price": 120.00,
+        "category": "category name"
+      },
+      {
+        "id": 15,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Earphones_1920x.jpg?v=1604559866",
+        "name": "name",
+        "price": 120.00,
+        "category": "category name"
+      }
+    ],
+    "middle": [
+      {
+        "id": 16,
+        "original": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_1920x.jpg?v=1605600708",
+        "thumbnail": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_1920x.jpg?v=1605600708"
+      },
+      {
+        "id": 17,
+        "original": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GameStation_720x.jpg?v=1604559863",
+        "thumbnail": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GameStation_720x.jpg?v=1604559863"
+      },
+      {
+        "id": 18,
+        "original": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Earphones_1920x.jpg?v=1604559866",
+        "thumbnail": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Earphones_1920x.jpg?v=1604559866"
+      }
+    ],
+    "right": [
+      {
+        "id": 19,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863",
+        "name": "name",
+        "price": 120.00,
+        "category": "category name"
+      },
+      {
+        "id": 20,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GameStation_720x.jpg?v=1604559863",
+        "name": "name",
+        "price": 120.00,
+        "category": "category name"
+      },
+      {
+        "id": 21,
+        "img": "//cdn.shopify.com/s/files/1/0066/4322/0562/products/Smartphone4_720x.jpg?v=1604559863",
+        "name": "name",
+        "price": 120.00,
+        "category": "category name"
+      },
+      {
+        "id": 22,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_1920x.jpg?v=1604559864",
+        "name": "name",
+        "price": 120.00,
+        "category": "category name"
+      }
+    ]
+  },
+  "cameras": {
+    "left": [
+      {
+        "id": 23,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Printer_1920x.jpg?v=1604559864",
+        "name": "Product Name",
+        "price": 220.00,
+        "category": "category"
+      },
+      {
+        "id": 24,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Smartwatch_1920x.jpg?v=1604559863",
+        "name": "Product Name",
+        "price": 220.00,
+        "category": "category"
+      },
+      {
+        "id": 25,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_1920x.jpg?v=1604559864",
+        "name": "Product Name",
+        "price": 220.00,
+        "category": "category"
+      },
+      {
+        "id": 26,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863",
+        "name": "Product Name",
+        "price": 220.00,
+        "category": "category"
+      }
+    ],
+    "middle": [
+      {
+        "id": 27,
+        "original": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/TV_010884af-efd0-4645-8d19-6ee037cd730d_1920x.jpg?v=1604559864",
+        "thumbnail": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/TV_010884af-efd0-4645-8d19-6ee037cd730d_1920x.jpg?v=1604559864"
+      },
+      {
+        "id": 28,
+        "original": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Printer_1920x.jpg?v=1604559864",
+        "thumbnail": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Printer_1920x.jpg?v=1604559864"
+      },
+      {
+        "id": 29,
+        "original": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863",
+        "thumbnail": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863"
+      }
+    ],
+    "right": [
+      {
+        "id": 30,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Earphones_1920x.jpg?v=1604559866",
+        "name": "Product Name",
+        "price": 220.00,
+        "category": "category"
+      },
+      {
+        "id": 31,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GameStation_720x.jpg?v=1604559863",
+        "name": "Product Name",
+        "price": 220.00,
+        "category": "category"
+      },
+      {
+        "id": 32,
+        "img": "//cdn.shopify.com/s/files/1/0066/4322/0562/products/Smartphone4_720x.jpg?v=1604559863",
+        "name": "Product Name",
+        "price": 220.00,
+        "category": "category"
+      },
+      {
+        "id": 33,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863",
+        "name": "Product Name",
+        "price": 220.00,
+        "category": "category"
+      }
+    ]
+  },
+  "audio": {
+    "left": [
+      {
+        "id": 34,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Printer_1920x.jpg?v=1604559864",
+        "name": "Product Name",
+        "price": 220.00,
+        "category": "category"
+      },
+      {
+        "id": 35,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Smartwatch_1920x.jpg?v=1604559863",
+        "name": "Product Name",
+        "price": 220.00,
+        "category": "category"
+      },
+      {
+        "id": 36,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_1920x.jpg?v=1604559864",
+        "name": "Product Name",
+        "price": 220.00,
+        "category": "category"
+      },
+      {
+        "id": 37,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863",
+        "name": "Product Name",
+        "price": 220.00,
+        "category": "category"
+      }
+    ],
+    "middle": [
+      {
+        "id": 38,
+        "original": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/TV_010884af-efd0-4645-8d19-6ee037cd730d_1920x.jpg?v=1604559864",
+        "thumbnail": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/TV_010884af-efd0-4645-8d19-6ee037cd730d_1920x.jpg?v=1604559864"
+      },
+      {
+        "id": 1,
+        "original": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Printer_1920x.jpg?v=1604559864",
+        "thumbnail": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Printer_1920x.jpg?v=1604559864"
+      },
+      {
+        "id": 39,
+        "original": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863",
+        "thumbnail": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863"
+      }
+    ],
+    "right": [
+      {
+        "id": 40,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Earphones_1920x.jpg?v=1604559866",
+        "name": "Product Name",
+        "price": 220.00,
+        "category": "category"
+      },
+      {
+        "id": 41,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GameStation_720x.jpg?v=1604559863",
+        "name": "Product Name",
+        "price": 220.00,
+        "category": "category"
+      },
+      {
+        "id": 42,
+        "img": "//cdn.shopify.com/s/files/1/0066/4322/0562/products/Smartphone4_720x.jpg?v=1604559863",
+        "name": "Product Name",
+        "price": 220.00,
+        "category": "category"
+      },
+      {
+        "id": 43,
+        "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863",
+        "name": "Product Name",
+        "price": 220.00,
+        "category": "category"
+      }
+    ]
+  }
+}
