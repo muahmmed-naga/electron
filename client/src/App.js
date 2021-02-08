@@ -18,6 +18,7 @@ import PageNotFound from "./pages/PageNotFound";
 import CategoriesPage from "./pages/CategoriesPage";
 import ProductPage from "./pages/product-page/product-page.comp";
 import CategoriesProductPage from "./pages/categories-product/categories-product.comp";
+import CategoriesBestSellers from "./pages/categories-bestsellers/categories-bestsellers.comp";
 
 function App() {
   const scrollFunction = () => {
@@ -51,9 +52,10 @@ function App() {
         />
         <Route
           exact
-          path="/categories/:section/product/:id"
-          component={CategoriesProductPage}
+          path="/categories/best-sellers/product/:id"
+          component={CategoriesBestSellers}
         />
+
         <Route path="/cart" component={CartPage} />
         <Route exact path="/account/signup" component={Signup} />
         <Route exact path="/account/login" component={LoginPage} />

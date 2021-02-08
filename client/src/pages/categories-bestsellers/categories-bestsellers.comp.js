@@ -1,33 +1,52 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 // Components
-import { Link } from "react-router-dom";
-import ImageGallery from "react-image-gallery";
-import AliceCarousel from "react-alice-carousel";
-// import PRODUCTS_DATA from "../../data/products";
-import { AiOutlineStar } from "react-icons/ai";
-import { IoIosArrowForward } from "react-icons/io";
-import ProdductDescriptioTabs from "./utils/tabs.comp";
-import { Accordion, Card, Row, Col } from "react-bootstrap";
-import NEW_ARRIVALS from "../../components/new-arrivals/data";
-import TinyProduct from "../../components/tiny-product/tiny-product.comp";
-import RouteNavigator from "../../components/route-navigator/route-navigator.comp";
-import ProductsMultiColumns from "../../components/products-multi-colums/products-multi-colums.comp";
+import { Link } from 'react-router-dom';
+import AliceCarousel from 'react-alice-carousel';
+import { AiOutlineStar } from 'react-icons/ai';
+import { IoIosArrowForward } from 'react-icons/io';
+import ProdductDescriptioTabs from './utils/tabs.comp';
+import { Accordion, Card, Row, Col } from 'react-bootstrap';
+import NEW_ARRIVALS from '../../components/new-arrivals/data';
+import TinyProduct from '../../components/tiny-product/tiny-product.comp';
+import RouteNavigator from '../../components/route-navigator/route-navigator.comp';
+import LoadingSpinner from '../../components/loading-spinner/loading-spinner.comp';
+import ProductsMultiColumns from '../../components/products-multi-colums/products-multi-colums.comp';
 
 // Styles
-import "react-alice-carousel/lib/alice-carousel.css";
-import "./categories-product.styles.scss";
-import axios from "axios";
+import 'react-alice-carousel/lib/alice-carousel.css';
+import './categories-bestsellers.styles.scss';
 
-const CategoriesProductPage = ({ match }) => {
-  // const { params } = match;
-  // const { category } = params;
+const CategoriesBestSellers = ({ match }) => {
+  const { params } = match;
+
+  const [isLoading, setIsLoading] = useState(false);
+  const [productName, setProductName] = useState('');
+  const [price, setPrice] = useState(null);
+  const [category, setCategory] = useState('');
+  const [productImg, setProductImg] = useState('');
 
   useEffect(() => {
-    axios.get("/api/v1/categories/2").then(res => {
-      console.log(res.data.data.categories.best_deals);
-    });
-  }, []);
+    window.scrollTo(0, 0);
+    document.title = `Electron | Product Page`;
+
+    setIsLoading(true);
+    axios
+      .get(`/api/v1/categories/best-sellers/product/${params.id}`)
+      .then((res) => {
+        const { name, img, price, category } = res.data.data.product;
+        console.log(res.data.data.product);
+
+        setProductName(name);
+        setPrice(price);
+        setCategory(category);
+        setProductImg(img);
+      });
+    setTimeout(() => setIsLoading(false), 500);
+  }, [params.id]);
+
+  console.log(productName, price, category, productImg);
 
   // eslint-disable-next-line
   const [count, setCount] = useState(1);
@@ -39,40 +58,13 @@ const CategoriesProductPage = ({ match }) => {
     1024: { items: 1 },
   };
 
-  const defaultImages = [
-    {
-      original:
-        "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_3929c9a4-1a61-4e52-91fb-8a07d394b56f_1366x.jpg?v=1604559863",
-      thumbnail:
-        "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_3929c9a4-1a61-4e52-91fb-8a07d394b56f_1366x.jpg?v=1604559863",
-    },
-    {
-      original:
-        "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_3929c9a4-1a61-4e52-91fb-8a07d394b56f_1366x.jpg?v=1604559863",
-      thumbnail:
-        "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_3929c9a4-1a61-4e52-91fb-8a07d394b56f_1366x.jpg?v=1604559863",
-    },
-    {
-      original:
-        "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_3929c9a4-1a61-4e52-91fb-8a07d394b56f_1366x.jpg?v=1604559863",
-      thumbnail:
-        "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_3929c9a4-1a61-4e52-91fb-8a07d394b56f_1366x.jpg?v=1604559863",
-    },
-  ];
-
-  const items = NEW_ARRIVALS.map(item => (
+  const items = NEW_ARRIVALS.map((item) => (
     <TinyProduct key={item.id} {...item} />
   ));
 
-  // Handlers functions
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    document.title = `Electron | Product Page`;
-  });
-
   return (
     <>
-      <div className="custom-container categpries-product-page-wrapper">
+      <div className="custom-container categpries-bestseller-page-wrapper">
         <RouteNavigator prev="Accessories" current="Faxtex Product Sample" />
         <div className="content-wrapper">
           <Row>
@@ -133,12 +125,12 @@ const CategoriesProductPage = ({ match }) => {
               </div>
               <Link
                 to="/cameras/4k"
-                style={{ marginTop: "30px", display: "block" }}
+                style={{ marginTop: '30px', display: 'block' }}
               >
                 <img
                   src="//cdn.shopify.com/s/files/1/0066/4322/0562/files/sidebar-banner_270x_caf21969-17c3-44e7-a84a-b10fc5e8a4be_1920x.jpg?v=1604560580"
                   alt="ad"
-                  style={{ width: "100%" }}
+                  style={{ width: '100%' }}
                 />
               </Link>
               <div className="latest-products m-top-20">Latest Products</div>
@@ -154,19 +146,28 @@ const CategoriesProductPage = ({ match }) => {
 
             <Col xs={12} md={9} lg={9}>
               <Row>
-                <Col xs={12} md={4} lg={6}>
-                  <div className="preview-products-images">
-                    <ImageGallery
-                      items={defaultImages}
-                      showPlayButton={false}
-                      showFullscreenButton={false}
-                    />
-                  </div>
+                <Col
+                  xs={12}
+                  md={4}
+                  lg={6}
+                  style={{ display: 'flex', alignItems: 'center' }}
+                >
+                  {isLoading ? (
+                    <LoadingSpinner />
+                  ) : (
+                    <div className="preview-products-images">
+                      <img
+                        src={productImg}
+                        alt={productName}
+                        style={{ width: '100%' }}
+                      />
+                    </div>
+                  )}
                 </Col>
                 <Col xs={12} md={8} lg={6}>
                   <div className="upper">
-                    <div className="category">Bulgari</div>
-                    <div className="product-name">Faxtex Product Sample</div>
+                    <div className="category">{category}</div>
+                    <div className="product-name">{productName}</div>
                     <div className="rating flex-align-center">
                       <div className="stars">
                         <AiOutlineStar />
@@ -192,13 +193,13 @@ const CategoriesProductPage = ({ match }) => {
                     <li>
                       <div>Products SKU: 4827521</div>
                       <div>
-                        Category: <Link to="#">Accessories</Link>{" "}
+                        Category: <Link to="#">Accessories</Link>{' '}
                       </div>
                     </li>
                   </ul>
 
                   <div className="price">
-                    <div className="new">$220.00</div>
+                    <div className="new">${price}</div>
                     <del>$300.00</del>
                   </div>
 
@@ -245,4 +246,4 @@ const CategoriesProductPage = ({ match }) => {
   );
 };
 
-export default CategoriesProductPage;
+export default CategoriesBestSellers;

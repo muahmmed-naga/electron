@@ -1,32 +1,31 @@
 const fs = require("fs");
 
-const categories = JSON.parse(
+const bestSellers = JSON.parse(
   fs.readFileSync(`${__dirname}/../data/categories_best_sellers.json`)
 );
 
 exports.checkID = (req, res, next) => {
-  if (req.params.id * 1 > categories.length) {
+  if (req.params.id * 1 > bestSellers.length) {
     return res.status(404).json({
       status: "fail",
-      msg: "Proudct not found",
+      msg: "Can not found this product",
     });
   }
-
   next();
 };
 
-exports.getCategories = (req, res) => {
-  res.status(200).json({
+exports.getAllBestSellers = (req, res) => {
+  return res.status(200).json({
     status: "success",
     data: {
-      categories,
+      bestSellers,
     },
   });
 };
 
-exports.showProduct = (req, res) => {
+exports.getBestSellerProduct = (req, res) => {
   const id = req.params.id * 1;
-  const product = categories.find(el => el.id === id);
+  const product = bestSellers.find(product => product.id === id);
 
   return res.status(200).json({
     status: "success",
@@ -35,5 +34,3 @@ exports.showProduct = (req, res) => {
     },
   });
 };
-
-// Up to next ==> enhance categories best sellers endpoint (Look at postman show request)

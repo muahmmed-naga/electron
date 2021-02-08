@@ -1,7 +1,8 @@
 const express = require("express");
 const morgan = require("morgan");
-const productsRouter = require("./routes/productsRoute");
-const categoriesRouter = require("./routes/categoriesRoute");
+
+// Routes
+const bestSellerRouter = require("./routes/bestSellerRouter");
 
 const app = express();
 
@@ -10,7 +11,6 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 // Routes handler
-app.use("/api/v1/products", productsRouter);
-app.use("/api/v1/categories", categoriesRouter);
+app.use("/api/v1/categories/best-sellers", bestSellerRouter);
 
 module.exports = app;
