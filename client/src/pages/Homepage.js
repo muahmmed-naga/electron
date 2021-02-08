@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import axios from "axios";
 
 // Components
 import ShopAndSave from "../components/shop-and-save.comp";
@@ -18,6 +19,9 @@ const Homepage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = `Electron | Home Page`;
+    axios
+      .get("/api/v1/products")
+      .then(res => console.log(res.data.data.products));
   });
 
   return (
