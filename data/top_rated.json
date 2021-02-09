@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GamePad_1920x.jpg?v=1604559863",
+    "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Smartphone5_1920x.jpg?v=1604559873",
     "name": "Product name",
     "price": 200,
     "category": "Category",
@@ -11,7 +11,7 @@
   },
   {
     "id": 2,
-    "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Printer_1920x.jpg?v=1604559864",
+    "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/FlashDrive_1920x.jpg?v=1604559864",
     "name": "Product name",
     "price": 200,
     "category": "Category"

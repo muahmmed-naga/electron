@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 // Components
 import { Switch, Route } from 'react-router-dom';
 import CartPage from './pages/cart-page/cart-page.comp';
-// import AppFooter from './components/app-footer/app-footer.comp';
+import AppFooter from './components/app-footer/app-footer.comp';
 import AppMainHeader from './components/main-header/main-header.comp';
 import ScrollHeader from './components/scroll-header/scroll-header.comp';
 import AppUpperHeader from './components/upper-header/upper-header.comp';
@@ -24,6 +24,7 @@ import CategoriesTVAndVideos from './pages/categories-tv-videos/categories-tv-vi
 import CategoriesBestSellers from './pages/categories-bestsellers/categories-bestsellers.comp';
 import CategoriesOnSale from './pages/categories-on-sale/categories-on-sale.comp';
 import CategoriesTopRated from './pages/categories-top-rated/categories-top-rated.comp';
+import NewArrivalsPage from './pages/new-arrivals/new-arrivals.comp';
 
 function App() {
   const scrollFunction = () => {
@@ -103,6 +104,12 @@ function App() {
           component={CategoriesAudios}
         />
 
+        <Route
+          exact
+          path="/categories/new-arrivals/product/:id"
+          component={NewArrivalsPage}
+        />
+
         {/* Categories Routes */}
 
         <Route path="/cart" component={CartPage} />
@@ -112,7 +119,7 @@ function App() {
         <Route component={PageNotFound} />
       </Switch>
 
-      {/* <AppFooter /> */}
+      <AppFooter />
     </div>
   );
 }

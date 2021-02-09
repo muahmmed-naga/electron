@@ -17,9 +17,9 @@ const Audio = () => {
   useEffect(() => {
     setIsLoading(true);
     axios
-      .get('/api/v1/categories/best-sellers')
+      .get('/api/v1/categories/audios')
       .then((res) => {
-        setData(res.data.data.bestSellers);
+        setData(res.data.data.audios);
       })
       .catch((err) => console.log(err));
 
@@ -37,13 +37,13 @@ const Audio = () => {
               <div className="tiny-product-wrapper" key={id}>
                 <div className="category">{category}</div>
                 <Link
-                  to={`/categories/best-sellers/product/${id}`}
+                  to={`/categories/audios/product/${id}`}
                   className="product-name"
                 >
                   {name}
                 </Link>
                 <Link
-                  to={`/categories/best-sellers/product/${id}`}
+                  to={`/categories/audios/product/${id}`}
                   className="img-wrapper"
                 >
                   <img src={img} alt="product" />
@@ -75,13 +75,13 @@ const Audio = () => {
               <div className="tiny-product-wrapper" key={id}>
                 <div className="category">{category}</div>
                 <Link
-                  to={`/categories/best-sellers/product/${id}`}
+                  to={`/categories/audios/product/${id}`}
                   className="product-name"
                 >
                   {name}
                 </Link>
                 <Link
-                  to={`/categories/best-sellers/product/${id}`}
+                  to={`/categories/audios/product/${id}`}
                   className="img-wrapper"
                 >
                   <img src={img} alt="product" />

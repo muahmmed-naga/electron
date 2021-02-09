@@ -21,28 +21,28 @@ const BestSellerSection = () => {
 
         <div className="navigator-items-wrapper flex-align-center">
           <div
-            onClick={() => setActiveTab('top-20')}
+            onClick={() => setActiveTab('audios')}
             className={`${
-              activeTab === 'top-20' ? 'active-tab' : undefined
+              activeTab === 'audios' ? 'active-tab' : undefined
             } tab-item`}
           >
-            Top 20
+            Audios
           </div>
           <div
-            onClick={() => setActiveTab('phones-tables')}
+            onClick={() => setActiveTab('featured')}
             className={`${
-              activeTab === 'phones-tables' ? 'active-tab' : undefined
+              activeTab === 'featured' ? 'active-tab' : undefined
             } tab-item`}
           >
-            Phones & Tables
+            Featued
           </div>
           <div
-            onClick={() => setActiveTab('laptops-computers')}
+            onClick={() => setActiveTab('top-rated')}
             className={`${
-              activeTab === 'laptops-computers' ? 'active-tab' : undefined
+              activeTab === 'top-rated' ? 'active-tab' : undefined
             } tab-item`}
           >
-            Laptops & Computers
+            Top Rated
           </div>
           <div
             onClick={() => setActiveTab('video-camera')}
@@ -55,9 +55,9 @@ const BestSellerSection = () => {
         </div>
       </div>
       <div className="tabs-content-wrapper">
-        {activeTab === 'top-20' && <Top20TabContent />}
-        {activeTab === 'phones-tables' && <PhonesTablesTabContent />}
-        {activeTab === 'laptops-computers' && <LaptopsComputersTabContent />}
+        {activeTab === 'audios' && <Top20TabContent />}
+        {activeTab === 'featured' && <PhonesTablesTabContent />}
+        {activeTab === 'top-rated' && <LaptopsComputersTabContent />}
         {activeTab === 'video-camera' && <VideoCameraTabContent />}
       </div>
     </div>

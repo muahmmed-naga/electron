@@ -9,6 +9,7 @@ const audioRouter = require('./routes/audioRouter');
 const featuredRouter = require('./routes/featuredRouter');
 const onSaleRouter = require('./routes/onSaleRouter');
 const topRatedRouter = require('./routes/topRatedRouter');
+const newArrivalsRouter = require('./routes/newArrivalsRouter');
 
 const app = express();
 
@@ -24,5 +25,6 @@ app.use('/api/v1/categories/audios', audioRouter);
 app.use('/api/v1/categories/featured', featuredRouter);
 app.use('/api/v1/categories/on-sale', onSaleRouter);
 app.use('/api/v1/categories/top-rated', topRatedRouter);
+app.use('/api/v1/categories/new-arrivals', newArrivalsRouter);
 
 module.exports = app;
