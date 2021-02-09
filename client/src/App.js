@@ -19,8 +19,11 @@ import CategoriesPage from './pages/CategoriesPage';
 import ProductPage from './pages/product-page/product-page.comp';
 import CategoriesAudios from './pages/categories-audios/categories-audios.comp';
 import CategoriesCameras from './pages/categories-carmeras/categories-cameras.comp';
+import CategoriesFeatured from './pages/categories-featured/categories-featured.comp';
 import CategoriesTVAndVideos from './pages/categories-tv-videos/categories-tv-videos.comp';
 import CategoriesBestSellers from './pages/categories-bestsellers/categories-bestsellers.comp';
+import CategoriesOnSale from './pages/categories-on-sale/categories-on-sale.comp';
+import CategoriesTopRated from './pages/categories-top-rated/categories-top-rated.comp';
 
 function App() {
   const scrollFunction = () => {
@@ -35,6 +38,7 @@ function App() {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     window.onscroll = () => scrollFunction();
   });
 
@@ -52,6 +56,27 @@ function App() {
           path="/collections/:category/product/:id"
           component={ProductPage}
         />
+
+        {/* Top Topics */}
+        <Route
+          exact
+          path="/categories/featured/product/:id"
+          component={CategoriesFeatured}
+        />
+
+        <Route
+          exact
+          path="/categories/on-sale/product/:id"
+          component={CategoriesOnSale}
+        />
+
+        <Route
+          exact
+          path="/categories/top-rated/product/:id"
+          component={CategoriesTopRated}
+        />
+
+        {/* Top Topics */}
 
         {/* Categories Routes */}
         <Route
