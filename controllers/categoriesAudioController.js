@@ -17,6 +17,7 @@ exports.checkID = (req, res, next) => {
 exports.getAllProducts = (req, res) => {
   return res.status(200).json({
     status: 'success',
+    results: audios.length,
     data: {
       audios,
     },

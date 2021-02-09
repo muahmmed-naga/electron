@@ -1,11 +1,11 @@
 const fs = require('fs');
 
-const bestSellers = JSON.parse(
-  fs.readFileSync(`${__dirname}/../data/categories_best_sellers.json`)
+const featured = JSON.parse(
+  fs.readFileSync(`${__dirname}/../data/featured.json`)
 );
 
 exports.checkID = (req, res, next) => {
-  if (req.params.id * 1 > bestSellers.length) {
+  if (req.params.id * 1 > featured.length) {
     return res.status(404).json({
       status: 'fail',
       msg: 'Can not found this product',
@@ -17,16 +17,16 @@ exports.checkID = (req, res, next) => {
 exports.getAllProducts = (req, res) => {
   return res.status(200).json({
     status: 'success',
-    results: bestSellers.length,
+    results: featured.length,
     data: {
-      bestSellers,
+      featured,
     },
   });
 };
 
 exports.getProduct = (req, res) => {
   const id = req.params.id * 1;
-  const product = bestSellers.find((product) => product.id === id);
+  const product = featured.find((product) => product.id === id);
 
   return res.status(200).json({
     status: 'success',
