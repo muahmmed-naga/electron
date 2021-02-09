@@ -16,9 +16,9 @@ import ProductsMultiColumns from '../../components/products-multi-colums/product
 
 // Styles
 import 'react-alice-carousel/lib/alice-carousel.css';
-import './categories-bestsellers.styles.scss';
+import './categories-cameras.styles.scss';
 
-const CategoriesBestSellers = ({ match }) => {
+const CategoriesCameras = ({ match }) => {
   const { params } = match;
 
   const [isLoading, setIsLoading] = useState(false);
@@ -29,19 +29,17 @@ const CategoriesBestSellers = ({ match }) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = `Electron | Product Page`;
+    document.title = `Electron | Cameras | Product ${params.id} Page`;
 
     setIsLoading(true);
-    axios
-      .get(`/api/v1/categories/best-sellers/product/${params.id}`)
-      .then((res) => {
-        const { name, img, price, category } = res.data.data.product;
+    axios.get(`/api/v1/categories/cameras/product/${params.id}`).then((res) => {
+      const { name, img, price, category } = res.data.data.product;
 
-        setProductName(name);
-        setPrice(price);
-        setCategory(category);
-        setProductImg(img);
-      });
+      setProductName(name);
+      setPrice(price);
+      setCategory(category);
+      setProductImg(img);
+    });
     setTimeout(() => setIsLoading(false), 500);
   }, [params.id]);
 
@@ -61,7 +59,7 @@ const CategoriesBestSellers = ({ match }) => {
 
   return (
     <>
-      <div className="custom-container categpries-bestseller-page-wrapper">
+      <div className="custom-container categpries-cameras-page-wrapper">
         <RouteNavigator prev="Accessories" current="Faxtex Product Sample" />
         <div className="content-wrapper">
           <Row>
@@ -243,4 +241,4 @@ const CategoriesBestSellers = ({ match }) => {
   );
 };
 
-export default CategoriesBestSellers;
+export default CategoriesCameras;

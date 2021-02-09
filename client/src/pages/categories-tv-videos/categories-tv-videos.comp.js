@@ -16,9 +16,9 @@ import ProductsMultiColumns from '../../components/products-multi-colums/product
 
 // Styles
 import 'react-alice-carousel/lib/alice-carousel.css';
-import './categories-bestsellers.styles.scss';
+import './categories-tv-videos.styles.scss';
 
-const CategoriesBestSellers = ({ match }) => {
+const CategoriesTVAndVideos = ({ match }) => {
   const { params } = match;
 
   const [isLoading, setIsLoading] = useState(false);
@@ -29,11 +29,11 @@ const CategoriesBestSellers = ({ match }) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = `Electron | Product Page`;
+    document.title = `Electron | TV And Vidoes Product ${params.id} Page`;
 
     setIsLoading(true);
     axios
-      .get(`/api/v1/categories/best-sellers/product/${params.id}`)
+      .get(`/api/v1/categories/tv-videos/product/${params.id}`)
       .then((res) => {
         const { name, img, price, category } = res.data.data.product;
 
@@ -61,7 +61,7 @@ const CategoriesBestSellers = ({ match }) => {
 
   return (
     <>
-      <div className="custom-container categpries-bestseller-page-wrapper">
+      <div className="custom-container categpries-tv-videos-page-wrapper">
         <RouteNavigator prev="Accessories" current="Faxtex Product Sample" />
         <div className="content-wrapper">
           <Row>
@@ -243,4 +243,4 @@ const CategoriesBestSellers = ({ match }) => {
   );
 };
 
-export default CategoriesBestSellers;
+export default CategoriesTVAndVideos;

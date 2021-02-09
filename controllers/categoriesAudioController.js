@@ -1,13 +1,11 @@
 const fs = require('fs');
 
-// Cameras data
-const cameras = JSON.parse(
-  fs.readFileSync(`${__dirname}/../data/categories_cameras.json`)
+const audios = JSON.parse(
+  fs.readFileSync(`${__dirname}/../data/categories_audio.json`)
 );
 
-// Middlewares
 exports.checkID = (req, res, next) => {
-  if (req.params.id * 1 > cameras.length) {
+  if (req.params.id * 1 > audios.length) {
     return res.status(404).json({
       status: 'fail',
       msg: 'Can not found this product',
@@ -20,14 +18,14 @@ exports.getAllProducts = (req, res) => {
   return res.status(200).json({
     status: 'success',
     data: {
-      cameras,
+      audios,
     },
   });
 };
 
 exports.getProduct = (req, res) => {
   const id = req.params.id * 1;
-  const product = cameras.find((product) => product.id === id);
+  const product = audios.find((product) => product.id === id);
 
   return res.status(200).json({
     status: 'success',

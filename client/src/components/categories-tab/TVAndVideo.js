@@ -1,27 +1,27 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 // Components
-import CategoriesLeftSide from "./utils/left-side/left-side.comp";
-import MiddleImgGallery from "./utils/middle-img-gallery/middle-img-gallery.comp";
-import CategoriesRightSide from "./utils/right-side/right-side.comp";
-import LoadingSpinner from "../loading-spinner/loading-spinner.comp";
+import { Link } from 'react-router-dom';
+import { IoEyeOutline } from 'react-icons/io5';
+import { IoMdHeartEmpty } from 'react-icons/io';
+import LoadingSpinner from '../loading-spinner/loading-spinner.comp';
+import MiddleImgGallery from './utils/middle-img-gallery/middle-img-gallery.comp';
 
 const TVAndVideo = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [leftData, setLeftData] = useState([]);
-  const [middleData, setMiddleData] = useState([]);
-  const [rightData, setRightData] = useState([]);
+  const [data, setData] = useState([]);
 
   // Fetch products data
   useEffect(() => {
     setIsLoading(true);
-    axios.get("/api/v1/categories").then(res => {
-      const { left, middle, right } = res.data.data.categories.tv_videos;
-      setLeftData(left);
-      setMiddleData(middle);
-      setRightData(right);
-    });
+    axios
+      .get('/api/v1/categories/tv-videos')
+      .then((res) => {
+        setData(res.data.data.tv_videos);
+      })
+      .catch((err) => console.log(err));
+
     setTimeout(() => setIsLoading(false), 500);
   }, []);
 
@@ -32,13 +32,77 @@ const TVAndVideo = () => {
       ) : (
         <>
           <div className="left-side-wrapper content-item">
-            <CategoriesLeftSide data={leftData} />
+            {data.slice(0, 4).map(({ id, img, name, price, category }) => (
+              <div className="tiny-product-wrapper" key={id}>
+                <div className="category">{category}</div>
+                <Link
+                  to={`/categories/tv-videos/product/${id}`}
+                  className="product-name"
+                >
+                  {name}
+                </Link>
+                <Link
+                  to={`/categories/tv-videos/product/${id}`}
+                  className="img-wrapper"
+                >
+                  <img src={img} alt="product" />
+                </Link>
+
+                <div className="price">
+                  <div className="new">${price}</div>
+                  <del>$300.00</del>
+                </div>
+
+                <div className="options flex-align-center">
+                  <div className="view flex-align-center">
+                    <IoEyeOutline />
+                    <span>view</span>
+                  </div>
+                  <div className="wishlist flex-align-center">
+                    <IoMdHeartEmpty />
+                    <span>wishlist</span>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
           <div className="middle-side-wrapper content-item">
-            <MiddleImgGallery data={middleData} />
+            <MiddleImgGallery />
           </div>
           <div className="right-side-wrapper content-item">
-            <CategoriesRightSide data={rightData} />
+            {data.slice(4, 8).map(({ id, img, name, price, category }) => (
+              <div className="tiny-product-wrapper" key={id}>
+                <div className="category">{category}</div>
+                <Link
+                  to={`/categories/tv-videos/product/${id}`}
+                  className="product-name"
+                >
+                  {name}
+                </Link>
+                <Link
+                  to={`/categories/tv-videos/product/${id}`}
+                  className="img-wrapper"
+                >
+                  <img src={img} alt="product" />
+                </Link>
+
+                <div className="price">
+                  <div className="new">${price}</div>
+                  <del>$300.00</del>
+                </div>
+
+                <div className="options flex-align-center">
+                  <div className="view flex-align-center">
+                    <IoEyeOutline />
+                    <span>view</span>
+                  </div>
+                  <div className="wishlist flex-align-center">
+                    <IoMdHeartEmpty />
+                    <span>wishlist</span>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </>
       )}

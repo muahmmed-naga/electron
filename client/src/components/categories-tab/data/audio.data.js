@@ -36,29 +36,7 @@ const AUDIO = {
       category: faker.commerce.department(),
     },
   ],
-  middle: [
-    {
-      id: uuidv4(),
-      original:
-        'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/TV_010884af-efd0-4645-8d19-6ee037cd730d_1920x.jpg?v=1604559864',
-      thumbnail:
-        'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/TV_010884af-efd0-4645-8d19-6ee037cd730d_1920x.jpg?v=1604559864',
-    },
-    {
-      id: uuidv4(),
-      original:
-        'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Printer_1920x.jpg?v=1604559864',
-      thumbnail:
-        'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Printer_1920x.jpg?v=1604559864',
-    },
-    {
-      id: uuidv4(),
-      original:
-        'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863',
-      thumbnail:
-        'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863',
-    },
-  ],
+
   right: [
     {
       id: uuidv4(),

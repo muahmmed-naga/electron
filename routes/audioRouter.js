@@ -4,7 +4,7 @@ const {
   checkID,
   getAllProducts,
   getProduct,
-} = require('../controllers/categoiresBestSellersController');
+} = require('../controllers/categoriesAudioController');
 
 const router = express.Router();
 

@@ -1,10 +1,9 @@
 const express = require('express');
-
 const {
   checkID,
   getAllProducts,
   getProduct,
-} = require('../controllers/categoiresBestSellersController');
+} = require('../controllers/categoriesTVAndVideosController');
 
 const router = express.Router();
 

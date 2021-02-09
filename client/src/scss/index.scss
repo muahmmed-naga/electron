@@ -46,3 +46,96 @@ p {
 .active-link {
   color: #00abc5 !important;
 }
+
+/*
+  ===================================================== 
+  ============== Tiny Proeduct Component ============== 
+  ===================================================== 
+*/
+.tiny-product-wrapper {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 0;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    .options {
+      bottom: 5px;
+    }
+  }
+
+  .category {
+    color: gray;
+    font-size: 0.7rem;
+  }
+  .product-name {
+    text-transform: capitalize;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #00abc5;
+    margin: 10px 0;
+  }
+
+  .img-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+
+    img {
+      width: 85%;
+      height: auto;
+    }
+  }
+
+  .price {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .new {
+      margin-right: 10px;
+      font-size: 0.9rem;
+      color: #f23b3b;
+      font-weight: 600;
+    }
+
+    del {
+      color: #a6a6a6;
+      font-size: 0.7rem;
+    }
+  }
+
+  .options {
+    width: 100%;
+    justify-content: space-around;
+    position: absolute;
+    bottom: -100px;
+    transition: bottom 0.4s ease-in-out;
+
+    svg,
+    span {
+      color: #878787;
+      font-size: 0.8rem;
+    }
+
+    svg {
+      margin: 3px 4px 0 0;
+    }
+
+    .view,
+    .wishlist {
+      cursor: pointer;
+
+      &:hover {
+        svg,
+        span {
+          color: #00abc5;
+        }
+      }
+    }
+  }
+}
