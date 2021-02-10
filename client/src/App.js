@@ -1,30 +1,30 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 
 // Components
-import { Switch, Route } from 'react-router-dom';
-import CartPage from './pages/cart-page/cart-page.comp';
-import AppFooter from './components/app-footer/app-footer.comp';
-import AppMainHeader from './components/main-header/main-header.comp';
-import ScrollHeader from './components/scroll-header/scroll-header.comp';
-import AppUpperHeader from './components/upper-header/upper-header.comp';
-import ResponsiveMainHeader from './components/responsive/main-header/main-header.comp';
+import { Switch, Route } from 'react-router-dom'
+import CartPage from './pages/cart-page/cart-page.comp'
+import AppFooter from './components/app-footer/app-footer.comp'
+import AppMainHeader from './components/main-header/main-header.comp'
+import ScrollHeader from './components/scroll-header/scroll-header.comp'
+import AppUpperHeader from './components/upper-header/upper-header.comp'
+import ResponsiveMainHeader from './components/responsive/main-header/main-header.comp'
 
 // Pages
-import Signup from './pages/Signup';
-import LoginPage from './pages/Login';
-import Homepage from './pages/Homepage';
-import TestPage from './pages/TestPage';
-import PageNotFound from './pages/PageNotFound';
-import CategoriesPage from './pages/CategoriesPage';
-import ProductPage from './pages/product-page/product-page.comp';
-import CategoriesAudios from './pages/categories-audios/categories-audios.comp';
-import CategoriesCameras from './pages/categories-carmeras/categories-cameras.comp';
-import CategoriesFeatured from './pages/categories-featured/categories-featured.comp';
-import CategoriesTVAndVideos from './pages/categories-tv-videos/categories-tv-videos.comp';
-import CategoriesBestSellers from './pages/categories-bestsellers/categories-bestsellers.comp';
-import CategoriesOnSale from './pages/categories-on-sale/categories-on-sale.comp';
-import CategoriesTopRated from './pages/categories-top-rated/categories-top-rated.comp';
-import NewArrivalsPage from './pages/new-arrivals/new-arrivals.comp';
+import Signup from './pages/Signup'
+import LoginPage from './pages/Login'
+import Homepage from './pages/Homepage'
+import TestPage from './pages/TestPage'
+import PageNotFound from './pages/PageNotFound'
+import CategoriesPage from './pages/CategoriesPage'
+import ProductPage from './pages/product-page/product-page.comp'
+import CategoriesAudios from './pages/categories-audios/categories-audios.comp'
+import CategoriesCameras from './pages/categories-carmeras/categories-cameras.comp'
+import CategoriesFeatured from './pages/categories-featured/categories-featured.comp'
+import CategoriesTVAndVideos from './pages/categories-tv-videos/categories-tv-videos.comp'
+import CategoriesBestSellers from './pages/categories-bestsellers/categories-bestsellers.comp'
+import CategoriesOnSale from './pages/categories-on-sale/categories-on-sale.comp'
+import CategoriesTopRated from './pages/categories-top-rated/categories-top-rated.comp'
+import NewArrivalsPage from './pages/new-arrivals/new-arrivals.comp'
 
 function App() {
   const scrollFunction = () => {
@@ -32,16 +32,16 @@ function App() {
       document.body.scrollTop > 100 ||
       document.documentElement.scrollTop > 100
     ) {
-      document.getElementById('scroll-header').style.top = '0';
+      document.getElementById('scroll-header').style.top = '0'
     } else {
-      document.getElementById('scroll-header').style.top = '-64px';
+      document.getElementById('scroll-header').style.top = '-64px'
     }
-  };
+  }
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    window.onscroll = () => scrollFunction();
-  });
+    window.scrollTo(0, 0)
+    window.onscroll = () => scrollFunction()
+  })
 
   return (
     <div className="App">
@@ -121,7 +121,7 @@ function App() {
 
       <AppFooter />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
