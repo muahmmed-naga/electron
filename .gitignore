@@ -3,4 +3,4 @@
 /client/node_modules
 /client/yarn.lock
 /.eslintcache
-/config.env
+config.env
