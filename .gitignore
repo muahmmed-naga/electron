@@ -1,7 +1,6 @@
-.gitignore
 /node_modules
 
 /client/node_modules
 /client/yarn.lock
 /.eslintcache
-*.env
+.env

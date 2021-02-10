@@ -1,1 +1,0 @@
-// Complete home page categories api
