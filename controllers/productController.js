@@ -82,14 +82,14 @@ exports.deleteProduct = async (req, res) => {
   try {
     await ProductModel.findByIdAndDelete(req.params.id)
 
-    req.res(204).json({
+    req.status(204).json({
       status: 'success',
       data: null,
     })
   } catch (err) {
     return res.status(400).json({
       status: 'fail',
-      msg: err,
+      msg: 'Product has been deleted',
     })
   }
 }

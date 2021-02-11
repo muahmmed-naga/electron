@@ -10,10 +10,30 @@ const productSchema = new mongoose.Schema({
     type: Number,
     required: [true, 'Product must have a price'],
   },
-  rating: {
+  ratingAverage: {
     type: Number,
-    default: 2.2,
+    default: 4.5,
   },
+  ratingQuantity: {
+    type: Number,
+    default: 0,
+  },
+  category: {
+    type: String,
+    required: [true, 'Prdouct must have a category'],
+  },
+  mainImage: {
+    type: String,
+    required: [true, 'Product must have a main image'],
+  },
+  quantity: {
+    type: Number,
+    required: [true, 'Product must have a quantity'],
+  },
+  thumbnails: [String],
+  sizes: [String],
+  description: String,
+  additionalDetails: [String],
 })
 
 const Product = mongoose.model('Product', productSchema)
