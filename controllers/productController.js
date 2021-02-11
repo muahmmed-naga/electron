@@ -2,7 +2,22 @@ const ProductModel = require('../models/productModel')
 
 exports.getAllProducts = async (req, res) => {
   try {
-    const products = await ProductModel.find()
+    const queryObj = { ...req.query }
+
+    // Delete unexpected query from the request
+    const exceptedQuery = ['page', 'limit', 'sort', 'fields']
+    exceptedQuery.forEach((el) => delete queryObj[el])
+
+    // Filter by mongoDB pattern
+    let queryStr = JSON.stringify(queryObj)
+    const queryResult = queryStr.replace(
+      /\b(gt|gte|lt|lte)\b/g,
+      (match) => `$${match}`
+    )
+
+    const query = ProductModel.find(JSON.parse(queryResult))
+
+    const products = await query
 
     return res.status(200).json({
       status: 'success',

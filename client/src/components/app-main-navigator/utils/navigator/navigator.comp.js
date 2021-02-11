@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
 // Components
-import { Link, NavLink } from 'react-router-dom';
-import { MdKeyboardArrowDown } from 'react-icons/md';
+import { Link, NavLink } from 'react-router-dom'
+import { MdKeyboardArrowDown } from 'react-icons/md'
 
 // Styles
-import './navigator.styles.scss';
+import './navigator.styles.scss'
 
 const MainNavigator = () => {
   return (
@@ -16,8 +16,8 @@ const MainNavigator = () => {
         </NavLink>
       </li>
       <li className="categories-menu">
-        <NavLink to="/categories/all" activeClassName="active-link">
-          Categories
+        <NavLink to="/products/all" activeClassName="active-link">
+          Products
         </NavLink>
         <MdKeyboardArrowDown />
 
@@ -119,7 +119,7 @@ const MainNavigator = () => {
         </NavLink>
       </li>
     </ul>
-  );
-};
+  )
+}
 
-export default MainNavigator;
+export default MainNavigator

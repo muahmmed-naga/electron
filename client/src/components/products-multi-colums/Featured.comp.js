@@ -1,27 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 
 // Components
-import { Link } from 'react-router-dom';
-import LoadingSpinner from '../loading-spinner/loading-spinner.comp';
+import { Link } from 'react-router-dom'
+import LoadingSpinner from '../loading-spinner/loading-spinner.comp'
 
 const FeaturedColumn = ({ title }) => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false)
+  const [data, setData] = useState([])
 
   useEffect(() => {
-    setIsLoading(true);
+    setIsLoading(true)
     axios
       .get('/api/v1/categories/featured')
-      .then((res) => setData(res.data.data.featured));
-    setTimeout(() => setIsLoading(false), 300);
-  }, []);
+      .then((res) => setData(res.data.data.featured))
+    setTimeout(() => setIsLoading(false), 300)
+  }, [])
 
   const truncateStr = (str, max) => {
     if (str?.length > max) {
-      return str.slice(0, max - 3) + '...';
-    } else return str;
-  };
+      return str.slice(0, max - 3) + '...'
+    } else return str
+  }
 
   return (
     <>
@@ -33,7 +33,10 @@ const FeaturedColumn = ({ title }) => {
             <span className="p-bottom-10">{title}</span>
           </div>
           {data.slice(0, 3).map(({ id, name, img, price, category }) => (
-            <div className="align-tiny-product-wrapper flex-align-center">
+            <div
+              className="align-tiny-product-wrapper flex-align-center"
+              key={id}
+            >
               <Link
                 to={`/categories/featured/product/${id}`}
                 className="img-wrapper"
@@ -59,7 +62,7 @@ const FeaturedColumn = ({ title }) => {
         </div>
       )}
     </>
-  );
-};
+  )
+}
 
-export default FeaturedColumn;
+export default FeaturedColumn

@@ -1,66 +1,58 @@
 [
   {
-    "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Earphones_1920x.jpg?v=1604559866",
+    "image": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Earphones_1920x.jpg?v=1604559866",
     "name": "Product name 1",
     "price": 200,
     "category": "Category",
-    "mainImage": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/DekstopPC_1920x.jpg?v=1604559865",
     "quantity": 3
   },
   {
-    "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Smartwatch_1920x.jpg?v=1604559863",
+    "image": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Smartwatch_1920x.jpg?v=1604559863",
     "name": "Product name 2",
     "price": 100,
     "category": "category",
-    "mainImage": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/DekstopPC_1920x.jpg?v=1604559865",
     "quantity": 3
   },
   {
-    "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863",
+    "image": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863",
     "name": "Product name 3",
     "price": 100,
     "category": "category",
-    "mainImage": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/DekstopPC_1920x.jpg?v=1604559865",
     "quantity": 3
   },
   {
-    "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863",
+    "image": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863",
     "name": "Product name fs",
     "price": 100,
     "category": "category",
-    "mainImage": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/DekstopPC_1920x.jpg?v=1604559865",
     "quantity": 3
   },
   {
-    "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Earphones_1920x.jpg?v=1604559866",
+    "image": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Earphones_1920x.jpg?v=1604559866",
     "name": "Product name fsafa",
     "price": 200,
     "category": "Category",
-    "mainImage": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/DekstopPC_1920x.jpg?v=1604559865",
     "quantity": 3
   },
   {
-    "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GameStation_720x.jpg?v=1604559863",
+    "image": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GameStation_720x.jpg?v=1604559863",
     "name": "Product name rw2",
     "price": 200,
     "category": "Category",
-    "mainImage": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/DekstopPC_1920x.jpg?v=1604559865",
     "quantity": 3
   },
   {
-    "img": "//cdn.shopify.com/s/files/1/0066/4322/0562/products/Smartphone4_720x.jpg?v=1604559863",
+    "image": "//cdn.shopify.com/s/files/1/0066/4322/0562/products/Smartphone4_720x.jpg?v=1604559863",
     "name": "Product name r22sd",
     "price": 200,
     "category": "Category",
-    "mainImage": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/DekstopPC_1920x.jpg?v=1604559865",
     "quantity": 3
   },
   {
-    "img": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863",
+    "image": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863",
     "name": "Product name dsafssfs",
     "price": 200,
     "category": "Category",
-    "mainImage": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/DekstopPC_1920x.jpg?v=1604559865",
     "quantity": 3
   }
 ]

@@ -23,7 +23,7 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Prdouct must have a category'],
   },
-  mainImage: {
+  image: {
     type: String,
     required: [true, 'Product must have a main image'],
   },

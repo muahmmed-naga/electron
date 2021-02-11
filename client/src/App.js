@@ -52,7 +52,7 @@ function App() {
 
       <Switch>
         <Route exact path="/" component={Homepage} />
-        <Route exact path="/categories/all" component={CategoriesPage} />
+        <Route exact path="/products/all" component={CategoriesPage} />
         <Route
           path="/collections/:category/product/:id"
           component={ProductPage}
