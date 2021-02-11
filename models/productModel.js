@@ -35,6 +35,10 @@ const productSchema = new mongoose.Schema({
   sizes: [String],
   description: String,
   additionalDetails: [String],
+  created_at: {
+    type: String,
+    default: new Date().toISOString(),
+  },
 })
 
 const Product = mongoose.model('Product', productSchema)

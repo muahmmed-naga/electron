@@ -15,7 +15,15 @@ exports.getAllProducts = async (req, res) => {
       (match) => `$${match}`
     )
 
-    const query = ProductModel.find(JSON.parse(queryResult))
+    let query = ProductModel.find(JSON.parse(queryResult))
+
+    // Sorting
+    if (req.query.sort) {
+      const sortedBy = req.query.sort.split(',').join(' ')
+      query = query.sort(sortedBy)
+    } else {
+      query = query.sort('-created_at')
+    }
 
     const products = await query
 
