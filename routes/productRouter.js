@@ -5,9 +5,13 @@ const {
   createProduct,
   updateProduct,
   deleteProduct,
+  getTopTen,
 } = require('../controllers/productController')
 
 const router = express.Router()
+
+// Get top 10
+router.route('/top-10-cheeper').get(getTopTen, getAllProducts)
 
 router.route('/').get(getAllProducts).post(createProduct)
 router

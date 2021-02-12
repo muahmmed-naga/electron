@@ -1,5 +1,15 @@
 const ProductModel = require('../models/productModel')
 
+// Get top 10 products
+exports.getTopTen = (req, res, next) => {
+  req.query.limit = '10'
+  req.query.sort = 'price,name,id'
+  req.query.fields = 'name,price,category,quantity,ratingAverage'
+
+  next()
+}
+
+// Get all Products
 exports.getAllProducts = async (req, res) => {
   try {
     const queryObj = { ...req.query }
@@ -31,6 +41,20 @@ exports.getAllProducts = async (req, res) => {
       query = query.select(fields)
     } else {
       query = query.select('-__v')
+    }
+
+    // Pagination
+    const count = await ProductModel.countDocuments()
+
+    const page = req.query.page * 1 || 1
+    const limit = req.query.limit * 1 || count
+    const skip = (page - 1) * limit
+
+    query = query.skip(skip).limit(limit)
+
+    if (req.query.page) {
+      const count = await ProductModel.countDocuments()
+      if (skip >= count) throw new Error('This page is not exists')
     }
 
     const products = await query
