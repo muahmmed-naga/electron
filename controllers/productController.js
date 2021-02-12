@@ -9,55 +9,71 @@ exports.getTopTen = (req, res, next) => {
   next()
 }
 
-// Get all Products
-exports.getAllProducts = async (req, res) => {
-  try {
-    const queryObj = { ...req.query }
+class APIFuctionality {
+  constructor(query, queryString) {
+    this.query = query
+    this.queryString = queryString
+  }
 
-    // Delete unexpected query from the request
+  filter() {
+    const queryObj = { ...this.queryString }
+
     const excludeQueries = ['page', 'limit', 'sort', 'fields']
     excludeQueries.forEach((el) => delete queryObj[el])
 
-    // Filter by mongoDB pattern
     let queryStr = JSON.stringify(queryObj)
     const queryResult = queryStr.replace(
       /\b(gt|gte|lt|lte)\b/g,
       (match) => `$${match}`
     )
 
-    let query = ProductModel.find(JSON.parse(queryResult))
+    this.query = this.query.find(JSON.parse(queryResult))
 
-    // Sorting
-    if (req.query.sort) {
-      const sort = req.query.sort.split(',').join(' ')
-      query = query.sort(sort)
+    return this
+  }
+
+  sort() {
+    if (this.queryString.sort) {
+      const sort = this.queryString.sort.split(',').join(' ')
+      this.query = this.query.sort(sort)
     } else {
-      query = query.sort('-created_at')
+      this.query = this.query.sort('-created_at')
     }
 
-    // Show fields
-    if (req.query.fields) {
-      const fields = req.query.fields.split(',').join(' ')
-      query = query.select(fields)
+    return this
+  }
+
+  limitFields() {
+    if (this.queryString.fields) {
+      const fields = this.queryString.fields.split(',').join(' ')
+      this.query = this.query.select(fields)
     } else {
-      query = query.select('-__v')
+      this.query = this.query.select('-__v')
     }
 
-    // Pagination
-    const count = await ProductModel.countDocuments()
+    return this
+  }
 
-    const page = req.query.page * 1 || 1
-    const limit = req.query.limit * 1 || count
+  pageinate() {
+    const page = this.queryString.page * 1 || 1
+    const limit = this.queryString.limit * 1 || 30
     const skip = (page - 1) * limit
 
-    query = query.skip(skip).limit(limit)
+    this.query = this.query.skip(skip).limit(limit)
 
-    if (req.query.page) {
-      const count = await ProductModel.countDocuments()
-      if (skip >= count) throw new Error('This page is not exists')
-    }
+    return this
+  }
+}
 
-    const products = await query
+// Get all Products
+exports.getAllProducts = async (req, res) => {
+  try {
+    const APIInstance = new APIFuctionality(ProductModel.find(), req.query)
+      .filter()
+      .sort()
+      .limitFields()
+      .pageinate()
+    const products = await APIInstance.query
 
     return res.status(200).json({
       status: 'success',
