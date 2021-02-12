@@ -38,6 +38,7 @@ const productSchema = new mongoose.Schema({
   created_at: {
     type: String,
     default: new Date().toISOString(),
+    select: false,
   },
 })
 

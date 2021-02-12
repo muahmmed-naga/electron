@@ -5,8 +5,8 @@ exports.getAllProducts = async (req, res) => {
     const queryObj = { ...req.query }
 
     // Delete unexpected query from the request
-    const exceptedQuery = ['page', 'limit', 'sort', 'fields']
-    exceptedQuery.forEach((el) => delete queryObj[el])
+    const excludeQueries = ['page', 'limit', 'sort', 'fields']
+    excludeQueries.forEach((el) => delete queryObj[el])
 
     // Filter by mongoDB pattern
     let queryStr = JSON.stringify(queryObj)
@@ -19,10 +19,18 @@ exports.getAllProducts = async (req, res) => {
 
     // Sorting
     if (req.query.sort) {
-      const sortedBy = req.query.sort.split(',').join(' ')
-      query = query.sort(sortedBy)
+      const sort = req.query.sort.split(',').join(' ')
+      query = query.sort(sort)
     } else {
       query = query.sort('-created_at')
+    }
+
+    // Show fields
+    if (req.query.fields) {
+      const fields = req.query.fields.split(',').join(' ')
+      query = query.select(fields)
+    } else {
+      query = query.select('-__v')
     }
 
     const products = await query
