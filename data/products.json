@@ -126,56 +126,80 @@
     "name": "Product name fsafa",
     "price": 222,
     "category": "Category",
-    "quantity": 3
+    "quantity": 3,
+    "sizes": [
+      "M"
+    ]
   },
   {
     "image": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GameStation_720x.jpg?v=1604559863",
     "name": "Product name rw2",
     "price": 243,
     "category": "Category",
-    "quantity": 3
+    "quantity": 3,
+    "sizes": [
+      "LX"
+    ]
   },
   {
     "image": "//cdn.shopify.com/s/files/1/0066/4322/0562/products/Smartphone4_720x.jpg?v=1604559863",
     "name": "Product name r22sd",
     "price": 542,
     "category": "Category",
-    "quantity": 3
+    "quantity": 3,
+    "sizes": [
+      "S"
+    ]
   },
   {
     "image": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863",
     "name": "Product name dsafssfs",
     "price": 920,
     "category": "Category",
-    "quantity": 3
+    "quantity": 3,
+    "sizes": [
+      "S"
+    ]
   },
   {
     "image": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Earphones_1920x.jpg?v=1604559866",
     "name": "Product name 1",
     "price": 4230,
     "category": "Category",
-    "quantity": 3
+    "quantity": 3,
+    "sizes": [
+      "XS"
+    ]
   },
   {
     "image": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Smartwatch_1920x.jpg?v=1604559863",
     "name": "Product name 2",
     "price": 4230,
     "category": "category",
-    "quantity": 3
+    "quantity": 3,
+    "sizes": [
+      "M"
+    ]
   },
   {
     "image": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863",
     "name": "Product name 3",
     "price": 883,
     "category": "category",
-    "quantity": 3
+    "quantity": 3,
+    "sizes": [
+      "L"
+    ]
   },
   {
     "image": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/ActionCamera_1920x.jpg?v=1604559863",
     "name": "Product name fs",
     "price": 992,
     "category": "category",
-    "quantity": 3
+    "quantity": 3,
+    "sizes": [
+      "XL"
+    ]
   },
   {
     "image": "https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Earphones_1920x.jpg?v=1604559866",
