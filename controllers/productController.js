@@ -214,3 +214,51 @@ exports.productsRatingStatistics = async (req, res) => {
     })
   }
 }
+
+exports.productsMonthStatistics = async (req, res) => {
+  try {
+    const year = req.params.year * 1
+
+    const month_selles_statistics = await ProductModel.aggregate([
+      {
+        $unwind: '$sellesDates',
+      },
+      {
+        $match: {
+          sellesDates: {
+            $gte: new Date(`${year}-01-01`),
+            $lte: new Date(`${year}-12-31`),
+          },
+        },
+      },
+      {
+        $group: {
+          _id: { $month: '$sellesDates' },
+          total: { $sum: 1 },
+          products: { $push: '$name' },
+        },
+      },
+      {
+        $addFields: { month: '$_id' },
+      },
+      {
+        $project: { _id: 0 },
+      },
+      {
+        $sort: { total: -1 },
+      },
+    ])
+
+    return res.status(200).json({
+      status: 'success',
+      data: {
+        month_selles_statistics,
+      },
+    })
+  } catch (err) {
+    return res.status(404).json({
+      status: 'fail',
+      msg: err,
+    })
+  }
+}

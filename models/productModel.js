@@ -40,6 +40,7 @@ const productSchema = new mongoose.Schema({
     default: new Date().toISOString(),
     select: false,
   },
+  sellesDates: [Date],
 })
 
 const Product = mongoose.model('Product', productSchema)

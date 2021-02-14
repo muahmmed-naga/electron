@@ -9,6 +9,8 @@ const {
   productsStatistics,
   productsSizesStatistics,
   productsRatingStatistics,
+  productsMonthStatistics,
+  productsWeekStatistics,
 } = require('../controllers/productController')
 
 const router = express.Router()
@@ -20,6 +22,7 @@ router.route('/top-10-cheeper').get(getTopTen, getAllProducts)
 router.route('/products-statistics/prices').get(productsStatistics)
 router.route('/products-statistics/sizes').get(productsSizesStatistics)
 router.route('/products-statistics/rating').get(productsRatingStatistics)
+router.route('/products-statistics/:year/month').get(productsMonthStatistics)
 
 router.route('/').get(getAllProducts).post(createProduct)
 router
