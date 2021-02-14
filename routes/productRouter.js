@@ -7,6 +7,8 @@ const {
   deleteProduct,
   getTopTen,
   productsStatistics,
+  productsSizesStatistics,
+  productsRatingStatistics,
 } = require('../controllers/productController')
 
 const router = express.Router()
@@ -14,7 +16,10 @@ const router = express.Router()
 // Get top 10
 router.route('/top-10-cheeper').get(getTopTen, getAllProducts)
 
-router.route('/products-statistics').get(productsStatistics)
+// Aggregation Piplines
+router.route('/products-statistics/prices').get(productsStatistics)
+router.route('/products-statistics/sizes').get(productsSizesStatistics)
+router.route('/products-statistics/rating').get(productsRatingStatistics)
 
 router.route('/').get(getAllProducts).post(createProduct)
 router

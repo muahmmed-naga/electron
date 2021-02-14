@@ -119,13 +119,17 @@ exports.productsStatistics = async (req, res) => {
       },
       {
         $group: {
-          _id: '$sizes',
+          _id: '$price',
           numPrices: { $sum: 1 },
           avgPrice: { $avg: '$price' },
           minPrice: { $min: '$price' },
           maxPrice: { $max: '$price' },
           totalPrices: { $sum: '$price' },
+          totalQty: { $sum: '$quantity' },
         },
+      },
+      {
+        $sort: { minPrice: -1 },
       },
     ])
 
@@ -136,6 +140,74 @@ exports.productsStatistics = async (req, res) => {
       },
     })
   } catch (error) {
+    return res.status(404).json({
+      status: 'fail',
+      msg: err,
+    })
+  }
+}
+
+exports.productsSizesStatistics = async (req, res) => {
+  try {
+    const sizesStatistics = await ProductModel.aggregate([
+      {
+        $match: { price: { $gte: 0 } },
+      },
+      {
+        $group: {
+          _id: '$sizes',
+          minPrice: { $min: '$price' },
+          maxPrice: { $max: '$price' },
+          avgPrices: { $avg: '$price' },
+          totalPrices: { $sum: '$prices' },
+        },
+      },
+      {
+        $sort: { minPrice: -1 },
+      },
+    ])
+
+    return res.status(200).json({
+      status: 'success',
+      data: {
+        sizesStatistics,
+      },
+    })
+  } catch (error) {
+    return res.status(404).json({
+      status: 'fail',
+      msg: err,
+    })
+  }
+}
+
+exports.productsRatingStatistics = async (req, res) => {
+  try {
+    const ratingStatistics = await ProductModel.aggregate([
+      {
+        $match: { ratingAverage: { $gte: 0 } },
+      },
+      {
+        $group: {
+          _id: '$ratingAverage',
+          count: { $sum: 1 },
+          minRatingAverage: { $min: '$ratingAverage' },
+          maxRatingAverage: { $max: '$ratingAverage' },
+          avgRatinAverage: { $avg: '$ratingAverage' },
+        },
+      },
+      {
+        $sort: { minRatingAverage: -1 },
+      },
+    ])
+
+    return res.status(200).json({
+      status: 'success',
+      data: {
+        ratingStatistics,
+      },
+    })
+  } catch (err) {
     return res.status(404).json({
       status: 'fail',
       msg: err,
