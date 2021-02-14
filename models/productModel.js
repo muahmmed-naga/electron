@@ -7,6 +7,8 @@ const productSchema = new mongoose.Schema({
     required: [true, 'Product must have a Name'],
     // unique: true,
     trim: true,
+    maxLength: [40, 'Product name must be less or equal 40 character'],
+    minLength: [10, 'Product name must be more or equal 10 characters'],
   },
   slug: String,
   price: {
@@ -16,6 +18,8 @@ const productSchema = new mongoose.Schema({
   ratingAverage: {
     type: Number,
     default: 4.5,
+    min: [0, 'Product rating must be above 1.0'],
+    max: [5, 'Product rating must be below 5.0'],
   },
   ratingQuantity: {
     type: Number,
@@ -34,7 +38,14 @@ const productSchema = new mongoose.Schema({
     required: [true, 'Product must have a quantity'],
   },
   thumbnails: [String],
-  sizes: [String],
+
+  sizes: {
+    type: [String],
+    enum: {
+      values: ['XS', 'S', 'M', 'L', 'XL'],
+      message: 'Sizes is either: XL, S, M, L, XL',
+    },
+  },
   description: String,
   additionalDetails: [String],
   created_at: {
