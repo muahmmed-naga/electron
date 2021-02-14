@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const slugify = require('slugify')
 
 const productSchema = new mongoose.Schema({
   name: {
@@ -7,6 +8,7 @@ const productSchema = new mongoose.Schema({
     // unique: true,
     trim: true,
   },
+  slug: String,
   price: {
     type: Number,
     required: [true, 'Product must have a price'],
@@ -41,6 +43,12 @@ const productSchema = new mongoose.Schema({
     select: false,
   },
   sellesDates: [Date],
+})
+
+// Document Middleware: runs only before .save() and .create()
+productSchema.pre('save', function (next) {
+  this.slug = slugify(this.name, { lower: true })
+  next()
 })
 
 const Product = mongoose.model('Product', productSchema)

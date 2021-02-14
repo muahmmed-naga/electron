@@ -10,7 +10,6 @@ const {
   productsSizesStatistics,
   productsRatingStatistics,
   productsMonthStatistics,
-  productsWeekStatistics,
 } = require('../controllers/productController')
 
 const router = express.Router()
