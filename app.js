@@ -33,4 +33,12 @@ app.use('/api/v1/categories/on-sale', onSaleRouter)
 app.use('/api/v1/categories/top-rated', topRatedRouter)
 app.use('/api/v1/categories/new-arrivals', newArrivalsRouter)
 
+// Handle unhanlded routes
+app.all('*', (req, res, next) => {
+  res.status(404).json({
+    status: 'fail',
+    msg: `Can't find this route ${req.originalUrl} on this server`,
+  })
+})
+
 module.exports = app
