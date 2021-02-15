@@ -1,5 +1,8 @@
 const express = require('express')
 const morgan = require('morgan')
+// Errors handlers
+const AppErrors = require('./utils/AppErrors')
+const errorController = require('./controllers/errorController')
 
 // Routes
 const productRouter = require('./routes/productRouter')
@@ -15,7 +18,6 @@ const newArrivalsRouter = require('./routes/newArrivalsRouter')
 const app = express()
 
 // Middlewares
-
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'))
 }
@@ -35,10 +37,15 @@ app.use('/api/v1/categories/new-arrivals', newArrivalsRouter)
 
 // Handle unhanlded routes
 app.all('*', (req, res, next) => {
-  res.status(404).json({
-    status: 'fail',
-    msg: `Can't find this route ${req.originalUrl} on this server`,
-  })
+  next(
+    new AppErrors(
+      `Can't find this route ${req.originalUrl} on this server`,
+      404
+    )
+  )
 })
+
+// Global error handling middleware
+app.use(errorController)
 
 module.exports = app
