@@ -1,5 +1,6 @@
 const ProductModel = require('../models/productModel')
 const APIFeatures = require('../utils/apiFeatures')
+const AppErrors = require('./../utils/AppErrors')
 
 // Errors handler
 const catchAsyncError = require('./../utils/catchAsyncError')
@@ -23,6 +24,8 @@ exports.getAllProducts = catchAsyncError(async (req, res, next) => {
 
   const products = await APIInstance.query
 
+  if (!products) return new AppErrors('Products not found')
+
   return res.status(200).json({
     status: 'success',
     results: products.length,
@@ -35,6 +38,8 @@ exports.getAllProducts = catchAsyncError(async (req, res, next) => {
 exports.getProduct = catchAsyncError(async (req, res, next) => {
   const product = await ProductModel.findById(req.params.id)
 
+  if (!product) return next(new AppErrors('Product not found', 404))
+
   return res.status(200).json({
     status: 'success',
     data: {
@@ -45,6 +50,8 @@ exports.getProduct = catchAsyncError(async (req, res, next) => {
 
 exports.createProduct = catchAsyncError(async (req, res, next) => {
   const product = await ProductModel.create(req.body)
+
+  if (!product) return next(new AppErrors('Product not found', 404))
 
   return res.status(200).json({
     status: 'success',
@@ -64,6 +71,8 @@ exports.updateProduct = catchAsyncError(async (req, res, next) => {
     }
   )
 
+  if (!product) return next(new AppErrors('Product not found', 404))
+
   return res.status(200).json({
     status: 'suucess',
     product,
@@ -71,7 +80,9 @@ exports.updateProduct = catchAsyncError(async (req, res, next) => {
 })
 
 exports.deleteProduct = catchAsyncError(async (req, res, next) => {
-  await ProductModel.findByIdAndDelete(req.params.id)
+  const product = await ProductModel.findByIdAndDelete(req.params.id)
+
+  if (!product) return next(new AppErrors('Product not found', 404))
 
   req.status(204).json({
     status: 'success',
