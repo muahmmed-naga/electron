@@ -1,11 +1,10 @@
 const express = require('express')
+const morgan = require('morgan')
 
 const app = express()
 
-app.get('/', (req, res) => {
-  return res.status(200).json({
-    status: 'success',
-  })
-})
+// Middlewares
+app.use(express.json())
+app.use(morgan('dev'))
 
 module.exports = app
