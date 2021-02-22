@@ -1,0 +1,104 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Muhammad Naga\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
+
+PATH: 
+  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Muhammad Naga\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\nodejs;C:\Users\Muhammad Naga\AppData\Local\Microsoft\WindowsApps;C:\Users\Muhammad Naga\AppData\Roaming\npm
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  15.9.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@material-ui/icons/-/icons-4.11.2.tgz: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (C:\Users\Muhammad Naga\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141289:19)
+      at Object.onceWrapper (node:events:484:28)
+      at ClientRequest.emit (node:events:378:20)
+      at TLSSocket.emitRequestTimeout (node:_http_client:780:9)
+      at Object.onceWrapper (node:events:484:28)
+      at TLSSocket.emit (node:events:390:22)
+      at TLSSocket.Socket._onTimeout (node:net:480:8)
+      at listOnTimeout (node:internal/timers:557:17)
+      at processTimers (node:internal/timers:500:7)
+
+npm manifest: 
+  {
+    "name": "electron",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+      "@material-ui/core": "^4.11.3",
+      "@material-ui/icons": "^4.11.2",
+      "@testing-library/jest-dom": "^5.11.4",
+      "@testing-library/react": "^11.1.0",
+      "@testing-library/user-event": "^12.1.10",
+      "axios": "^0.21.1",
+      "bootstrap": "^4.6.0",
+      "faker": "^5.3.1",
+      "firebase": "^8.2.4",
+      "node-sass": "^4.0.0",
+      "react": "^17.0.1",
+      "react-alice-carousel": "^2.3.0",
+      "react-awesome-slider": "^4.1.0",
+      "react-bootstrap": "^1.4.3",
+      "react-countdown": "^2.3.1",
+      "react-dom": "^17.0.1",
+      "react-icons": "^4.1.0",
+      "react-image-gallery": "^1.0.8",
+      "react-redux": "^7.2.2",
+      "react-router-dom": "^5.2.0",
+      "react-scripts": "4.0.1",
+      "redux": "^4.0.5",
+      "redux-logger": "^3.0.6",
+      "styled-components": "^5.2.1",
+      "uuid": "^8.3.2",
+      "web-vitals": "^0.2.4",
+      "workbox-background-sync": "^5.1.3",
+      "workbox-broadcast-update": "^5.1.3",
+      "workbox-cacheable-response": "^5.1.3",
+      "workbox-core": "^5.1.3",
+      "workbox-expiration": "^5.1.3",
+      "workbox-google-analytics": "^5.1.3",
+      "workbox-navigation-preload": "^5.1.3",
+      "workbox-precaching": "^5.1.3",
+      "workbox-range-requests": "^5.1.3",
+      "workbox-routing": "^5.1.3",
+      "workbox-strategies": "^5.1.3",
+      "workbox-streams": "^5.1.3"
+    },
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+      "extends": [
+        "react-app",
+        "react-app/jest"
+      ]
+    },
+    "browserslist": {
+      "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
+    },
+    "proxy": "http://localhost:5000"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
