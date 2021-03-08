@@ -1,24 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 
 // Styles
-import './right-side-tab-featured.styles.scss';
-import { Link } from 'react-router-dom';
-import { IoEyeOutline } from 'react-icons/io5';
-import { IoMdHeartEmpty } from 'react-icons/io';
-import LoadingSpinner from '../../../loading-spinner/loading-spinner.comp';
+import './right-side-tab-featured.styles.scss'
+import { Link } from 'react-router-dom'
+import { IoEyeOutline } from 'react-icons/io5'
+import { IoMdHeartEmpty } from 'react-icons/io'
+import LoadingSpinner from '../../../loading-spinner/loading-spinner.comp'
 
 const RightSideTabFeatured = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false)
+  const [data, setData] = useState([])
 
   useEffect(() => {
-    setIsLoading(true);
+    setIsLoading(true)
     axios
       .get('/api/v1/categories/featured')
-      .then((res) => setData(res.data.data.featured));
-    setTimeout(() => setIsLoading(false), 300);
-  }, []);
+      .then((res) => setData(res.data.data.featured))
+    setTimeout(() => setIsLoading(false), 300)
+  }, [])
 
   return (
     <>
@@ -62,7 +62,7 @@ const RightSideTabFeatured = () => {
         </div>
       )}
     </>
-  );
-};
+  )
+}
 
-export default RightSideTabFeatured;
+export default RightSideTabFeatured

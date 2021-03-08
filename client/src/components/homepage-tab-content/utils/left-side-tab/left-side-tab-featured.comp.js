@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 
 // Components
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 // Styles
-import './left-side-tab-featured.styles.scss';
+import './left-side-tab-featured.styles.scss'
 
 const LeftSideTabFeatured = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([])
 
   useEffect(() => {
     axios
       .get('/api/v1/categories/featured')
-      .then((res) => setData(res.data.data.featured));
-  }, []);
+      .then((res) => setData(res.data.data.featured))
+  }, [])
 
   return (
     <>
@@ -63,7 +63,7 @@ const LeftSideTabFeatured = () => {
         </div>
       ))}
     </>
-  );
-};
+  )
+}
 
-export default LeftSideTabFeatured;
+export default LeftSideTabFeatured

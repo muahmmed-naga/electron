@@ -1,26 +1,30 @@
-const app = require('./app')
-const dotenv = require('dotenv')
-const mongoose = require('mongoose')
+const express = require('express')
+const products = require('./data/products')
 
-// Environment variables
-dotenv.config({
-  path: './../.env',
+const app = express()
+
+app.get('/', (req, res) => {
+  res.send('Success API')
 })
 
-// Connect to database
-const DB = process.env.DB_URL.replace('<PASSWORD>', process.env.DB_PASSWORD)
-
-mongoose
-  .connect(DB, {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
+app.get('/api/products', (req, res) => {
+  res.status(200).json({
+    status: 'success',
+    results: products.length,
+    products,
   })
-  .then(() => console.log('Connected to database'))
-  .catch((err) => console.log(err))
+})
 
-// Server
-const PORT = process.env.PORT || 5000
+app.get('/api/products/:id', (req, res) => {
+  const id = req.params.id * 1
+  const product = products.find((product) => product._id === id)
 
-app.listen(PORT, () => {
-  console.log(`Running at  ${PORT}`)
+  res.status(200).json({
+    status: 'success',
+    product,
+  })
+})
+
+app.listen(5000, () => {
+  console.log('Running at 5000')
 })

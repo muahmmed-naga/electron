@@ -1,37 +1,35 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react'
 
-import axios from 'axios';
-import LoadingSpinner from '../components/loading-spinner/loading-spinner.comp';
+import Rating from 'react-rating'
+
+// components
+import Products from './../products'
+import { AiOutlineStar, AiTwotoneStar } from 'react-icons/ai'
 
 const TestPage = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [products, setProducts] = useState([]);
-
-  const fetchProducts = () => {
-    axios
-      .get('/api/v1/products')
-      .then((res) => setProducts(res.data.data.products));
-  };
-
-  useEffect(() => {
-    setIsLoading(true);
-    fetchProducts();
-    setIsLoading(false);
-  }, []);
-
   return (
-    <>
-      {isLoading ? (
-        <LoadingSpinner />
-      ) : (
-        <div className="custom-container">
-          {products?.map(({ id, name }) => (
-            <span key={id}>{name}</span>
-          ))}
+    <div>
+      <h1>Test Page</h1>
+      {Products.map((item) => (
+        <div key={item.id}>
+          <img src={item.image} alt="" />
+          <h1>{item.name}</h1>
         </div>
-      )}
-    </>
-  );
-};
+      ))}
+      <Rating
+        start={0}
+        stop={5}
+        initialRating={1.3}
+        emptySymbol={<AiOutlineStar />}
+        fullSymbol={<AiTwotoneStar />}
+        onChange={() => console.log('Rating changed')}
+      />
+    </div>
+  )
+}
 
-export default TestPage;
+// Rating.defaultProps = {
+//   color: 'yellow',
+// }
+
+export default TestPage
