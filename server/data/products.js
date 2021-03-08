@@ -1,7 +1,7 @@
 const products = [
   {
     _id: 1,
-    name: 'Product 1',
+    name: 'Naga Product Name',
     image: '/images/products/product-1.jpg',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, minima.',
@@ -71,4 +71,4 @@ const products = [
   },
 ]
 
-module.exports = products
+export default products
