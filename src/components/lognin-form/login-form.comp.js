@@ -1,7 +1,8 @@
-import React from 'react';
+import React from 'react'
+import { signInWithGoogle } from '../../firebase/firebase.utils'
 
 // Styles
-import './login-form.styles.scss';
+import './login-form.styles.scss'
 
 const LoginForm = () => {
   return (
@@ -18,9 +19,17 @@ const LoginForm = () => {
         <button type="submit" className="cutom-button">
           Login
         </button>
+
+        <button
+          type="submit"
+          className="cutom-button"
+          onClick={signInWithGoogle}
+        >
+          Sign in With Google
+        </button>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default LoginForm;
+export default LoginForm

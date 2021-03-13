@@ -1,60 +1,207 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-
 // Components
-import { Link } from 'react-router-dom';
-import LoadingSpinner from '../../../loading-spinner/loading-spinner.comp';
+import { Link } from 'react-router-dom'
 
 const CategoriesTopRated = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    setIsLoading(true);
-    axios
-      .get('/api/v1/categories/top-rated')
-      .then((res) => setData(res.data.data.top_rated));
-    setTimeout(() => setIsLoading(false), 300);
-  }, []);
-
   const truncateStr = (str, max) => {
     if (str?.length > max) {
-      return str.slice(0, max - 3) + '...';
-    } else return str;
-  };
+      return str.slice(0, max - 3) + '...'
+    } else return str
+  }
 
   return (
     <div className="tab-content">
-      {isLoading ? (
-        <LoadingSpinner />
-      ) : (
-        data.map(({ id, name, img, price, category }) => (
-          <div className="align-tiny-product-wrapper flex-align-center">
-            <Link
-              to={`/categories/top-rated/product/${id}`}
-              className="img-wrapper"
-            >
-              <img src={img} alt="product" />
-            </Link>
+      <div className="align-tiny-product-wrapper flex-align-center">
+        <Link to={`/categories/audios/product/1`} className="img-wrapper">
+          <img
+            src="https://demo3.madrasthemes.com/electro/v2/wp-content/uploads/2016/03/GamePad-300x300.jpg"
+            alt="product"
+          />
+        </Link>
 
-            <div className="content">
-              <div className="category">{category}</div>
-              <Link
-                to={`/categories/top-rated/product/${id}`}
-                className="product-name"
-              >
-                {truncateStr(name, 15)}
-              </Link>
-              <div className="price">
-                <div className="new">${price}.00</div>
-                <del>$250.00</del>
-              </div>
-            </div>
+        <div className="content">
+          <div className="category">category</div>
+          <Link to={`/categories/audios/product/1}`} className="product-name">
+            {truncateStr('Product Name', 15)}
+          </Link>
+          <div className="price">
+            <div className="new">$100.00</div>
+            <del>$250.00</del>
           </div>
-        ))
-      )}
-    </div>
-  );
-};
+        </div>
+      </div>
+      <div className="align-tiny-product-wrapper flex-align-center">
+        <Link to={`/categories/audios/product/1`} className="img-wrapper">
+          <img
+            src="https://demo3.madrasthemes.com/electro/v2/wp-content/uploads/2016/03/GamePad-300x300.jpg"
+            alt="product"
+          />
+        </Link>
 
-export default CategoriesTopRated;
+        <div className="content">
+          <div className="category">category</div>
+          <Link to={`/categories/audios/product/1}`} className="product-name">
+            {truncateStr('Product Name', 15)}
+          </Link>
+          <div className="price">
+            <div className="new">$100.00</div>
+            <del>$250.00</del>
+          </div>
+        </div>
+      </div>
+      <div className="align-tiny-product-wrapper flex-align-center">
+        <Link to={`/categories/audios/product/1`} className="img-wrapper">
+          <img
+            src="https://demo3.madrasthemes.com/electro/v2/wp-content/uploads/2016/03/GamePad-300x300.jpg"
+            alt="product"
+          />
+        </Link>
+
+        <div className="content">
+          <div className="category">category</div>
+          <Link to={`/categories/audios/product/1}`} className="product-name">
+            {truncateStr('Product Name', 15)}
+          </Link>
+          <div className="price">
+            <div className="new">$100.00</div>
+            <del>$250.00</del>
+          </div>
+        </div>
+      </div>
+      <div className="align-tiny-product-wrapper flex-align-center">
+        <Link to={`/categories/audios/product/1`} className="img-wrapper">
+          <img
+            src="https://demo3.madrasthemes.com/electro/v2/wp-content/uploads/2016/03/GamePad-300x300.jpg"
+            alt="product"
+          />
+        </Link>
+
+        <div className="content">
+          <div className="category">category</div>
+          <Link to={`/categories/audios/product/1}`} className="product-name">
+            {truncateStr('Product Name', 15)}
+          </Link>
+          <div className="price">
+            <div className="new">$100.00</div>
+            <del>$250.00</del>
+          </div>
+        </div>
+      </div>
+      <div className="align-tiny-product-wrapper flex-align-center">
+        <Link to={`/categories/audios/product/1`} className="img-wrapper">
+          <img
+            src="https://demo3.madrasthemes.com/electro/v2/wp-content/uploads/2016/03/GamePad-300x300.jpg"
+            alt="product"
+          />
+        </Link>
+
+        <div className="content">
+          <div className="category">category</div>
+          <Link to={`/categories/audios/product/1}`} className="product-name">
+            {truncateStr('Product Name', 15)}
+          </Link>
+          <div className="price">
+            <div className="new">$100.00</div>
+            <del>$250.00</del>
+          </div>
+        </div>
+      </div>
+      <div className="align-tiny-product-wrapper flex-align-center">
+        <Link to={`/categories/audios/product/1`} className="img-wrapper">
+          <img
+            src="https://demo3.madrasthemes.com/electro/v2/wp-content/uploads/2016/03/GamePad-300x300.jpg"
+            alt="product"
+          />
+        </Link>
+
+        <div className="content">
+          <div className="category">category</div>
+          <Link to={`/categories/audios/product/1}`} className="product-name">
+            {truncateStr('Product Name', 15)}
+          </Link>
+          <div className="price">
+            <div className="new">$100.00</div>
+            <del>$250.00</del>
+          </div>
+        </div>
+      </div>
+      <div className="align-tiny-product-wrapper flex-align-center">
+        <Link to={`/categories/audios/product/1`} className="img-wrapper">
+          <img
+            src="https://demo3.madrasthemes.com/electro/v2/wp-content/uploads/2016/03/GamePad-300x300.jpg"
+            alt="product"
+          />
+        </Link>
+
+        <div className="content">
+          <div className="category">category</div>
+          <Link to={`/categories/audios/product/1}`} className="product-name">
+            {truncateStr('Product Name', 15)}
+          </Link>
+          <div className="price">
+            <div className="new">$100.00</div>
+            <del>$250.00</del>
+          </div>
+        </div>
+      </div>
+      <div className="align-tiny-product-wrapper flex-align-center">
+        <Link to={`/categories/audios/product/1`} className="img-wrapper">
+          <img
+            src="https://demo3.madrasthemes.com/electro/v2/wp-content/uploads/2016/03/GamePad-300x300.jpg"
+            alt="product"
+          />
+        </Link>
+
+        <div className="content">
+          <div className="category">category</div>
+          <Link to={`/categories/audios/product/1}`} className="product-name">
+            {truncateStr('Product Name', 15)}
+          </Link>
+          <div className="price">
+            <div className="new">$100.00</div>
+            <del>$250.00</del>
+          </div>
+        </div>
+      </div>
+      <div className="align-tiny-product-wrapper flex-align-center">
+        <Link to={`/categories/audios/product/1`} className="img-wrapper">
+          <img
+            src="https://demo3.madrasthemes.com/electro/v2/wp-content/uploads/2016/03/GamePad-300x300.jpg"
+            alt="product"
+          />
+        </Link>
+
+        <div className="content">
+          <div className="category">category</div>
+          <Link to={`/categories/audios/product/1}`} className="product-name">
+            {truncateStr('Product Name', 15)}
+          </Link>
+          <div className="price">
+            <div className="new">$100.00</div>
+            <del>$250.00</del>
+          </div>
+        </div>
+      </div>
+      <div className="align-tiny-product-wrapper flex-align-center">
+        <Link to={`/categories/audios/product/1`} className="img-wrapper">
+          <img
+            src="https://demo3.madrasthemes.com/electro/v2/wp-content/uploads/2016/03/GamePad-300x300.jpg"
+            alt="product"
+          />
+        </Link>
+
+        <div className="content">
+          <div className="category">category</div>
+          <Link to={`/categories/audios/product/1}`} className="product-name">
+            {truncateStr('Product Name', 15)}
+          </Link>
+          <div className="price">
+            <div className="new">$100.00</div>
+            <del>$250.00</del>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default CategoriesTopRated

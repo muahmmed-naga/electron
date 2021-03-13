@@ -1,63 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-
 // Components
-import { Link } from 'react-router-dom';
-import AliceCarousel from 'react-alice-carousel';
-import { AiOutlineStar } from 'react-icons/ai';
-import { IoIosArrowForward } from 'react-icons/io';
-import ProdductDescriptioTabs from './utils/tabs.comp';
-import { Accordion, Card, Row, Col } from 'react-bootstrap';
-import NEW_ARRIVALS from '../../components/new-arrivals/data';
-import TinyProduct from '../../components/tiny-product/tiny-product.comp';
-import RouteNavigator from '../../components/route-navigator/route-navigator.comp';
-import LoadingSpinner from '../../components/loading-spinner/loading-spinner.comp';
-import ProductsMultiColumns from '../../components/products-multi-colums/products-multi-colums.comp';
+import { Link } from 'react-router-dom'
+import AliceCarousel from 'react-alice-carousel'
+import { AiOutlineStar } from 'react-icons/ai'
+import { IoIosArrowForward } from 'react-icons/io'
+import ProdductDescriptioTabs from './utils/tabs.comp'
+import { Accordion, Card, Row, Col } from 'react-bootstrap'
+import TinyProduct from '../../components/tiny-product/tiny-product.comp'
+import RouteNavigator from '../../components/route-navigator/route-navigator.comp'
+import ProductsMultiColumns from '../../components/products-multi-colums/products-multi-colums.comp'
 
 // Styles
-import 'react-alice-carousel/lib/alice-carousel.css';
-import './categories-featured.styles.scss';
+import 'react-alice-carousel/lib/alice-carousel.css'
+import './categories-featured.styles.scss'
 
-const CategoriesFeatured = ({ match }) => {
-  const { params } = match;
-
-  const [isLoading, setIsLoading] = useState(false);
-  const [productName, setProductName] = useState('');
-  const [price, setPrice] = useState(null);
-  const [category, setCategory] = useState('');
-  const [productImg, setProductImg] = useState('');
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    document.title = `Electron | Product Page`;
-
-    setIsLoading(true);
-    axios
-      .get(`/api/v1/categories/featured/product/${params.id}`)
-      .then((res) => {
-        const { name, img, price, category } = res.data.data.product;
-
-        setProductName(name);
-        setPrice(price);
-        setCategory(category);
-        setProductImg(img);
-      });
-    setTimeout(() => setIsLoading(false), 500);
-  }, [params.id]);
-
+const CategoriesFeatured = () => {
   // eslint-disable-next-line
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(1)
 
   // Product image gallery
   const responsive = {
     0: { items: 1 },
     568: { items: 1 },
     1024: { items: 1 },
-  };
+  }
 
-  const items = NEW_ARRIVALS.map((item) => (
-    <TinyProduct key={item.id} {...item} />
-  ));
+  const items = [
+    <TinyProduct productImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
+    <TinyProduct productImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
+    <TinyProduct productImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
+    <TinyProduct productImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
+    <TinyProduct productImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
+    <TinyProduct productImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
+    <TinyProduct productImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
+    <TinyProduct productImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
+    <TinyProduct productImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
+    <TinyProduct productImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
+    <TinyProduct productImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
+  ]
 
   return (
     <>
@@ -149,22 +128,18 @@ const CategoriesFeatured = ({ match }) => {
                   lg={6}
                   style={{ display: 'flex', alignItems: 'center' }}
                 >
-                  {isLoading ? (
-                    <LoadingSpinner />
-                  ) : (
-                    <div className="preview-products-images">
-                      <img
-                        src={productImg}
-                        alt={productName}
-                        style={{ width: '100%' }}
-                      />
-                    </div>
-                  )}
+                  <div className="preview-products-images">
+                    <img
+                      src="https://demo3.madrasthemes.com/electro/v2/wp-content/uploads/2016/03/GamePad-300x300.jpg"
+                      alt="productName"
+                      style={{ width: '100%' }}
+                    />
+                  </div>
                 </Col>
                 <Col xs={12} md={8} lg={6}>
                   <div className="upper">
-                    <div className="category">{category}</div>
-                    <div className="product-name">{productName}</div>
+                    <div className="category">category</div>
+                    <div className="product-name">productName</div>
                     <div className="rating flex-align-center">
                       <div className="stars">
                         <AiOutlineStar />
@@ -196,7 +171,7 @@ const CategoriesFeatured = ({ match }) => {
                   </ul>
 
                   <div className="price">
-                    <div className="new">${price}</div>
+                    <div className="new">$100.43</div>
                     <del>$300.00</del>
                   </div>
 
@@ -240,7 +215,7 @@ const CategoriesFeatured = ({ match }) => {
       </div>
       <ProductsMultiColumns />
     </>
-  );
-};
+  )
+}
 
-export default CategoriesFeatured;
+export default CategoriesFeatured

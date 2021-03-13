@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 
 // Components
-import ImageGallery from 'react-image-gallery';
+import ImageGallery from 'react-image-gallery'
 
 // Styles
-import './middle-img-gallery.styles.scss';
+import './middle-img-gallery.styles.scss'
 
 const defaultImages = [
   {
@@ -25,7 +25,7 @@ const defaultImages = [
     thumbnail:
       'https://cdn.shopify.com/s/files/1/0066/4322/0562/products/Tablet_3929c9a4-1a61-4e52-91fb-8a07d394b56f_1366x.jpg?v=1604559863',
   },
-];
+]
 
 const MiddleImgGallery = () => {
   return (
@@ -38,7 +38,7 @@ const MiddleImgGallery = () => {
         slideInterval={100000}
       />
     </div>
-  );
-};
+  )
+}
 
-export default MiddleImgGallery;
+export default MiddleImgGallery
