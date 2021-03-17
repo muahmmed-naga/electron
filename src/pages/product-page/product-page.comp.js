@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import ImageGallery from 'react-image-gallery'
 import AliceCarousel from 'react-alice-carousel'
-import PRODUCTS_DATA from '../../data/categories_products'
 import { AiOutlineStar } from 'react-icons/ai'
 import { IoIosArrowForward } from 'react-icons/io'
 import ProdductDescriptioTabs from './utils/tabs.comp'
@@ -19,7 +18,7 @@ import 'react-alice-carousel/lib/alice-carousel.css'
 import './product-page.styles.scss'
 
 const ProductPage = ({ match }) => {
-  const { params } = match
+  // const { params } = match
 
   // eslint-disable-next-line
   const [count, setCount] = useState(1)

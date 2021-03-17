@@ -10,9 +10,9 @@ import AppUpperHeader from './components/upper-header/upper-header.comp'
 import ResponsiveMainHeader from './components/responsive/main-header/main-header.comp'
 
 // Pages
+import Homepage from './pages/Homepage'
 import Signup from './pages/Signup'
 import LoginPage from './pages/Login'
-import Homepage from './pages/Homepage'
 import TestPage from './pages/TestPage'
 import PageNotFound from './pages/PageNotFound'
 import CategoriesPage from './pages/CategoriesPage'

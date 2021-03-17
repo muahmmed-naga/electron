@@ -13,7 +13,6 @@ import TabContent from './../../data/tab-content'
 
 // Styles
 import './homepage-tab-content.styles.scss'
-
 const HomepageTabContent = () => {
   const [activeTab, setActiveTab] = useState('featured-tab')
   const featuredTab = TabContent.featured

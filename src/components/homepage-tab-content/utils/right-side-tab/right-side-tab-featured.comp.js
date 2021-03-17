@@ -5,11 +5,8 @@ import './right-side-tab-featured.styles.scss'
 import { Link } from 'react-router-dom'
 import { IoEyeOutline } from 'react-icons/io5'
 import { IoMdHeartEmpty } from 'react-icons/io'
-import TABS_CONTENT from '../../../../data/tab-content'
 
 const RightSideTabFeatured = ({ data }) => {
-  console.log(TABS_CONTENT)
-
   return (
     <div className="righ-side-tab-featured">
       {data.map(({ id, name, imgUrl, price, category }) => (
