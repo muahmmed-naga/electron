@@ -26,9 +26,10 @@
   }
 
   .content {
-    display: flex;
-    // grid-template-columns: repeat(3, 1fr);
+    display: grid;
     overflow: hidden;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
 
     .content-item {
       display: flex;
@@ -39,7 +40,7 @@
     .left-side-wrapper,
     .right-side-wrapper {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 2px;
     }
   }

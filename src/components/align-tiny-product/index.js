@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 // Styles
 import "./index.scss";
 
-const AlignTinyProduct = ({ id, name, img, price, category }) => {
+const AlignTinyProduct = ({ id, name, imgUrl, price, category }) => {
   // Truncate Strings
   const truncateStr = (str, max) => {
     if (str?.length > max) {
@@ -17,7 +17,7 @@ const AlignTinyProduct = ({ id, name, img, price, category }) => {
   return (
     <div className="align-tiny-product-wrapper flex-align-center">
       <Link to={`/collections/product/${id}`} className="img-wrapper">
-        <img src={img} alt="product" />
+        <img src={imgUrl} alt="product" />
       </Link>
 
       <div className="content">

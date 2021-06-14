@@ -63,7 +63,7 @@ const ProductPage = ({ match }) => {
 
   return (
     <>
-      <div className="custom-container product-page-wrapper">
+      <div className="custom-container  product-page-wrapper">
         <RouteNavigator prev="Accessories" current="Faxtex Product Sample" />
         <div className="content-wrapper">
           <Row>

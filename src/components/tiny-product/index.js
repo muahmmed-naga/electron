@@ -8,7 +8,7 @@ import { IoMdHeartEmpty } from "react-icons/io";
 // Styles
 import "./index.scss";
 
-const TinyProduct = ({ productImg }) => {
+const TinyProduct = ({ img }) => {
   return (
     <div className="tiny-product-wrapper">
       <div className="category">category</div>
@@ -16,7 +16,7 @@ const TinyProduct = ({ productImg }) => {
         Product name
       </Link>
       <Link to="#" className="img-wrapper">
-        <img src={productImg} alt="product" />
+        <img src={img} alt="product" />
       </Link>
 
       <div className="price">

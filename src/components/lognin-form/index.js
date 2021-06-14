@@ -18,10 +18,6 @@ const LoginForm = () => {
         <button type="submit" className="cutom-button">
           Login
         </button>
-
-        <button type="submit" className="cutom-button">
-          Sign in With Google
-        </button>
       </form>
     </div>
   );

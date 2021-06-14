@@ -103,10 +103,10 @@ const CartPage = () => {
                 {rows.map((row, idx) => (
                   <StyledTableRow key={idx}>
                     <StyledTableCell component="th" scope="row">
-                      <AlignTinyProduct imgUrl="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />
+                      <AlignTinyProduct imgUrl="https://wpbingosite.com/wordpress/funio/wp-content/uploads/2020/12/Image-12-1020x1020.jpg" />
                     </StyledTableCell>
                     <StyledTableCell align="left">
-                      {row.calories}
+                      ${row.calories}
                     </StyledTableCell>
                     <StyledTableCell align="left">{row.fat}</StyledTableCell>
                     <StyledTableCell align="left">{row.carbs}</StyledTableCell>

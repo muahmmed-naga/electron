@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 import { IoIosCall } from "react-icons/io";
 import { IoPersonAddOutline } from "react-icons/io5";
 import { GoMail } from "react-icons/go";
-import { MdLocalShipping } from "react-icons/md";
-import { GoLocation } from "react-icons/go";
 import { RiLoginBoxLine } from "react-icons/ri";
 
 // Styles
@@ -27,17 +25,6 @@ const AppUpperHeader = () => {
         </div>
       </div>
       <div className="right-side">
-        <div className="flex-align-center">
-          <Link to="#" className="item flex-align-center">
-            <GoLocation className="main-color" />
-            <p>Store Location</p>
-          </Link>
-          <Link to="#" className="item flex-align-center">
-            <MdLocalShipping className="main-color" />
-            <p>Track Your Order</p>
-          </Link>
-        </div>
-
         <div className="flex-align-center">
           <Link to="/account/login" className="item flex-align-center">
             <RiLoginBoxLine className="main-color" />

@@ -25,8 +25,11 @@ const Homepage = () => {
       <AppMainNavigator />
       <HomepageCarousel />
       <HomepageBanner />
+      <hr style={{ marginTop: "50px" }} />
       <HomepageTabContent />
+      <hr style={{ marginTop: "50px" }} />
       <HomepageCategoriesTabs />
+      <hr style={{ marginTop: "50px" }} />
       <BestSellerSection />
       <ShopAndSave />
       <NewArrivals />

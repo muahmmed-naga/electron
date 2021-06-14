@@ -67,7 +67,7 @@ const NewArrivalsPage = ({ match }) => {
           <Row>
             <Col xs={12} md={3} lg={3}>
               <div className="left-side">
-                <div className="title">Categories</div>
+                <div className="title">Categoriessss</div>
                 <Accordion>
                   <div className="list-item">
                     <Accordion.Toggle variant="link" eventKey="0">
