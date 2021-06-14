@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react";
 
 // Components
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 // Styles
-import './left-side-tab-featured.styles.scss'
+import "./left-side-tab-featured.styles.scss";
 
 const LeftSideTabFeatured = () => {
   return (
@@ -27,24 +27,9 @@ const LeftSideTabFeatured = () => {
         <del>$140.00</del>
       </div>
 
-      <div className="on-stock">
-        <div className="head">
-          <span>
-            Already Sold: <b>6</b>
-          </span>
-          <span>
-            Available: <b>26</b>
-          </span>
-        </div>
-
-        <div className="progress">
-          <div className="solded" />
-        </div>
-      </div>
-
       <div className="special-offer">special offer</div>
     </div>
-  )
-}
+  );
+};
 
-export default LeftSideTabFeatured
+export default LeftSideTabFeatured;

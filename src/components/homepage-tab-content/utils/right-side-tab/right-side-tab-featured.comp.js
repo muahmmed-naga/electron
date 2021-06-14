@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react";
 
 // Styles
-import './right-side-tab-featured.styles.scss'
-import { Link } from 'react-router-dom'
-import { IoEyeOutline } from 'react-icons/io5'
-import { IoMdHeartEmpty } from 'react-icons/io'
+import "./right-side-tab-featured.styles.scss";
+import { Link } from "react-router-dom";
+import { IoEyeOutline } from "react-icons/io5";
+import { IoMdHeartEmpty } from "react-icons/io";
 
 const RightSideTabFeatured = ({ data }) => {
   return (
@@ -15,8 +15,9 @@ const RightSideTabFeatured = ({ data }) => {
           <Link
             to={`/categories/featured/product/${id}`}
             className="product-name"
+            style={{ textAlign: "center" }}
           >
-            {name}
+            {name.substring(0, 25) + "..."}
           </Link>
           <Link
             to={`/categories/featured/product/${id}`}
@@ -43,7 +44,7 @@ const RightSideTabFeatured = ({ data }) => {
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default RightSideTabFeatured
+export default RightSideTabFeatured;

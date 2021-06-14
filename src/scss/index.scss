@@ -1,5 +1,5 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,700&display=swap");
 
 * {
   margin: 0;
@@ -8,7 +8,7 @@
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   // height: 5000px;
   overflow-x: hidden;
 }
@@ -34,9 +34,9 @@ p {
 }
 
 // Files
-@import './variables.scss';
-@import './classes.scss';
-@import './loops.scss';
+@import "./variables.scss";
+@import "./classes.scss";
+@import "./loops.scss";
 
 // Custom classes
 .main-color {

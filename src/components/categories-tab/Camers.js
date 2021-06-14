@@ -1,14 +1,14 @@
-import React from 'react'
+import React from "react";
 
 // Components
 
-import { Link } from 'react-router-dom'
-import { IoEyeOutline } from 'react-icons/io5'
-import { IoMdHeartEmpty } from 'react-icons/io'
-import MiddleImgGallery from './utils/middle-img-gallery/middle-img-gallery.comp'
+import { Link } from "react-router-dom";
+import { IoEyeOutline } from "react-icons/io5";
+import { IoMdHeartEmpty } from "react-icons/io";
+import MiddleImgGallery from "./utils/middle-img-gallery";
 
 const Camers = ({ data }) => {
-  const { left, middle, right } = data
+  const { left, middle, right } = data;
 
   return (
     <>
@@ -20,7 +20,7 @@ const Camers = ({ data }) => {
               to={`/categories/best-sellers/product/${id}`}
               className="product-name"
             >
-              {name}
+              {name.substring(0, 25) + "..."}
             </Link>
             <Link
               to={`/categories/best-sellers/product/${id}`}
@@ -88,7 +88,7 @@ const Camers = ({ data }) => {
         ))}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Camers
+export default Camers;

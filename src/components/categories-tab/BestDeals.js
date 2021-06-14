@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 
 // Components
-import { Link } from 'react-router-dom'
-import { IoEyeOutline } from 'react-icons/io5'
-import { IoMdHeartEmpty } from 'react-icons/io'
-import MiddleImgGallery from './utils/middle-img-gallery/middle-img-gallery.comp'
+import { Link } from "react-router-dom";
+import { IoEyeOutline } from "react-icons/io5";
+import { IoMdHeartEmpty } from "react-icons/io";
+import MiddleImgGallery from "./utils/middle-img-gallery";
 
 const BestDeals = ({ data }) => {
-  const { left, middle, right } = data
+  const { left, middle, right } = data;
 
   return (
     <>
@@ -19,7 +19,7 @@ const BestDeals = ({ data }) => {
               to={`/collections/best-sellers/product/${id}`}
               className="product-name"
             >
-              {name}
+              {name.substring(0, 25) + "..."}
             </Link>
             <Link
               to={`/collections/best-sellers/product/${id}`}
@@ -87,7 +87,7 @@ const BestDeals = ({ data }) => {
         ))}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default BestDeals
+export default BestDeals;

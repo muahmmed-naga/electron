@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
 // Components
-import { Row, Col } from 'react-bootstrap';
-import LoginForm from '../components/lognin-form/login-form.comp';
-import SignupForm from '../components/signup-form/signup-form.comp';
+import { Row, Col } from "react-bootstrap";
+import LoginForm from "../components/lognin-form";
+import SignupForm from "../components/signup-form";
 
 const Signup = () => {
   // Handlers functions

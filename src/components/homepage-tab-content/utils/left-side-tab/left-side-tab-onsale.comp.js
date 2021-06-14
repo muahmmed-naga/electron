@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 
 // Components,
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 // Styles
-import './left-side-tab-featured.styles.scss'
+import "./left-side-tab-featured.styles.scss";
 
 const LeftSideTabOnSale = ({ data }) => {
-  const { name, imgUrl, price, category } = data
+  const { name, imgUrl, price, category } = data;
 
   return (
     <div className="left-side-tab-featured">
@@ -26,21 +26,6 @@ const LeftSideTabOnSale = ({ data }) => {
         <del>$300.00</del>
       </div>
 
-      <div className="on-stock">
-        <div className="head">
-          <span>
-            Already Sold: <b>6</b>
-          </span>
-          <span>
-            Available: <b>26</b>
-          </span>
-        </div>
-
-        <div className="progress">
-          <div className="solded" />
-        </div>
-      </div>
-
       <div className="special-offer">special offer</div>
       {/* {isSave && (
                 <div className="discound-offer">
@@ -48,7 +33,7 @@ const LeftSideTabOnSale = ({ data }) => {
                 </div>
               )} */}
     </div>
-  )
-}
+  );
+};
 
-export default LeftSideTabOnSale
+export default LeftSideTabOnSale;

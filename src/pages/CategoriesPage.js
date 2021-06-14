@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
 // Components
-import { Row, Col } from 'react-bootstrap';
-import RouteNavigator from '../components/route-navigator/route-navigator.comp';
-import CategoriesPageLeftSide from '../components/categories-page-left/categories-page-left.comp';
-import CategoriesPageRightSide from '../components/categories-page-right/categories-page-right.comp';
-import ProductsMultiColumns from '../components/products-multi-colums/products-multi-colums.comp';
+import { Row, Col } from "react-bootstrap";
+import RouteNavigator from "../components/route-navigator";
+import CategoriesPageLeftSide from "../components/categories-page-left";
+import CategoriesPageRightSide from "../components/categories-page-right";
+import ProductsMultiColumns from "../components/products-multi-colums";
 
 const CategoriesPage = () => {
   // Handlers functions

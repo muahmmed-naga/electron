@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 
 // Components
-import { Link } from 'react-router-dom'
-import { IoEyeOutline } from 'react-icons/io5'
-import { IoMdHeartEmpty } from 'react-icons/io'
+import { Link } from "react-router-dom";
+import { IoEyeOutline } from "react-icons/io5";
+import { IoMdHeartEmpty } from "react-icons/io";
 
 // Styles
-import './right-side-tab-featured.styles.scss'
+import "./right-side-tab-featured.styles.scss";
 
 const RightSideTabOnSale = ({ data }) => {
   return (
@@ -17,8 +17,9 @@ const RightSideTabOnSale = ({ data }) => {
           <Link
             to={`/collections/featured/product/${id}`}
             className="product-name"
+            style={{ textAlign: "center" }}
           >
-            {name}
+            {name.substring(0, 25) + "..."}
           </Link>
           <Link
             to={`/collections/featured/product/${id}`}
@@ -45,7 +46,7 @@ const RightSideTabOnSale = ({ data }) => {
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default RightSideTabOnSale
+export default RightSideTabOnSale;
