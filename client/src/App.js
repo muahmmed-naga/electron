@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 // Components
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import CartPage from "./pages/cart-page";
 import AppFooter from "./components/app-footer";
 import AppMainHeader from "./components/main-header";
@@ -17,8 +17,11 @@ import TestPage from "./pages/TestPage";
 import PageNotFound from "./pages/PageNotFound";
 import shopPage from "./pages/ShopPage";
 import ProductPage from "./pages/product-page";
+import { useSelector } from "react-redux";
 
-function App() {
+const App = () => {
+  const { userInfo } = useSelector(state => state.user);
+
   const scrollFunction = () => {
     if (
       document.body.scrollTop > 100 ||
@@ -50,11 +53,15 @@ function App() {
           component={ProductPage}
         />
 
-        {/* Categories Routes */}
-
         <Route path="/cart" component={CartPage} />
+        <Route
+          path="/user/login"
+          render={
+            userInfo?.name ? () => <Redirect to="/" /> : () => <LoginPage />
+          }
+        />
+
         <Route exact path="/user/signup" component={UserSignUp} />
-        <Route exact path="/user/login" component={LoginPage} />
         <Route path="/test" component={TestPage} />
         <Route component={PageNotFound} />
       </Switch>
@@ -62,6 +69,6 @@ function App() {
       <AppFooter />
     </div>
   );
-}
+};
 
 export default App;

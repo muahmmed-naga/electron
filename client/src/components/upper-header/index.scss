@@ -1,7 +1,7 @@
 .app-upper-header-wrapper {
   padding: 10px 0;
   font-size: 0.7rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 
   .left-side,
   .right-side {
@@ -31,6 +31,23 @@
 
     .item {
       margin: 0 10px;
+    }
+  }
+
+  .user-dropdown {
+    .btn-success {
+      background-color: #00abc5 !important;
+      border-color: #00abc5 !important;
+      font-size: 0.9rem;
+
+      &:hover {
+        background-color: #00abc5 !important;
+        border-color: #00abc5 !important;
+      }
+    }
+
+    .dropdown-item {
+      font-size: 0.8rem;
     }
   }
 }

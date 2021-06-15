@@ -4,23 +4,23 @@ import { generateToken } from "../utils/token.js";
 
 export const userLoginAuth = asyncHanlder(async (req, res) => {
   const { email, password } = req.body;
+  console.log(req.body);
 
   const user = await User.findOne({ email });
-  const { _id, email: userEmail, name, isAdmin } = user;
 
   if (user && (await user.comparePassword(password))) {
+    const { email, name, isAdmin } = user;
+
     res.status(200).json({
       status: "success",
-      email: userEmail,
+      email,
       name,
       isAdmin,
-      token: generateToken(_id),
+      token: generateToken(user._id),
     });
   } else {
-    res.status(401).json({
-      status: "fail",
-      message: "Invalid Email of Password",
-    });
+    res.status(401);
+    throw new Error("Invalid Email or Password");
   }
 });
 
