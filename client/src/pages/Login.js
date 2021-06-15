@@ -1,9 +1,7 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 // Components
-import { Row, Col } from "react-bootstrap";
-import LoginForm from "../components/lognin-form";
-import SignupForm from "../components/signup-form";
+import { Link } from "react-router-dom";
 
 const LoginPage = () => {
   // Handlers functions
@@ -14,15 +12,26 @@ const LoginPage = () => {
 
   return (
     <div className="custom-container">
-      <Row>
-        <Col xm={12} sm={12} md={6} lg={6}>
-          <LoginForm />
-        </Col>
-        <div className="sperator"></div>
-        <Col xm={12} sm={12} md={6} lg={6}>
-          <SignupForm />
-        </Col>
-      </Row>
+      <div className="login-form-wrapper">
+        <div className="title">Login</div>
+
+        <form autoComplete="off">
+          <label htmlFor="loginEmail">Email Address*</label>
+          <input type="email" name="email" id="loginEmail" required />
+
+          <label htmlFor="loginPassword">Password*</label>
+          <input type="password" name="password" id="loginPassword" required />
+
+          <button type="submit" className="cutom-button">
+            Login
+          </button>
+
+          <div className="not-have-already-account">
+            Don't have account?,
+            <Link to="/user/signup">Register Now</Link>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

@@ -196,3 +196,140 @@ p {
     }
   }
 }
+
+/*
+  ====================================================
+  ================ User Register Form ================
+  ====================================================
+*/
+.signup-form-wrapper {
+  margin-top: 50px;
+  width: 65%;
+  margin: 50px auto 0 auto;
+  max-width: 500px;
+
+  .title {
+    border-bottom: 2px solid #00abc5;
+    width: fit-content;
+    padding-bottom: 3px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+
+    label {
+      color: #585858;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 7px;
+    }
+
+    input {
+      all: unset;
+      border: 1px solid #d0d0d0;
+      padding: 10px 15px;
+      border-radius: 25px;
+      font-size: 0.8rem;
+      margin-bottom: 20px;
+      color: #797979;
+    }
+
+    .cutom-button {
+      all: unset;
+      background-color: #00abc5;
+      color: #fff;
+      border-radius: 25px;
+      width: fit-content;
+      padding: 10px 50px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+  }
+
+  .have-already-account {
+    margin-top: 20px;
+    font-size: 1rem;
+
+    a {
+      margin-left: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-md) {
+  .signup-form-wrapper,
+  .login-form-wrapper {
+    width: 95% !important;
+  }
+}
+
+/*
+  ===================================================
+  ================= User Login Form =================
+  ===================================================
+*/
+
+.login-form-wrapper {
+  margin-top: 50px;
+  width: 65%;
+  margin: 50px auto 0 auto;
+  max-width: 500px;
+
+  .title {
+    border-bottom: 2px solid #00abc5;
+    width: fit-content;
+    padding-bottom: 3px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+
+    label {
+      color: #585858;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 7px;
+    }
+
+    input {
+      all: unset;
+      border: 1px solid #d0d0d0;
+      padding: 10px 15px;
+      border-radius: 25px;
+      font-size: 0.8rem;
+      margin-bottom: 20px;
+      color: #797979;
+    }
+
+    .cutom-button {
+      all: unset;
+      background-color: #00abc5;
+      color: #fff;
+      border-radius: 25px;
+      width: fit-content;
+      padding: 10px 50px;
+      cursor: pointer;
+      font-weight: 700;
+      margin-top: 15px;
+    }
+  }
+
+  .not-have-already-account {
+    margin-top: 20px;
+    font-size: 1rem;
+
+    a {
+      margin-left: 10px;
+    }
+  }
+}

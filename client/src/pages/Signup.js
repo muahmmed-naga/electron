@@ -1,11 +1,7 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
-// Components
-import { Row, Col } from "react-bootstrap";
-import LoginForm from "../components/lognin-form";
-import SignupForm from "../components/signup-form";
-
-const Signup = () => {
+const UserSignUp = () => {
   // Handlers functions
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -14,17 +10,34 @@ const Signup = () => {
 
   return (
     <div className="custom-container">
-      <Row>
-        <Col xm={12} sm={12} md={6} lg={6}>
-          <SignupForm />
-        </Col>
-        <div className="sperator"></div>
-        <Col xm={12} sm={12} md={6} lg={6}>
-          <LoginForm />
-        </Col>
-      </Row>
+      <div className="signup-form-wrapper">
+        <div className="title">Create New Account</div>
+
+        <form autoComplete="off">
+          <label htmlFor="signupFirstName">First Name</label>
+          <input type="text" name="firstName" id="signupFirstName" required />
+
+          <label htmlFor="signupLastName">Last Name</label>
+          <input type="text" name="lastName" id="signupLastName" required />
+
+          <label htmlFor="signupEmail">Email Address*</label>
+          <input type="email" name="email" id="signupEmail" required />
+
+          <label htmlFor="signupPassword">Password*</label>
+          <input type="password" name="password" id="signupPassword" required />
+
+          <button type="submit" className="cutom-button">
+            Register
+          </button>
+
+          <div className="have-already-account">
+            Have account?,
+            <Link to="/user/login">Login</Link>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
 
-export default Signup;
+export default UserSignUp;

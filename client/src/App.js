@@ -11,7 +11,7 @@ import ResponsiveMainHeader from "./components/responsive/main-header";
 
 // Pages
 import Homepage from "./pages/Homepage";
-import Signup from "./pages/Signup";
+import UserSignUp from "./pages/Signup";
 import LoginPage from "./pages/Login";
 import TestPage from "./pages/TestPage";
 import PageNotFound from "./pages/PageNotFound";
@@ -53,8 +53,8 @@ function App() {
         {/* Categories Routes */}
 
         <Route path="/cart" component={CartPage} />
-        <Route exact path="/account/signup" component={Signup} />
-        <Route exact path="/account/login" component={LoginPage} />
+        <Route exact path="/user/signup" component={UserSignUp} />
+        <Route exact path="/user/login" component={LoginPage} />
         <Route path="/test" component={TestPage} />
         <Route component={PageNotFound} />
       </Switch>

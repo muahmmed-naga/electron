@@ -26,11 +26,11 @@ const AppUpperHeader = () => {
       </div>
       <div className="right-side">
         <div className="flex-align-center">
-          <Link to="/account/login" className="item flex-align-center">
+          <Link to="/user/login" className="item flex-align-center">
             <RiLoginBoxLine className="main-color" />
             <p>Login</p>
           </Link>
-          <Link to="/account/signup" className="item flex-align-center">
+          <Link to="/user/signup" className="item flex-align-center">
             <IoPersonAddOutline className="main-color" />
             <p>Register</p>
           </Link>
