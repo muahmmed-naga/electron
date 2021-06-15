@@ -15,7 +15,7 @@ import Signup from "./pages/Signup";
 import LoginPage from "./pages/Login";
 import TestPage from "./pages/TestPage";
 import PageNotFound from "./pages/PageNotFound";
-import CategoriesPage from "./pages/CategoriesPage";
+import shopPage from "./pages/ShopPage";
 import ProductPage from "./pages/product-page";
 
 function App() {
@@ -44,7 +44,7 @@ function App() {
 
       <Switch>
         <Route exact path="/" component={Homepage} />
-        <Route exact path="/products/all" component={CategoriesPage} />
+        <Route exact path="/products/all" component={shopPage} />
         <Route
           path="/categories/:category/product/:id"
           component={ProductPage}

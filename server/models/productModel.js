@@ -66,6 +66,9 @@ const ProductSchema = mongoose.Schema(
       type: Number,
       defualt: 0,
     },
+    quantity: {
+      type: String,
+    },
   },
   { timestamps: true }
 );

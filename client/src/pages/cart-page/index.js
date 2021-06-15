@@ -16,9 +16,16 @@ import RouteNavigator from "../../components/route-navigator";
 import AlignTinyProduct from "../../components/align-tiny-product";
 import NewArrivals from "../../components/new-arrivals/";
 import ProductsMultiColumns from "../../components/products-multi-colums";
+import { useSelector, useDispatch } from "react-redux";
 
 // Styles
 import "./index.scss";
+import {
+  addItemToCart,
+  clearItemFromCart,
+  descreaseItemQty,
+  removeAllItemFromCart,
+} from "../../redux/actions/cartActions";
 
 const StyledTableCell = withStyles(theme => ({
   head: {
@@ -38,34 +45,6 @@ const StyledTableRow = withStyles(theme => ({
   },
 }))(TableRow);
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-
-const rows = [
-  createData(
-    "Frozen yoghurt",
-    159,
-    6.0,
-    24,
-    <VscTrash style={{ fontSize: "1.5rem", color: "red", cursor: "pointer" }} />
-  ),
-  createData(
-    "Ice cream sandwich",
-    237,
-    9.0,
-    37,
-    <VscTrash style={{ fontSize: "1.5rem", color: "red", cursor: "pointer" }} />
-  ),
-  createData(
-    "Eclair",
-    262,
-    16.0,
-    24,
-    <VscTrash style={{ fontSize: "1.5rem", color: "red", cursor: "pointer" }} />
-  ),
-];
-
 const useStyles = makeStyles({
   table: {
     minWidth: 700,
@@ -75,71 +54,119 @@ const useStyles = makeStyles({
 const CartPage = () => {
   const classes = useStyles();
 
+  const { cartItems } = useSelector(state => state.cart);
+  const dispatch = useDispatch();
+
   // Handlers functions
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = `Electron | Cart Page`;
-  });
+  }, []);
 
   return (
     <>
       <div className="custom-container cart-page-wrapper">
         <RouteNavigator current="Your Shopping Cart" />
         <div className="content">
-          <div className="title">Shoppong Cart</div>
+          <div className="title">Shopping Cart</div>
 
-          <TableContainer component={Paper}>
-            <Table className={classes.table} aria-label="customized table">
-              <TableHead>
-                <TableRow>
-                  <StyledTableCell>Product</StyledTableCell>
-                  <StyledTableCell align="left">Price</StyledTableCell>
-                  <StyledTableCell align="left">Quantity</StyledTableCell>
-                  <StyledTableCell align="left">Cart Total</StyledTableCell>
-                  <StyledTableCell align="left">Actions</StyledTableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {rows.map((row, idx) => (
-                  <StyledTableRow key={idx}>
-                    <StyledTableCell component="th" scope="row">
-                      <AlignTinyProduct imgUrl="https://wpbingosite.com/wordpress/funio/wp-content/uploads/2020/12/Image-12-1020x1020.jpg" />
-                    </StyledTableCell>
-                    <StyledTableCell align="left">
-                      ${row.calories}
-                    </StyledTableCell>
-                    <StyledTableCell align="left">{row.fat}</StyledTableCell>
-                    <StyledTableCell align="left">{row.carbs}</StyledTableCell>
-                    <StyledTableCell align="left">
-                      {row.protein}
-                    </StyledTableCell>
-                  </StyledTableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
+          {cartItems?.length === 0 ? (
+            <h4>
+              Your cart is Empty now{" "}
+              <Link to="/products/all">Continue Shopping</Link>{" "}
+            </h4>
+          ) : (
+            <TableContainer component={Paper}>
+              <Table className={classes.table} aria-label="customized table">
+                <TableHead>
+                  <TableRow>
+                    <StyledTableCell>Product</StyledTableCell>
+                    <StyledTableCell align="left">Price</StyledTableCell>
+                    <StyledTableCell align="left">Quantity</StyledTableCell>
+                    <StyledTableCell align="left">Item Total</StyledTableCell>
+                    <StyledTableCell align="left">Actions</StyledTableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {cartItems?.map(item => (
+                    <StyledTableRow key={item?._id}>
+                      <StyledTableCell component="th" scope="row">
+                        <AlignTinyProduct
+                          _id={item?._id}
+                          name={item?.name}
+                          image={item?.image}
+                          price={item?.price}
+                          category={item?.category}
+                        />
+                      </StyledTableCell>
+                      <StyledTableCell align="left">
+                        ${item?.price}
+                      </StyledTableCell>
+                      <StyledTableCell align="left">
+                        <div className="d-flex align-items-center">
+                          <div
+                            className="arrow-left"
+                            onClick={() => dispatch(addItemToCart(item))}
+                          >
+                            &#10094;
+                          </div>
+                          <span>{item?.quantity}</span>
+                          <div
+                            className="arrow-right"
+                            onClick={() => dispatch(descreaseItemQty(item))}
+                          >
+                            &#10095;
+                          </div>
+                        </div>
+                      </StyledTableCell>
+                      <StyledTableCell align="left">
+                        ${item?.price * item?.quantity}
+                      </StyledTableCell>
+                      <StyledTableCell align="left">
+                        <VscTrash
+                          onClick={() => dispatch(clearItemFromCart(item?._id))}
+                          style={{
+                            color: "red",
+                            fontSize: 25,
+                            cursor: "pointer",
+                          }}
+                        />
+                      </StyledTableCell>
+                    </StyledTableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          )}
 
           <Row>
             <Col xs={12} md={4} lg={4}>
-              <div className="cart-total m-top-30">
-                <div className="head flex-align-center flex-justify-between">
-                  <div className="head-title">Cart Total</div>
-                  <div className="total">$3220.00</div>
+              {cartItems?.length !== 0 && (
+                <div className="cart-total m-top-30">
+                  <div className="head flex-align-center flex-justify-between">
+                    <div className="head-title">Cart Total</div>
+                    <div className="total">$3220.00</div>
+                  </div>
+                  <Link to="/checkout" className="proceed-to-checkout">
+                    Proceed to Checkout
+                  </Link>
                 </div>
-                <Link to="/checkout" className="proceed-to-checkout">
-                  Proceed to Checkout
-                </Link>
-              </div>
+              )}
             </Col>
             <Col xs={12} md={8} lg={8}>
-              <div className="footer">
-                <Link to="/categories/all" className="continue-shopping">
-                  <span>Continue Shopping</span>
-                </Link>
-                <div className="add-to-cart-btn">
-                  <span>Clear Cart</span>
+              {cartItems?.length !== 0 && (
+                <div className="footer">
+                  <Link to="/categories/all" className="continue-shopping">
+                    <span>Continue Shopping</span>
+                  </Link>
+                  <div
+                    className="add-to-cart-btn"
+                    onClick={() => dispatch(removeAllItemFromCart())}
+                  >
+                    <span>Clear Cart</span>
+                  </div>
                 </div>
-              </div>
+              )}
             </Col>
           </Row>
         </div>

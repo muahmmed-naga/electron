@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 // Components
 import { Link, withRouter } from "react-router-dom";
@@ -26,9 +26,11 @@ const ProductPage = ({ match }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = `Electron | Product Page`;
+
     dispatch(fetchProduct(match.params.id));
   }, [dispatch, match.params.id]);
-  const [count, setCount] = useState(1);
 
   // Product image gallery
   const responsive = {
@@ -61,12 +63,6 @@ const ProductPage = ({ match }) => {
   const items = NEW_ARRIVALS.map(item => (
     <TinyProduct key={item.id} {...item} />
   ));
-
-  // Handlers functions
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    document.title = `Electron | Product Page`;
-  }, []);
 
   return (
     <>
@@ -214,46 +210,13 @@ const ProductPage = ({ match }) => {
                       </div>
 
                       <div className="product-options">
-                        <div className="sizes">
-                          <span className="title">Size:</span>
-                          <div className="avilable-sizes">
-                            <div className="m active">M</div>
-                            <div className="l">L</div>
-                            <div className="x">X</div>
-                            <div className="xl">XL</div>
-                          </div>
-                        </div>
-
                         <div className="cart-options">
-                          <div className="quantity">
-                            <label>Quantity</label>
-                            <div className="wrapper">
-                              <div
-                                style={{
-                                  fontWeight: "bold",
-                                  fontSize: ".8rem",
-                                }}
-                              >
-                                {count}
-                              </div>
-                              <div className="btn-wrapper">
-                                <button onClick={() => setCount(count + 1)}>
-                                  +
-                                </button>
-                                <button
-                                  onClick={() => setCount(count - 1)}
-                                  disabled={count <= 1 ? true : false}
-                                >
-                                  -
-                                </button>
-                              </div>
-                            </div>
-                          </div>
                           <div
                             className="add-to-cart-btn"
-                            onClick={() =>
-                              dispatch(addItemToCart(data?.product))
-                            }
+                            onClick={() => {
+                              dispatch(addItemToCart(data?.product));
+                              alert("Item has been add successfully.");
+                            }}
                           >
                             <span>Add To Cart</span>
                           </div>

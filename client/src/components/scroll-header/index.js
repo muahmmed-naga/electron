@@ -1,15 +1,15 @@
-import React from "react";
-
 // Components
 import { Link } from "react-router-dom";
-import { ReactComponent as Logo } from "../../assets/svg/logo.svg";
-import { AiOutlineSearch, AiOutlineHeart } from "react-icons/ai";
-import { IoBagOutline, IoRepeatOutline } from "react-icons/io5";
+import { AiOutlineSearch } from "react-icons/ai";
+import { IoBagOutline } from "react-icons/io5";
+import { useSelector } from "react-redux";
 
 // Styles
 import "./index.scss";
 
 const ScrollHeader = () => {
+  const { cartItems } = useSelector(state => state.cart);
+
   return (
     <div className="custom-container">
       <div
@@ -17,7 +17,7 @@ const ScrollHeader = () => {
         id="scroll-header"
       >
         <Link to="/" className="logo">
-          <Logo />
+          <h4>Electron</h4>
         </Link>
 
         <div className="product-search flex-align-center">
@@ -28,17 +28,9 @@ const ScrollHeader = () => {
         </div>
 
         <div className="righ-side flex-align-center">
-          <Link to="#" className="item">
-            <IoRepeatOutline />
-            <div className="count">0</div>
-          </Link>
-          <Link to="#" className="item">
-            <AiOutlineHeart />
-            <div className="count">0</div>
-          </Link>
           <Link to="/cart" className="item">
             <IoBagOutline />
-            <div className="count">0</div>
+            <div className="count">{cartItems?.length}</div>
           </Link>
         </div>
       </div>
