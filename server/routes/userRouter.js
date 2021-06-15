@@ -10,10 +10,8 @@ import { userProtectAuth } from "../middlewares/authMiddleware.js";
 const router = express.Router();
 
 router.route("/").post(userRegister);
-router.route("/login").post(userLoginAuth);
-router
-  .route("/profile")
-  .get(userProtectAuth, getUserProfile)
-  .patch(userProtectAuth, updateUserProfile);
+router.route("/login").post(userProtectAuth, userLoginAuth);
+router.route("/profile").get(userProtectAuth, getUserProfile);
+//   .patch(userProtectAuth, updateUserProfile);
 
 export default router;

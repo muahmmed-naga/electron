@@ -11,9 +11,9 @@ export const userProtectAuth = asyncHanlder(async (req, res, next) => {
   ) {
     try {
       token = req.headers.authorization.split(" ")[1];
-      const decoded = jwt.verify(token, process.env.JWT_SECRIT_TOKEN);
+      const { id } = jwt.verify(token, process.env.JWT_SECRIT_TOKEN);
 
-      req.user = await User.findById(decoded.id);
+      req.user = await User.findById(id);
     } catch (err) {
       res.status(401);
       throw new Error("Not authorized, failed token");

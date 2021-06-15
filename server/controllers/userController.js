@@ -4,19 +4,40 @@ import { generateToken } from "../utils/token.js";
 
 export const userLoginAuth = asyncHanlder(async (req, res) => {
   const { email, password } = req.body;
+
   const user = await User.findOne({ email });
+  const { _id, email: userEmail, name, isAdmin } = user;
 
   if (user && (await user.comparePassword(password))) {
     res.status(200).json({
-      _id: user._id,
-      name: user.name,
-      email: user.email,
-      token: generateToken(user._id, user.isAdmin),
+      status: "success",
+      email: userEmail,
+      name,
+      isAdmin,
+      token: generateToken(_id),
     });
   } else {
     res.status(401).json({
       status: "fail",
-      message: "Invalid Email or Password",
+      message: "Invalid Email of Password",
+    });
+  }
+});
+
+export const getUserProfile = asyncHanlder(async (req, res) => {
+  try {
+    const { _id, name, email } = await User.findById(req.user._id);
+
+    res.status(200).json({
+      status: "success",
+      _id,
+      name,
+      email,
+    });
+  } catch (err) {
+    res.status(401).json({
+      status: "fail",
+      message: "User not found",
     });
   }
 });
@@ -45,24 +66,6 @@ export const userRegister = asyncHanlder(async (req, res) => {
     res.status(500).json({
       status: "fail",
       message: "Can not create this user",
-    });
-  }
-});
-
-export const getUserProfile = asyncHanlder(async (req, res) => {
-  try {
-    const user = await User.findById(req.user._id);
-
-    res.status(200).json({
-      status: "success",
-      _id: user._id,
-      name: user.name,
-      email: user.email,
-    });
-  } catch (err) {
-    res.status(401).json({
-      status: "fail",
-      message: "User not found",
     });
   }
 });
