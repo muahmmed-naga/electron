@@ -29,7 +29,7 @@ const LoginPage = () => {
       <div className="login-form-wrapper">
         <div className="title">Login</div>
         {error && (
-          <div class="alert alert-danger" role="alert">
+          <div className="alert alert-danger" role="alert">
             {error}
           </div>
         )}
@@ -37,6 +37,9 @@ const LoginPage = () => {
         <form autoComplete="off" onSubmit={handleSubmit}>
           <label htmlFor="loginEmail">Email Address*</label>
           <input
+            style={{
+              border: `1px solid #d0d0d0`,
+            }}
             type="email"
             name="email"
             id="loginEmail"
@@ -48,6 +51,9 @@ const LoginPage = () => {
 
           <label htmlFor="loginPassword">Password*</label>
           <input
+            style={{
+              border: `1px solid #d0d0d0`,
+            }}
             type="password"
             name="password"
             id="loginPassword"

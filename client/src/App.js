@@ -61,7 +61,13 @@ const App = () => {
           }
         />
 
-        <Route exact path="/user/signup" component={UserSignUp} />
+        <Route
+          path="/user/signup"
+          render={
+            userInfo?.name ? () => <Redirect to="/" /> : () => <UserSignUp />
+          }
+        />
+
         <Route path="/test" component={TestPage} />
         <Route component={PageNotFound} />
       </Switch>

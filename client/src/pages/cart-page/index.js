@@ -156,7 +156,7 @@ const CartPage = () => {
             <Col xs={12} md={8} lg={8}>
               {cartItems?.length !== 0 && (
                 <div className="footer">
-                  <Link to="/categories/all" className="continue-shopping">
+                  <Link to="/products/all" className="continue-shopping">
                     <span>Continue Shopping</span>
                   </Link>
                   <div

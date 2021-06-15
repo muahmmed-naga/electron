@@ -215,7 +215,9 @@ const ProductPage = ({ match }) => {
                             className="add-to-cart-btn"
                             onClick={() => {
                               dispatch(addItemToCart(data?.product));
-                              alert("Item has been add successfully.");
+                              alert(
+                                "Item has been added to your cart successfully."
+                              );
                             }}
                           >
                             <span>Add To Cart</span>

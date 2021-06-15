@@ -23,6 +23,25 @@ const userReducer = (state = { userInfo: {} }, action) => {
       };
     case actionTypes.USER_LOGOUT:
       return {};
+
+    case actionTypes.USER_REGISTER_REQUEST:
+      return {
+        loading: true,
+        userInfo: {},
+        error: false,
+      };
+    case actionTypes.USER_REGISTER_SUCCESS:
+      return {
+        loading: false,
+        userInfo: action.payload,
+        error: false,
+      };
+    case actionTypes.USER_REGISTER_ERROR:
+      return {
+        loading: false,
+        userInfo: {},
+        error: action.payload,
+      };
     default:
       return state;
   }

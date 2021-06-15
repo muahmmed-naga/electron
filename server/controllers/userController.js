@@ -52,6 +52,7 @@ export const userRegister = asyncHanlder(async (req, res) => {
         status: "fail",
         message: "User already exits",
       });
+      return;
     }
 
     const user = await User.create({ name, email, password });
@@ -60,12 +61,12 @@ export const userRegister = asyncHanlder(async (req, res) => {
       _id: user._id,
       name: user.name,
       email: user.email,
-      token: generateToken(user._id, user.isAdmin),
+      token: generateToken(user._id),
     });
   } catch (err) {
     res.status(500).json({
       status: "fail",
-      message: "Can not create this user",
+      message: err.message.split(":: ")[1],
     });
   }
 });
