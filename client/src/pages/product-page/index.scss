@@ -199,20 +199,14 @@
     align-items: center;
 
     .wrapper {
-      display: flex;
-      align-items: center;
-      border: 1px solid red;
-      width: fit-content;
       border-radius: 13px;
       margin-top: 6px;
       border: 1px solid #ddd;
-
-      input {
-        all: unset;
-        padding: 5px 0 5px 10px;
-        font-size: 0.8rem;
-        width: 100px;
-      }
+      min-width: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 0 5px 20px;
 
       .btn-wrapper {
         display: flex;
@@ -222,11 +216,11 @@
           all: unset;
           margin-left: 10px;
           cursor: pointer;
+          font-size: 20px;
         }
 
         button:last-of-type {
-          margin: 0 10px 0 15px;
-          font-size: 1rem;
+          margin: 0px 20px;
         }
       }
     }

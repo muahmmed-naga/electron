@@ -5,10 +5,7 @@ import "./index.scss";
 
 const LoadingSpinner = () => {
   return (
-    <div
-      className="loading-spinner-wrapper lds-roller"
-      style={{ border: "1px solid red" }}
-    >
+    <div className="loading-spinner-wrapper lds-roller">
       <div></div>
       <div></div>
       <div></div>

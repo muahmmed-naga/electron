@@ -15,22 +15,19 @@ import ProductsMultiColumns from "../../components/products-multi-colums";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProduct } from "../../redux/actions/productActions";
 import LoadingSpinner from "../../components/loading-spinner";
+import { addItemToCart } from "../../redux/actions/cartActions";
 
 // Styles
 import "react-alice-carousel/lib/alice-carousel.css";
 import "./index.scss";
 
 const ProductPage = ({ match }) => {
-  console.log(match);
   const { loading, data, error } = useSelector(state => state.product);
   const dispatch = useDispatch();
-
-  console.log(data);
 
   useEffect(() => {
     dispatch(fetchProduct(match.params.id));
   }, [dispatch, match.params.id]);
-  // eslint-disable-next-line
   const [count, setCount] = useState(1);
 
   // Product image gallery
@@ -69,7 +66,7 @@ const ProductPage = ({ match }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = `Electron | Product Page`;
-  });
+  }, []);
 
   return (
     <>
@@ -231,18 +228,33 @@ const ProductPage = ({ match }) => {
                           <div className="quantity">
                             <label>Quantity</label>
                             <div className="wrapper">
-                              <input
-                                type="text"
-                                value={count}
-                                onChange={() => {}}
-                              />
+                              <div
+                                style={{
+                                  fontWeight: "bold",
+                                  fontSize: ".8rem",
+                                }}
+                              >
+                                {count}
+                              </div>
                               <div className="btn-wrapper">
-                                <button>+</button>
-                                <button>-</button>
+                                <button onClick={() => setCount(count + 1)}>
+                                  +
+                                </button>
+                                <button
+                                  onClick={() => setCount(count - 1)}
+                                  disabled={count <= 1 ? true : false}
+                                >
+                                  -
+                                </button>
                               </div>
                             </div>
                           </div>
-                          <div className="add-to-cart-btn">
+                          <div
+                            className="add-to-cart-btn"
+                            onClick={() =>
+                              dispatch(addItemToCart(data?.product))
+                            }
+                          >
                             <span>Add To Cart</span>
                           </div>
                         </div>
