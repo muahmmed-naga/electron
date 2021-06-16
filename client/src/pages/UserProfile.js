@@ -1,7 +1,12 @@
 import { useState, useEffect } from "react";
+import { Spinner } from "react-bootstrap";
 // import actionTypes from "../redux/types";
 import { useSelector, useDispatch } from "react-redux";
-import { userDetailsAction } from "./../redux/actions/userActions";
+import actionTypes from "../redux/types";
+import {
+  userDetailsAction,
+  userUpdateProfileAction,
+} from "./../redux/actions/userActions";
 
 const UserProfilePage = () => {
   const [name, setName] = useState("");
@@ -12,8 +17,36 @@ const UserProfilePage = () => {
   const [isPasswordFail, setIsPasswordFail] = useState(false);
 
   const { user, error } = useSelector(state => state.userDetails);
+  const {
+    loading,
+    error: updateError,
+    success,
+  } = useSelector(state => state.userUpdate);
 
   const dispatch = useDispatch();
+
+  const handleUserUpdateProfile = e => {
+    e.preventDefault();
+
+    if (password !== confirmPassword) {
+      alert("Passwords don't match!");
+      setIsPasswordFail(true);
+      return;
+    } else if (password.length < 8 || confirmPassword.length < 8) {
+      setIsPasswordFail(true);
+      alert("Passwords must be above 8 character");
+      return;
+    } else {
+      dispatch(
+        userUpdateProfileAction({
+          id: user._id,
+          name,
+          email,
+          password,
+        })
+      );
+    }
+  };
 
   useEffect(() => {
     if (!user.name) {
@@ -30,10 +63,20 @@ const UserProfilePage = () => {
         <div className="col-sm-12 col-md-4 col-lg-4">
           <div className="form-wrapper">
             {error && <h2>{error}</h2>}
+            {updateError && (
+              <div class="alert alert-danger" role="alert">
+                {updateError}
+              </div>
+            )}
+            {success && (
+              <div class="alert alert-success" role="alert">
+                Profile updated successfully.
+              </div>
+            )}
 
             <div className="title">Update Your Info</div>
 
-            <form autoComplete="off" onSubmit={() => {}}>
+            <form autoComplete="off" onSubmit={handleUserUpdateProfile}>
               <label htmlFor="name">Name*</label>
               <input
                 style={{
@@ -82,14 +125,29 @@ const UserProfilePage = () => {
                 onChange={e => setConfirmPassword(e.target.value)}
               />
 
-              <button type="submit" className="custom-button">
-                UPDATE
+              <button
+                type="submit"
+                className="custom-button"
+                disabled={loading ? true : false}
+                style={{
+                  cursor: loading ? "not-allowed" : "pointer",
+                }}
+              >
+                {loading ? (
+                  <Spinner animation="border" variant="secondary" />
+                ) : (
+                  "Update"
+                )}
               </button>
 
               <button
                 type="submit"
                 className="logout-button"
-                onClick={() => {}}
+                onClick={() =>
+                  dispatch({
+                    type: actionTypes.USER_LOGOUT,
+                  })
+                }
               >
                 LOGOUT
               </button>

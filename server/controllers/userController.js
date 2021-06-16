@@ -71,6 +71,18 @@ export const userRegister = asyncHanlder(async (req, res) => {
 });
 
 export const updateUserProfile = asyncHanlder(async (req, res) => {
+  const { email } = req.body;
+  const exitsUser = await User.findOne({ email });
+
+  if (exitsUser) {
+    res.status(400).json({
+      status: "fail",
+      message: "User already exits",
+    });
+
+    return;
+  }
+
   try {
     const user = await User.findById(req.user._id);
 
@@ -94,7 +106,7 @@ export const updateUserProfile = asyncHanlder(async (req, res) => {
   } catch (err) {
     res.status(401).json({
       status: "fail",
-      message: "User not found",
+      message: err.message,
     });
   }
 });

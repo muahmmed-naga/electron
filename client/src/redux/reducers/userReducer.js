@@ -88,6 +88,7 @@ export const userUpdateReducer = (state = {}, action) => {
     case actionTypes.USER_UPDATE_PROFILE_SCUCESS:
       return {
         loading: false,
+        success: true,
         userInfo: action.payload,
         error: false,
       };
