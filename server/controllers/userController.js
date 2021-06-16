@@ -90,7 +90,7 @@ export const updateUserProfile = asyncHanlder(async (req, res) => {
       _id: updatedUser._id,
       name: updatedUser.name,
       email: updatedUser.email,
-      token: generateToken(updatedUser._id, updatedUser.isAdmin),
+      token: generateToken(updatedUser._id),
     });
   } catch (err) {
     res.status(401).json({
