@@ -11,19 +11,19 @@ const UserSignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [isPasswordFail, setIsPasswordFail] = useState(false);
 
-  const { loading, error } = useSelector(state => state.user);
+  const { loading, error } = useSelector(state => state.userLogin);
   const dispatch = useDispatch();
 
   const handleUserRegister = e => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      alert("Password don't match!");
+      alert("Passwords don't match!");
       setIsPasswordFail(true);
       return;
     } else if (password.length < 8 || confirmPassword.length < 8) {
       setIsPasswordFail(true);
-      alert("Password must be above 8 character");
+      alert("Passwords must be above 8 character");
       return;
     }
 
@@ -108,7 +108,7 @@ const UserSignUp = () => {
 
           <button
             type="submit"
-            className="cutom-button"
+            className="custom-button"
             style={{ cursor: loading ? "not-allowed" : "pointer" }}
           >
             {loading ? (

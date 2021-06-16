@@ -18,9 +18,10 @@ import PageNotFound from "./pages/PageNotFound";
 import shopPage from "./pages/ShopPage";
 import ProductPage from "./pages/product-page";
 import { useSelector } from "react-redux";
+import UserProfilePage from "./pages/UserProfile";
 
 const App = () => {
-  const { userInfo } = useSelector(state => state.user);
+  const { userInfo } = useSelector(state => state.userLogin);
 
   const scrollFunction = () => {
     if (
@@ -65,6 +66,16 @@ const App = () => {
           path="/user/signup"
           render={
             userInfo?.name ? () => <Redirect to="/" /> : () => <UserSignUp />
+          }
+        />
+
+        <Route
+          exact
+          path="/user/profile"
+          render={
+            !userInfo?.name
+              ? () => <Redirect to="/" />
+              : () => <UserProfilePage />
           }
         />
 

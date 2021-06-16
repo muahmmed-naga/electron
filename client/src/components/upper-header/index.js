@@ -11,7 +11,7 @@ import { useSelector } from "react-redux";
 import "./index.scss";
 
 const AppUpperHeader = () => {
-  const { userInfo } = useSelector(state => state.user);
+  const { userInfo } = useSelector(state => state.userLogin);
 
   return (
     <div className="custom-container app-upper-header-wrapper flex-center-between">
