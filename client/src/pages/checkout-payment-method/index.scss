@@ -1,0 +1,28 @@
+.checkout-payment-method-page {
+  .title {
+    margin: 50px auto;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
+  .payment-method-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .box {
+      cursor: pointer;
+      overflow: hidden;
+      max-width: 300px;
+      max-height: 135px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 65px;
+      border-radius: 10px;
+    }
+  }
+}

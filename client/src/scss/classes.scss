@@ -79,3 +79,14 @@
   align-items: center;
   justify-content: space-around;
 }
+
+.custom-button {
+  all: unset;
+  background-color: #00abc5;
+  color: #fff;
+  border-radius: 25px;
+  width: fit-content;
+  padding: 10px 50px;
+  cursor: pointer;
+  font-weight: 700;
+}

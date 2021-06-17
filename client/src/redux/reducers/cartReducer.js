@@ -2,7 +2,7 @@ import actionTypes from "../types";
 import { addItemToShoppingCart, descreaseCartItemQty } from "../utils";
 
 const cartReducer = (
-  state = { cartItems: [], shippingAddress: {} },
+  state = { cartItems: [], shippingAddress: {}, paymentMethod: "PayPal" },
   action
 ) => {
   switch (action.type) {
@@ -33,6 +33,11 @@ const cartReducer = (
       return {
         ...state,
         shippingAddress: action.payload,
+      };
+    case actionTypes.CART_PAYMENT_METHOD:
+      return {
+        ...state,
+        paymentMethod: action.payload,
       };
     default:
       return state;

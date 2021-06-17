@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 // Components
 import { Switch, Route, Redirect } from "react-router-dom";
 import CartPage from "./pages/cart-page";
-import AppFooter from "./components/app-footer";
+// import AppFooter from "./components/app-footer";
 import AppMainHeader from "./components/main-header";
 import ScrollHeader from "./components/scroll-header";
 import AppUpperHeader from "./components/upper-header";
@@ -20,9 +20,12 @@ import ProductPage from "./pages/product-page";
 import { useSelector } from "react-redux";
 import UserProfilePage from "./pages/UserProfile";
 import ShippingInfoPage from "./pages/ShippingInfoPage";
+import CheckoutPaymentMethod from "./pages/checkout-payment-method";
+import CheckoutPlaceOrder from "./pages/checkout-placeorder";
 
 const App = () => {
   const { userInfo } = useSelector(state => state.userLogin);
+  const { shippingAddress } = useSelector(state => state.cart);
 
   const scrollFunction = () => {
     if (
@@ -89,11 +92,31 @@ const App = () => {
           }
         />
 
+        <Route
+          exact
+          path="/checkout/payment-method"
+          render={
+            !userInfo?.name || !shippingAddress
+              ? () => <Redirect to="/shipping-info" />
+              : props => <CheckoutPaymentMethod {...props} />
+          }
+        />
+
+        <Route
+          exact
+          path="/checkout/placeorder"
+          render={
+            !userInfo?.name || !shippingAddress
+              ? () => <Redirect to="/user/login" />
+              : props => <CheckoutPlaceOrder {...props} />
+          }
+        />
+
         <Route path="/test" component={TestPage} />
         <Route component={PageNotFound} />
       </Switch>
 
-      <AppFooter />
+      {/* <AppFooter /> */}
     </div>
   );
 };

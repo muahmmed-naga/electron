@@ -17,7 +17,7 @@ const ShippingPage = ({ history: { push } }) => {
 
     dispatch(cartSaveShippingAddress({ address, city, country, postalCode }));
 
-    push("/payment");
+    push("/checkout/payment-method");
   };
 
   return (
@@ -27,7 +27,6 @@ const ShippingPage = ({ history: { push } }) => {
         current="Shipping Info"
         step1
         step2
-        step3
         checkoutStepsArr
       />
       <div className="signup-form-wrapper">

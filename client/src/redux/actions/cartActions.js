@@ -23,3 +23,8 @@ export const cartSaveShippingAddress = data => ({
   type: actionTypes.CART_SHIPPING_ADDRESS,
   payload: data,
 });
+
+export const cartPaymentMethod = data => ({
+  type: actionTypes.CART_PAYMENT_METHOD,
+  payload: data,
+});

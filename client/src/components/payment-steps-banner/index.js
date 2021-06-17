@@ -44,7 +44,7 @@ const PaymentStepsBanner = ({
           )}
           {step2 ? (
             <>
-              <Link to="/shipping-address" className="step-item">
+              <Link to="/shipping-info" className="step-item">
                 Shipping Info
               </Link>
               <IoIosArrowForward style={{ color: "#00abc5" }} />
@@ -57,7 +57,7 @@ const PaymentStepsBanner = ({
           )}
           {step3 ? (
             <>
-              <Link to="/payment" className="step-item">
+              <Link to="/checkout/payment-method" className="step-item">
                 Payment Method
               </Link>
               <IoIosArrowForward style={{ color: "#00abc5" }} />
@@ -70,7 +70,7 @@ const PaymentStepsBanner = ({
           )}
           {step4 ? (
             <>
-              <Link to="/place-order" className="step-item">
+              <Link to="/checkout/placeorder" className="step-item">
                 Place Order
               </Link>
             </>
