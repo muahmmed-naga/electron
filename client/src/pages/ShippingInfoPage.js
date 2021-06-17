@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import PaymentStepsBanner from "../components/payment-steps-banner";
 import { cartSaveShippingAddress } from "../redux/actions/cartActions";
 
 const ShippingPage = ({ history: { push } }) => {
@@ -21,6 +22,14 @@ const ShippingPage = ({ history: { push } }) => {
 
   return (
     <div className="custom-container">
+      <PaymentStepsBanner
+        prev="Home"
+        current="Shipping Info"
+        step1
+        step2
+        step3
+        checkoutStepsArr
+      />
       <div className="signup-form-wrapper">
         <div className="title">Shipping Address Info</div>
 

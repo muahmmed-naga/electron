@@ -1,0 +1,51 @@
+.page-banner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0 40px 0;
+  padding: 25px 0;
+  border-top: 1px solid #d4d4d4;
+  border-bottom: 1px solid #d4d4d4;
+
+  h3 {
+    font-size: 3rem;
+  }
+
+  .navigator {
+    display: flex;
+    align-items: center;
+
+    svg:not(:last-of-type) {
+      font-size: 10px;
+      margin: 0 5px;
+    }
+
+    text-transform: capitalize;
+    font-size: 0.8rem;
+    color: gray;
+
+    a {
+      color: #585858;
+    }
+  }
+  .checkout-steps {
+    display: flex;
+    align-items: center;
+
+    svg:not(:last-of-type) {
+      font-size: 10px;
+      margin: 0 5px;
+    }
+    .not-allowed-link {
+      cursor: not-allowed;
+    }
+
+    text-transform: capitalize;
+    font-size: 0.8rem;
+    color: gray;
+
+    a {
+      color: #585858;
+    }
+  }
+}
