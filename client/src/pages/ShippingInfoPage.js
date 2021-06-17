@@ -11,9 +11,17 @@ const ShippingPage = ({ history: { push } }) => {
   const [city, setCity] = useState(shippingAddress?.city);
   const [country, setCountry] = useState(shippingAddress?.country);
   const [postalCode, setPostalCode] = useState(shippingAddress?.postalCode);
+  const [isPostalCode, setIsPostalCode] = useState(false);
+  const [message, setMessage] = useState("");
 
   const submitHandler = e => {
     e.preventDefault();
+
+    if (isNaN(postalCode)) {
+      setIsPostalCode(true);
+      setMessage("Please, write a valide Postal Code Number");
+      return;
+    }
 
     dispatch(cartSaveShippingAddress({ address, city, country, postalCode }));
 
@@ -74,7 +82,7 @@ const ShippingPage = ({ history: { push } }) => {
           <label htmlFor="postalCode">Postal Code</label>
           <input
             style={{
-              border: `1px solid #d0d0d0`,
+              border: `1px solid ${!isPostalCode ? "#d0d0d0" : "red"}`,
             }}
             type="text"
             name="postalCode"
@@ -83,6 +91,16 @@ const ShippingPage = ({ history: { push } }) => {
             value={postalCode}
             onChange={e => setPostalCode(e.target.value)}
           />
+          <p
+            style={{
+              color: "red",
+              fontWeight: "bold",
+              fontSize: ".7rem",
+              marginBottom: "12px !important",
+            }}
+          >
+            {message}
+          </p>
 
           <button type="submit" className="custom-button text-uppercase">
             continue

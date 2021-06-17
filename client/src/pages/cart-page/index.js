@@ -147,7 +147,7 @@ const CartPage = () => {
                     <div className="head-title">Cart Total</div>
                     <div className="total">$3220.00</div>
                   </div>
-                  <Link to="/checkout" className="proceed-to-checkout">
+                  <Link to="/shipping-info" className="proceed-to-checkout">
                     Proceed to Checkout
                   </Link>
                 </div>

@@ -1,17 +1,23 @@
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import PaymentStepsBanner from "../../components/payment-steps-banner";
+import { addOrderItemsData } from "../../redux/actions/orderActions";
 
 // Styles
 import "./index.scss";
 
 const CheckoutPlaceOrder = () => {
+  const dispatch = useDispatch();
   const cart = useSelector(state => state.cart);
   const {
     cartItems,
     shippingAddress: { address, city, postalCode, country },
     paymentMethod,
   } = cart;
+
+  const { loading, error, success, orderData } = useSelector(
+    state => state.orderItems
+  );
 
   const addDecimals = num => Math.round((num * 100) / 100).toFixed(2);
   const taxVal = 0.2;
@@ -25,6 +31,19 @@ const CheckoutPlaceOrder = () => {
     Number(cart.itemsPrice) +
     Number(cart.shippingPrice) +
     Number(cart.taxPrice);
+
+  const handleCheckoutPlaceorder = () => {
+    dispatch(
+      addOrderItemsData({
+        orderItems: cartItems,
+        shippingAddress: cart.shippingAddress,
+        paymentMethod,
+        itemsPrice: cart.itemsPrice,
+        taxPrice: cart.taxPrice,
+        totalPrice: cart.totalPrices,
+      })
+    );
+  };
 
   return (
     <div className="custom-container">
@@ -80,6 +99,19 @@ const CheckoutPlaceOrder = () => {
               ))}
           </div>
           <div className="col-sm-12 col-md-4 col-lg-4">
+            {error && (
+              <div class="alert alert-danger" role="alert">
+                {error}
+              </div>
+            )}
+            {!loading && !error && success && (
+              <div className="alert alert-success" role="alert">
+                <Link to={`/user/orders/${orderData?.order?._id}`}>
+                  See Your orders details
+                </Link>
+              </div>
+            )}
+
             {cartItems.length > 0 && (
               <div className="before-checkout">
                 <div className="header">cart totals</div>
@@ -101,7 +133,7 @@ const CheckoutPlaceOrder = () => {
                     <span>${cart.totalPrices}</span>
                   </div>
                 </div>
-                <div className="checkout" onClick={() => {}}>
+                <div className="checkout" onClick={handleCheckoutPlaceorder}>
                   place order
                 </div>
               </div>
