@@ -67,36 +67,46 @@ const CheckoutPlaceOrder = () => {
             <hr />
             <h4 className="mt-4">Order Items</h4>
             {cartItems.length > 0 &&
-              cartItems.map(({ _id, name, price, quantity, image }) => (
-                <div
-                  key={_id}
-                  className="cart-products d-flex justify-content-between border-bottom pb-3 pt-3"
-                >
-                  <div className="product-preview d-flex justify-content-between">
-                    <img
-                      src={image}
-                      alt={name}
-                      style={{
-                        width: "80px",
-                        height: "80px",
-                        marginRight: "15px",
-                      }}
-                    />
-                    <div
-                      className="d-flex flex-column"
-                      style={{ fontSize: ".8rem" }}
-                    >
-                      <Link to={`/products/${_id}`}>{name}</Link>
-                      <div className="d-flex">
-                        <span className="mr-2 font-weight-bold">quantity:</span>
-                        <span className="font-weight-bold">
-                          {quantity} x ${price} = ${quantity * price}
-                        </span>
+              cartItems.map(
+                ({ _id, name, price, quantity, image, category }) => (
+                  <div
+                    key={_id}
+                    className="cart-products d-flex justify-content-between border-bottom pb-3 pt-3"
+                  >
+                    <div className="product-preview d-flex justify-content-between">
+                      <img
+                        src={image}
+                        alt={name}
+                        style={{
+                          width: "80px",
+                          height: "80px",
+                          marginRight: "15px",
+                        }}
+                      />
+                      <div
+                        className="d-flex flex-column"
+                        style={{ fontSize: ".8rem" }}
+                      >
+                        <Link
+                          to={`/categories/${category
+                            .replace(" ", "-")
+                            .toLowerCase()}/product/${_id}`}
+                        >
+                          {name}
+                        </Link>
+                        <div className="d-flex">
+                          <span className="mr-2 font-weight-bold">
+                            quantity:
+                          </span>
+                          <span className="font-weight-bold">
+                            {quantity} x ${price} = ${quantity * price}
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                )
+              )}
           </div>
           <div className="col-sm-12 col-md-4 col-lg-4">
             {error && (

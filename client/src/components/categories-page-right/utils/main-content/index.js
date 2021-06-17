@@ -33,13 +33,17 @@ const CategoiresPageMainContent = () => {
               <div className="tiny-product-wrapper">
                 <div className="category">{category}</div>
                 <Link
-                  to={`/categories/${category}/product/${_id}`}
+                  to={`/categories/${category
+                    .replace(" ", "-")
+                    .toLowerCase()}/product/${_id}`}
                   className="product-name"
                 >
                   {name.substring(0, 20) + "..."}
                 </Link>
                 <Link
-                  to={`/categories/${category}/product/${_id}`}
+                  to={`/categories/${category
+                    .replace(" ", "-")
+                    .toLowerCase()}/product/${_id}`}
                   className="img-wrapper"
                 >
                   <img src={image} alt="product" />
