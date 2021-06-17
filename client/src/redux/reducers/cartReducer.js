@@ -1,7 +1,10 @@
 import actionTypes from "../types";
 import { addItemToShoppingCart, descreaseCartItemQty } from "../utils";
 
-const cartReducer = (state = { cartItems: [] }, action) => {
+const cartReducer = (
+  state = { cartItems: [], shippingAddress: {} },
+  action
+) => {
   switch (action.type) {
     case actionTypes.CART_ADD_ITEM:
       return {
@@ -26,6 +29,11 @@ const cartReducer = (state = { cartItems: [] }, action) => {
         cartItems: [],
       };
 
+    case actionTypes.CART_SHIPPING_ADDRESS:
+      return {
+        ...state,
+        shippingAddress: action.payload,
+      };
     default:
       return state;
   }

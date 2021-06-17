@@ -19,6 +19,7 @@ import shopPage from "./pages/ShopPage";
 import ProductPage from "./pages/product-page";
 import { useSelector } from "react-redux";
 import UserProfilePage from "./pages/UserProfile";
+import ShippingPage from "./pages/ShippingPage";
 
 const App = () => {
   const { userInfo } = useSelector(state => state.userLogin);
@@ -76,6 +77,15 @@ const App = () => {
             !userInfo?.name
               ? () => <Redirect to="/" />
               : () => <UserProfilePage />
+          }
+        />
+        <Route
+          exact
+          path="/shipping-info"
+          render={
+            !userInfo?.name
+              ? () => <Redirect to="/user/login" />
+              : props => <ShippingPage {...props} />
           }
         />
 

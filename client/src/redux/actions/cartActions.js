@@ -18,3 +18,8 @@ export const descreaseItemQty = item => ({
 export const removeAllItemFromCart = () => ({
   type: actionTypes.CART_REMOVE_ALL_ITEMS,
 });
+
+export const cartSaveShippingAddress = data => ({
+  type: actionTypes.CART_SHIPPING_ADDRESS,
+  payload: data,
+});
