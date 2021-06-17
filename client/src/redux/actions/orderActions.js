@@ -66,3 +66,41 @@ export const getUserOrderDetails = id => async (dispatch, getState) => {
     });
   }
 };
+
+export const userOrderPayAction =
+  (id, paymentResult) => async (dispatch, getState) => {
+    try {
+      dispatch({
+        type: actionTypes.USER_ORDER_PAID_REQUEST,
+      });
+
+      const {
+        userLogin: { userInfo },
+      } = getState();
+
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${userInfo.token}`,
+        },
+      };
+
+      const { data } = await axios.patch(
+        `/api/v1/orders/${id}/pay`,
+        paymentResult,
+        config
+      );
+      dispatch({
+        type: actionTypes.USER_ORDER_PAID_SUCCESS,
+        payload: data,
+      });
+    } catch (err) {
+      dispatch({
+        type: actionTypes.USER_ORDER_PAID_ERROR,
+        payload:
+          err.response && err.response.data.message
+            ? err.response.data.message
+            : err.message,
+      });
+    }
+  };
