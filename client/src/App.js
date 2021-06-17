@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 // Components
 import { Switch, Route, Redirect } from "react-router-dom";
 import CartPage from "./pages/cart-page";
-import AppFooter from "./components/app-footer";
+// import AppFooter from "./components/app-footer";
 import AppMainHeader from "./components/main-header";
 import ScrollHeader from "./components/scroll-header";
 import AppUpperHeader from "./components/upper-header";
@@ -22,6 +22,7 @@ import UserProfilePage from "./pages/UserProfile";
 import ShippingInfoPage from "./pages/ShippingInfoPage";
 import CheckoutPaymentMethod from "./pages/checkout-payment-method";
 import CheckoutPlaceOrder from "./pages/checkout-placeorder";
+import UserOrdersPage from "./pages/UserOrdersPage";
 
 const App = () => {
   const { userInfo } = useSelector(state => state.userLogin);
@@ -112,11 +113,21 @@ const App = () => {
           }
         />
 
+        <Route
+          exact
+          path="/user/orders/:id"
+          render={
+            !userInfo?.name || !shippingAddress
+              ? () => <Redirect to="/user/login" />
+              : props => <UserOrdersPage {...props} />
+          }
+        />
+
         <Route path="/test" component={TestPage} />
         <Route component={PageNotFound} />
       </Switch>
 
-      <AppFooter />
+      {/* <AppFooter /> */}
     </div>
   );
 };

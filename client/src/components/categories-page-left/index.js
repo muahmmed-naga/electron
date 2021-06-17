@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 // Components
 import { Link } from "react-router-dom";
@@ -10,8 +10,28 @@ import { Accordion, Card } from "react-bootstrap";
 // Styles
 import "react-alice-carousel/lib/alice-carousel.css";
 import "./index.scss";
+import { fetchAllProducts } from "../../redux/actions/productActions";
+import { useDispatch, useSelector } from "react-redux";
 
 const CategoriesPageLeftSide = () => {
+  const {
+    loading,
+    data: { products },
+    error,
+  } = useSelector(state => state.products);
+  const dispatch = useDispatch();
+
+  const productsItems =
+    !loading &&
+    !error &&
+    products.map(item => <TinyProduct key={item._id} {...item} />);
+
+  console.log(productsItems);
+
+  useEffect(() => {
+    dispatch(fetchAllProducts());
+  }, [dispatch]);
+
   const responsive = {
     0: { items: 1 },
     568: { items: 1 },
@@ -19,18 +39,18 @@ const CategoriesPageLeftSide = () => {
   };
 
   const items = [
-    <TinyProduct productImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
-    <TinyProduct productImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
-    <TinyProduct productImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
-    <TinyProduct productImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
-    <TinyProduct productImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
-    <TinyProduct productImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
-    <TinyProduct productImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
-    <TinyProduct productImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
-    <TinyProduct productImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
-    <TinyProduct productImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
-    <TinyProduct productImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
-    <TinyProduct productImg="https://cdn.shopify.com/s/files/1/0066/4322/0562/products/GoldPhone_bd50e26e-6236-4648-88db-d0b8a94a1bde_540x.jpg?v=1605600708" />,
+    <TinyProduct image />,
+    <TinyProduct image />,
+    <TinyProduct image />,
+    <TinyProduct image />,
+    <TinyProduct image />,
+    <TinyProduct image />,
+    <TinyProduct image />,
+    <TinyProduct image />,
+    <TinyProduct image />,
+    <TinyProduct image />,
+    <TinyProduct image />,
+    <TinyProduct image />,
   ];
 
   return (

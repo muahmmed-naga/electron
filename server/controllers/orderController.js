@@ -18,7 +18,6 @@ export const getAllOrders = asyncHanlder(async (req, res) => {
 });
 
 export const addOrderItems = asyncHanlder(async (req, res) => {
-  console.log(req.body);
   try {
     const {
       orderItems,
