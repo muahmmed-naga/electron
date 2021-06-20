@@ -1,15 +1,22 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import moment from "moment";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getUserOrderDetails } from "../redux/actions/orderActions";
+import {
+  getUserOrderDetails,
+  userOrderPayAction,
+} from "../redux/actions/orderActions";
 import LoadingSpinner from "../components/loading-spinner";
+import actionTypes from "../redux/types";
+import { PayPalButton } from "react-paypal-button-v2";
 
 const UserOrdersPage = ({
   match: {
     params: { id },
   },
 }) => {
+  const [sdkReady, setSdkReady] = useState(false);
   const dispatch = useDispatch();
   const cart = useSelector(state => state.cart);
   const {
@@ -17,8 +24,9 @@ const UserOrdersPage = ({
     shippingAddress: { address, city, postalCode, country },
     paymentMethod,
   } = cart;
-  const { loading, error, order, success } = useSelector(
-    state => state.orderDetails
+  const { loading, error, order } = useSelector(state => state.orderDetails);
+  const { loading: payLoading, success } = useSelector(
+    state => state.orderPayInfo
   );
 
   const addDecimals = num => Math.round((num * 100) / 100).toFixed(2);
@@ -34,9 +42,36 @@ const UserOrdersPage = ({
     Number(cart.shippingPrice) +
     Number(cart.taxPrice);
 
+  const hanldeSuccessPayment = paymentResult => {
+    console.log(paymentResult);
+    dispatch(userOrderPayAction(id, paymentResult));
+  };
+
   useEffect(() => {
-    dispatch(getUserOrderDetails(id));
-  }, [dispatch, id]);
+    const getPaymentMethod = async () => {
+      const { data: clientId } = await axios.get("/api/config/paypal");
+      const payPalScriptEl = document.createElement("script");
+      payPalScriptEl.type = "text/javascript";
+      payPalScriptEl.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`;
+      payPalScriptEl.async = true;
+      payPalScriptEl.onload = () => {
+        setSdkReady(true);
+      };
+
+      document.body.appendChild(payPalScriptEl);
+    };
+
+    if (!order?.order || success) {
+      dispatch({ type: actionTypes.USER_ORDER_PAID_RESET });
+      dispatch(getUserOrderDetails(id));
+    } else if (!order?.order?.isPaid) {
+      if (!window.paypal) {
+        getPaymentMethod();
+      } else {
+        setSdkReady(true);
+      }
+    }
+  }, [dispatch, id, order, success]);
 
   return (
     <div className="custom-container mt-5">
@@ -174,9 +209,19 @@ const UserOrdersPage = ({
                       <span>${cart.totalPrices}</span>
                     </div>
                   </div>
-                  <div className="checkout" onClick={() => {}}>
-                    place order
-                  </div>
+                  {!order?.order?.isPaid && (
+                    <div>
+                      {payLoading && <LoadingSpinner />}
+                      {!sdkReady ? (
+                        <LoadingSpinner />
+                      ) : (
+                        <PayPalButton
+                          amount={cart.totalPrices}
+                          onSuccess={hanldeSuccessPayment}
+                        />
+                      )}
+                    </div>
+                  )}
                 </div>
               )}
             </div>

@@ -103,3 +103,28 @@ export const userUpdateReducer = (state = {}, action) => {
       return state;
   }
 };
+
+export const userOrderPayReducer = (state = {}, action) => {
+  switch (action.type) {
+    case actionTypes.USER_ORDER_PAID_REQUEST:
+      return {
+        loading: true,
+        error: false,
+      };
+    case actionTypes.USER_ORDER_PAID_SUCCESS:
+      return {
+        loading: false,
+        success: true,
+        error: false,
+      };
+    case actionTypes.USER_ORDER_PAID_ERROR:
+      return {
+        loading: false,
+        error: action.payload,
+      };
+    case actionTypes.USER_ORDER_PAID_RESET:
+      return {};
+    default:
+      return state;
+  }
+};

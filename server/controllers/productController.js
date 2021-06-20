@@ -1,9 +1,17 @@
 import Product from "../models/productModel.js";
 import asyncHanlder from "express-async-handler";
+import APIFeatures from "../utils/APIFeatues.js";
 
 export const getAllProducts = asyncHanlder(async (req, res) => {
   try {
-    const products = await Product.find({});
+    const apiFeatures = new APIFeatures(Product.find(), req.query)
+      .filter()
+      .sort()
+      .fields()
+      .paginate();
+
+    const products = await apiFeatures.model;
+
     res.status(200).json({
       status: "success",
       results: products.length,
