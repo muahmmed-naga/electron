@@ -1,39 +1,71 @@
+import { useEffect } from "react";
+
 // Components
-import { Link } from 'react-router-dom'
-import LAPTOPS_PRODUCTS from '../../../../data/laptops_products'
+import { Link } from "react-router-dom";
+
+import { useSelector, useDispatch } from "react-redux";
+import { fetchAllProducts } from "../../../../redux/actions/productActions";
+import LoadingSpinner from "./../../../loading-spinner";
 
 const CategoriesTopRated = () => {
   const truncateStr = (str, max) => {
     if (str?.length > max) {
-      return str.slice(0, max - 3) + '...'
-    } else return str
-  }
+      return str.slice(0, max - 3) + "...";
+    } else return str;
+  };
+
+  const {
+    loading,
+    data: { products },
+    error,
+  } = useSelector(state => state.products);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchAllProducts("/api/v1/products"));
+  }, [dispatch]);
 
   return (
     <div className="tab-content">
-      {LAPTOPS_PRODUCTS.map(({ id, name, imgUrl, price, category }) => (
-        <div className="align-tiny-product-wrapper flex-align-center" key={id}>
-          <Link to={`/categories/audios/product/${id}`} className="img-wrapper">
-            <img src={imgUrl} alt="product" />
-          </Link>
+      {loading && <LoadingSpinner />}
+      {error && <h3>{error}</h3>}
 
-          <div className="content">
-            <div className="category">{category}</div>
+      {!loading &&
+        !error &&
+        products &&
+        products.map(({ _id, name, image, price, category }) => (
+          <div
+            className="align-tiny-product-wrapper flex-align-center"
+            key={_id}
+          >
             <Link
-              to={`/categories/audios/product/${id}}`}
-              className="product-name"
+              to={`/categories/${category
+                .replace(" ", "-")
+                .toLowerCase()}/product/${_id}`}
+              className="img-wrapper"
             >
-              {truncateStr(name, 15)}
+              <img src={image} alt="product" />
             </Link>
-            <div className="price">
-              <div className="new">${price}</div>
-              <del>$250.00</del>
+
+            <div className="content">
+              <div className="category">{category}</div>
+              <Link
+                to={`/categories/${category
+                  .replace(" ", "-")
+                  .toLowerCase()}/product/${_id}`}
+                className="product-name"
+              >
+                {truncateStr(name, 15)}
+              </Link>
+              <div className="price">
+                <div className="new">${price}</div>
+                <del>$250.00</del>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
     </div>
-  )
-}
+  );
+};
 
-export default CategoriesTopRated
+export default CategoriesTopRated;

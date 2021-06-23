@@ -29,7 +29,7 @@ const ProductPage = ({ match }) => {
     window.scrollTo(0, 0);
     document.title = `Electron | Product Page`;
 
-    dispatch(fetchProduct(match.params.id));
+    dispatch(fetchProduct(`/api/v1/products/${match.params.id}`));
   }, [dispatch, match.params.id]);
 
   // Product image gallery

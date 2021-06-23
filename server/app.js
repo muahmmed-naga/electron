@@ -42,5 +42,3 @@ app.use(errorPath);
 app.use(errorHandler);
 
 export default app;
-
-// Up to next Update user Profile (5)

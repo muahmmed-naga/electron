@@ -2,6 +2,23 @@ import Product from "../models/productModel.js";
 import asyncHanlder from "express-async-handler";
 import APIFeatures from "../utils/APIFeatues.js";
 
+// Aliases
+export const getTopTenCheepPrice = (req, res, next) => {
+  req.query.limit = "10";
+  req.query.sort = "price,name,createdAt,rating";
+  req.query.fields = "name,price,image,countInStock";
+
+  next();
+};
+
+export const getTopTenExpensivePrice = (req, res, next) => {
+  req.query.limit = "10";
+  req.query.sort = "-price,name,createdAt,rating";
+  req.query.fields = "name,price,image,countInStock";
+
+  next();
+};
+
 export const getAllProducts = asyncHanlder(async (req, res) => {
   try {
     const apiFeatures = new APIFeatures(Product.find(), req.query)

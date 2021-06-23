@@ -1,14 +1,14 @@
 import axios from "axios";
 import actionTypes from "../types";
 
-export const fetchAllProducts = () => {
+export const fetchAllProducts = url => {
   return async dispatch => {
     try {
       dispatch({
         type: actionTypes.PRODUCTS_REQUEST_FETCH,
       });
 
-      const { data } = await axios.get(`/api/v1/products`);
+      const { data } = await axios.get(`${url}`);
 
       dispatch({
         type: actionTypes.PRODUCTS_REQUEST_SUCCESS,
@@ -23,14 +23,14 @@ export const fetchAllProducts = () => {
   };
 };
 
-export const fetchProduct = id => {
+export const fetchProduct = url => {
   return async dispatch => {
     try {
       dispatch({
         type: actionTypes.PRODUCT_REQUEST_FETCH,
       });
 
-      const { data } = await axios.get(`/api/v1/products/${id}`);
+      const { data } = await axios.get(`${url}`);
 
       dispatch({
         type: actionTypes.PRODUCT_REQUEST_SUCCESS,

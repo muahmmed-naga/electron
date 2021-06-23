@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 // Components
-import Top20TabContent from "./utils/top-20-tab";
 import VideoCameraTabContent from "./utils/video-camera";
 import PhonesTablesTabContent from "./utils/phones-tables";
 import LaptopsComputersTabContent from "./utils/laptos-computers";
@@ -20,14 +19,6 @@ const BestSellerSection = () => {
         <div className="title">Best Sellers</div>
 
         <div className="navigator-items-wrapper flex-align-center">
-          <div
-            onClick={() => setActiveTab("audios")}
-            className={`${
-              activeTab === "audios" ? "active-tab" : undefined
-            } tab-item`}
-          >
-            Audios
-          </div>
           <div
             onClick={() => setActiveTab("cameras")}
             className={`${
@@ -55,7 +46,6 @@ const BestSellerSection = () => {
         </div>
       </div>
       <div className="tabs-content-wrapper">
-        {activeTab === "audios" && <Top20TabContent />}
         {activeTab === "cameras" && <PhonesTablesTabContent />}
         {activeTab === "top-rated" && <LaptopsComputersTabContent />}
         {activeTab === "video-camera" && <VideoCameraTabContent />}
