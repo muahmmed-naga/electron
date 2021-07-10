@@ -18,7 +18,7 @@ const CategoiresPageMainContent = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchAllProducts());
+    dispatch(fetchAllProducts("/api/v1/products"));
   }, [dispatch]);
 
   return (

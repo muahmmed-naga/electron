@@ -1,16 +1,28 @@
+import { useEffect } from "react";
+
 // Components
-import AliceCarousel from "react-alice-carousel";
 import { Link } from "react-router-dom";
 import { IoEyeOutline } from "react-icons/io5";
+import AliceCarousel from "react-alice-carousel";
 import { IoMdHeartEmpty } from "react-icons/io";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAllProducts } from "../../redux/actions/productActions";
 
 // Styles
 import "react-alice-carousel/lib/alice-carousel.css";
 import "./index.scss";
 
-import VIDEOS_PRODUCTS from "../../data/videos_products";
-
 const NewArrivals = () => {
+  const dispatch = useDispatch();
+
+  const {
+    data: { products },
+  } = useSelector(state => state.products);
+
+  useEffect(() => {
+    dispatch(fetchAllProducts("/api/v1/products"));
+  }, [dispatch]);
+
   const responsive = {
     0: { items: 2 },
     768: { items: 3 },
@@ -18,20 +30,24 @@ const NewArrivals = () => {
     1024: { items: 6 },
   };
 
-  const items = VIDEOS_PRODUCTS.map(({ id, name, imgUrl, price, category }) => (
+  const items = products?.map(({ _id, name, image, price, category }) => (
     <div className="tiny-product-wrapper">
       <div className="category">{category}</div>
       <Link
-        to={`/categories/new-arrivals/product/${id}`}
+        to={`/categories/${category
+          .replace(" ", "-")
+          .toLowerCase()}/product/${_id}`}
         className="product-name"
       >
         {name}
       </Link>
       <Link
-        to={`/categories/new-arrivals/product/${id}`}
+        to={`/categories/${category
+          .replace(" ", "-")
+          .toLowerCase()}/product/${_id}`}
         className="img-wrapper"
       >
-        <img src={imgUrl} alt="product" />
+        <img src={image} alt="product" />
       </Link>
 
       <div className="price">

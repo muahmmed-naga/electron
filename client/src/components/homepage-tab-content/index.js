@@ -8,30 +8,18 @@ import RightSideTabOnSale from "./utils/right-side-tab/right-side-tab-onsale.com
 import RightSideTabFeatured from "./utils/right-side-tab/right-side-tab-featured.comp";
 import RightSideTabTopRated from "./utils/right-side-tab/right-side-tab-toprated.comp";
 
-// Data
-import TabContent from "../../data/tab-content";
-
 // Styles
 import "./index.scss";
 
 const HomepageTabContent = () => {
   const [activeTab, setActiveTab] = useState("featured-tab");
-  const featuredTab = TabContent.featured;
-  const onSaleTab = TabContent.onSale;
-  const topRatedTab = TabContent.topRated;
 
   return (
     <div className="custom-container homepage-tab-content-wrapper m-top-50">
       <div className="left-side">
-        {activeTab === "featured-tab" && (
-          <LeftSideTabFeatured data={featuredTab.left} />
-        )}
-        {activeTab === "on-sale-tab" && (
-          <LeftSideTabOnSale data={onSaleTab.left} />
-        )}
-        {activeTab === "top-rated-tab" && (
-          <LeftSideTabTopRated data={topRatedTab.left} />
-        )}
+        {activeTab === "featured-tab" && <LeftSideTabFeatured />}
+        {activeTab === "on-sale-tab" && <LeftSideTabOnSale />}
+        {activeTab === "top-rated-tab" && <LeftSideTabTopRated />}
       </div>
       <div className="right-side">
         <div className="tab-navigator flex-align-center flex-justify-center">
@@ -56,15 +44,9 @@ const HomepageTabContent = () => {
         </div>
 
         <div className="m-top-20">
-          {activeTab === "featured-tab" && (
-            <RightSideTabFeatured data={featuredTab.main} />
-          )}
-          {activeTab === "on-sale-tab" && (
-            <RightSideTabOnSale data={onSaleTab.main} />
-          )}
-          {activeTab === "top-rated-tab" && (
-            <RightSideTabTopRated data={topRatedTab.main} />
-          )}
+          {activeTab === "featured-tab" && <RightSideTabFeatured />}
+          {activeTab === "on-sale-tab" && <RightSideTabOnSale />}
+          {activeTab === "top-rated-tab" && <RightSideTabTopRated />}
         </div>
       </div>
     </div>

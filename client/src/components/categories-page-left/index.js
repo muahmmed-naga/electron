@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 // Components
 import { Link } from "react-router-dom";
 import AliceCarousel from "react-alice-carousel";
+// eslint-disable-next-line
 import TinyProduct from "../tiny-product";
 import { IoIosArrowForward } from "react-icons/io";
 import { Accordion, Card } from "react-bootstrap";
@@ -15,21 +16,14 @@ import { useDispatch, useSelector } from "react-redux";
 
 const CategoriesPageLeftSide = () => {
   const {
-    loading,
     data: { products },
-    error,
   } = useSelector(state => state.products);
   const dispatch = useDispatch();
 
-  const productsItems =
-    !loading &&
-    !error &&
-    products.map(item => <TinyProduct key={item._id} {...item} />);
-
-  console.log(productsItems);
+  const items = products?.map(item => <TinyProduct key={item._id} {...item} />);
 
   useEffect(() => {
-    dispatch(fetchAllProducts());
+    dispatch(fetchAllProducts("/api/v1/products"));
   }, [dispatch]);
 
   const responsive = {
@@ -37,21 +31,6 @@ const CategoriesPageLeftSide = () => {
     568: { items: 1 },
     1024: { items: 1 },
   };
-
-  const items = [
-    <TinyProduct image />,
-    <TinyProduct image />,
-    <TinyProduct image />,
-    <TinyProduct image />,
-    <TinyProduct image />,
-    <TinyProduct image />,
-    <TinyProduct image />,
-    <TinyProduct image />,
-    <TinyProduct image />,
-    <TinyProduct image />,
-    <TinyProduct image />,
-    <TinyProduct image />,
-  ];
 
   return (
     <div className="categories-page-left-wrapper">

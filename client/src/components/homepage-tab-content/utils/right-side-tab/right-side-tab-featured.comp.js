@@ -29,7 +29,7 @@ const RightSideTabFeatured = () => {
       {error && <h3>{error}</h3>}
       {!loading &&
         !error &&
-        products?.map(({ _id, name, image, price, category }) => (
+        products?.slice(0, 8)?.map(({ _id, name, image, price, category }) => (
           <div className="tiny-product-wrapper" key={_id}>
             <div className="category">{category}</div>
             <Link

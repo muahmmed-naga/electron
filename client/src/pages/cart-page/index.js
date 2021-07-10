@@ -14,7 +14,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import RouteNavigator from "../../components/route-navigator";
 import AlignTinyProduct from "../../components/align-tiny-product";
-import NewArrivals from "../../components/new-arrivals/";
+// import NewArrivals from "../../components/new-arrivals/";
 import ProductsMultiColumns from "../../components/products-multi-colums";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -172,7 +172,7 @@ const CartPage = () => {
         </div>
       </div>
 
-      <NewArrivals />
+      {/* <NewArrivals /> */}
       <ProductsMultiColumns />
     </>
   );

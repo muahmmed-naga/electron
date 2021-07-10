@@ -8,12 +8,14 @@ import { AiOutlineStar } from "react-icons/ai";
 import { IoIosArrowForward } from "react-icons/io";
 import ProdductDescriptioTabs from "./utils";
 import { Accordion, Card, Row, Col } from "react-bootstrap";
-import NEW_ARRIVALS from "../../components/new-arrivals/data";
 import TinyProduct from "../../components/tiny-product";
 import RouteNavigator from "../../components/route-navigator";
 import ProductsMultiColumns from "../../components/products-multi-colums";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProduct } from "../../redux/actions/productActions";
+import {
+  fetchAllProducts,
+  fetchProduct,
+} from "../../redux/actions/productActions";
 import LoadingSpinner from "../../components/loading-spinner";
 import { addItemToCart } from "../../redux/actions/cartActions";
 
@@ -25,19 +27,25 @@ const ProductPage = ({ match }) => {
   const { loading, data, error } = useSelector(state => state.product);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    document.title = `Electron | Product Page`;
+  const {
+    data: { products },
+  } = useSelector(state => state.products);
 
-    dispatch(fetchProduct(`/api/v1/products/${match.params.id}`));
-  }, [dispatch, match.params.id]);
+  const items = products?.map(item => <TinyProduct key={item._id} {...item} />);
 
-  // Product image gallery
   const responsive = {
     0: { items: 1 },
     568: { items: 1 },
     1024: { items: 1 },
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = `Electron | Product Page`;
+
+    dispatch(fetchAllProducts("/api/v1/products"));
+    dispatch(fetchProduct(`/api/v1/products/${match.params.id}`));
+  }, [dispatch, match.params.id]);
 
   const defaultImages = [
     {
@@ -60,14 +68,13 @@ const ProductPage = ({ match }) => {
     },
   ];
 
-  const items = NEW_ARRIVALS.map(item => (
-    <TinyProduct key={item.id} {...item} />
-  ));
-
   return (
     <>
       <div className="custom-container  product-page-wrapper">
-        <RouteNavigator prev="Accessories" current="Faxtex Product Sample" />
+        <RouteNavigator
+          prev={data?.product?.category}
+          current={data?.product?.name}
+        />
         <div className="content-wrapper">
           <Row>
             <Col xs={12} md={3} lg={3}>
@@ -135,21 +142,21 @@ const ProductPage = ({ match }) => {
                   style={{ width: "100%" }}
                 />
               </Link>
-              <div className="latest-products m-top-20">Latest Products</div>
+              <div className="latest-products m-top-20">Latest Product</div>
               <AliceCarousel
                 mouseTracking
                 items={items}
                 responsive={responsive}
                 disableDotsControls
                 autoPlay
-                autoPlayInterval={5000}
+                autoPlayInterval={3000}
               />
             </Col>
 
-            {loading && <LoadingSpinner />}
             {error && <h2>{error}</h2>}
             <Col xs={12} md={9} lg={9}>
               <Row>
+                {loading && <LoadingSpinner />}
                 {!loading && !error && (
                   <>
                     <Col xs={12} md={4} lg={6}>
